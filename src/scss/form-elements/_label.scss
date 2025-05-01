@@ -1,0 +1,19 @@
+label {
+    font-size: 14px;
+    line-height: 1.4;
+    color: $color;
+    display: block;
+    text-align: left;
+    position: relative;
+    margin: 0 0 8px;
+    @include tablet {
+        font-size: 13px;
+    }
+
+    &.required {
+        &::after {
+            content: ' *';
+            color: #ff0000;
+        }
+    }
+}

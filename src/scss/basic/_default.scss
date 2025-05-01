@@ -1,0 +1,102 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $cLight;
+    background: $color;
+    font: $font-size/#{1.2} $font-family;
+    padding: 0;
+    scroll-behavior: smooth;
+    padding: 0;
+}
+
+main {
+
+    .layout-without-header & section:first-child {
+        padding-top: 0;
+    }
+}
+
+a {
+    color: $color;
+    text-decoration: none;
+    transition: .2s $easing color,
+                .2s $easing opacity;
+
+    &:hover,
+    &.hover {
+        text-decoration: none;
+        outline: none;
+    }
+    &:active,
+    &.active {
+        outline: none;
+    }
+}
+
+p {
+    margin: 0 0 20px;
+    @include desktop {
+        margin-bottom: 22px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    &:focus {
+        outline: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+ol,
+ul {
+    padding: 0 0 0 20px;
+    margin: 0 0 20px;
+    @include desktop {
+        padding-left: 28px;
+    }
+
+}
+
+li {
+    line-height: 1.6;
+}
+
+td,
+th {
+    padding: 16px 8px;
+    @include desktop {
+        padding: 24px 16px;
+    }
+}
+
+td {
+    border: 1px solid $cGray;
+}
+
+tr:nth-child(odd) td {
+    background-color: rgba($cGray, .1);
+}
+
+.light-page {
+    background-color: $cLight;
+    color: $color;
+}
+
+.menu-opened {
+    overflow: hidden;
+    @include desktop {
+        overflow: auto;
+    }
+}

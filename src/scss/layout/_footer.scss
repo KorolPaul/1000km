@@ -1,0 +1,41 @@
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 68px;
+    z-index: 2;
+    @include layout;
+    @include tablet {
+        bottom: 46px;
+    }
+
+    &_holder {
+        @include layout-inner;
+        position: relative;
+        @include tablet {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        @include desktop-large {
+            gap: 200px;
+        }
+    }
+
+    &_menu {
+        display: none;
+        @include tablet {
+            display: flex;
+            gap: 16px;
+        }
+    }
+    
+    &_menu-link {
+        font-size: 16px;
+        color: $cLight;
+
+        [data-page="3"] & {
+            color: $color;
+        }
+    }
+}
