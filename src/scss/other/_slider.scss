@@ -1,0 +1,17 @@
+.slider {
+  background: $cBlue;
+
+  &_item {
+    @include layout;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  &_item-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}

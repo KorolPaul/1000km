@@ -8,15 +8,11 @@ input[type="submit"] {
     border-radius: 0;
     box-sizing: border-box;
     font: 38px/1 $font-family;
-    letter-spacing: -1.9px;
     height: auto;
     padding: 16px 0 10px;
     transition: .2s $easingSmooth border-color,
                 .2s $easingSmooth color,
                 .2s $easingSmooth opacity;
-    @include big-height {
-        font-size: 58px;
-    }
 
     &:focus,
     &:hover {

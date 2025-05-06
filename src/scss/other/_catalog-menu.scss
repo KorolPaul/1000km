@@ -1,0 +1,5 @@
+.catalog-menu {
+  &_button {
+    @include button-filled;
+  }
+}

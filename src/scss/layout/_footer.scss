@@ -10,7 +10,6 @@
     }
 
     &_holder {
-        @include layout-inner;
         position: relative;
         @include tablet {
             display: flex;
@@ -29,7 +28,7 @@
             gap: 16px;
         }
     }
-    
+
     &_menu-link {
         font-size: 16px;
         color: $cLight;

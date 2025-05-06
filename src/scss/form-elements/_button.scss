@@ -1,45 +1,62 @@
 @mixin button {
-    display: inline-block;
-    background: transparent;
-    box-sizing: border-box;
-    cursor: pointer;
-    color: $cGray;
-    border: 1px solid currentColor;
-    border-radius: 24px;
-    white-space: nowrap;
-    text-align: center;
-    font-size: 20px;
-    line-height: 24px;
-    padding: 30px;
-    font-family: $font-family;
-    min-width: 250px;
-    width: 100%;
-    transition: .3s $easing background,
-                .2s $easing color,
-                .2s $easing border-color;
-    @include tablet {
-        width: auto;
-    }
+  display: inline-block;
+  background: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: $cBlack;
+  border: 1px solid $cBright;
+  background-color: transparent;
+  border-radius: 50px;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 1;
+  padding: 11px 30px;
+  font-family: $font-family;
+  min-width: 140px;
+  width: 100%;
+  transition: .3s $easing background,
+              .2s $easing color,
+              .2s $easing border-color;
+  @include tablet {
+    width: auto;
+  }
 
-    &:hover {
-        // background: linear-gradient(45deg, #141418 13.06%, #787891 99.63%);
-        color: $cLight;
-    }
+  &:hover {
+    color: $cLight;
+    background-color: $cBright;
+  }
 
-    &:active {
-        // background: $color;
-        color: $cLight;
-    }
+  &:active {
+    color: $cLight;
+    background-color: $cBrightLight;
+  }
 
-    &:disabled {
-        pointer-events: none;
-        opacity: .6;
-    }
+  &:disabled {
+    pointer-events: none;
+    opacity: .6;
+  }
+}
+
+@mixin button-filled {
+  background-color: $cBright;
+  color: $cLight;
+
+  &:hover {
+    background-color: $cBrightLight;
+  }
+
+  &:active {
+    background-color: $cBright;
+  }
 }
 
 .button,
 button,
 input[type="button"] {
-    @include button;
+  @include button;
 }
-

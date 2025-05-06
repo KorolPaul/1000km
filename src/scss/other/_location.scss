@@ -1,0 +1,13 @@
+.location {
+  color: $cGray;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+
+  &_icon {
+    display: block;
+    position: relative;
+    bottom: 2px;
+  }
+}

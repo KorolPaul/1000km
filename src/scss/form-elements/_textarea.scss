@@ -1,32 +1,31 @@
 textarea {
-    @include placeholder-color($cGray);
-    color: $color;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid $color;
-    border-radius: 0;
-    box-sizing: border-box;
-    font: 20px/1 $font-family;
-    height: 120px;
-    padding: 22px 0;
-    width: 100%;
-    resize: none;
-    transition: .2s $easingSmooth border-color,
-                .2s $easingSmooth color,
-                .2s $easingSmooth box-shadow;
-    @include tablet {
-        font-size: 24px;
-        padding: 24px 0;
-    }
+  @include placeholder-color($cGray);
+  color: $color;
+  background: $cLight;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: $cBlack;
+  font: 16px/41px $font-family;
+  height: 41px;
+  padding: 20px 18px;
+  transition: .2s $easingSmooth border-color,
+    .2s $easingSmooth color,
+    .2s $easingSmooth box-shadow;
 
-    &:focus,
-    &.focus {
-        border-color: $color;
-        box-shadow: 0 3px 0 0 $color;
-    }
+  @include tablet {
+    font-size: 24px;
+    padding: 24px 0;
+  }
 
-    .error & {
-        @include placeholder-color(#ff0000);
-        color: #ff0000;
-    }
+  &:focus,
+  &.focus {
+    border-color: $color;
+    box-shadow: 0 3px 0 0 $color;
+  }
+
+  .error & {
+    @include placeholder-color(#ff0000);
+    color: #ff0000;
+  }
 }

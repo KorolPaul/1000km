@@ -1,0 +1,11 @@
+.main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+
+  &_link {
+    padding: 15px 23px;
+    color: $cGray;
+  }
+}

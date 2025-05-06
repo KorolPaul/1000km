@@ -16,7 +16,6 @@
     }
     &_button {
         @include button-reset;
-        color: $cGrayDark;
         border: 1px solid currentColor;
         border-radius: 16px;
         display: flex;
@@ -55,7 +54,6 @@
 
         &:hover {
             color: $cLight;
-            border-color: $cGrayDark;
         }
 
         &:active,

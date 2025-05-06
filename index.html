@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Tooogether</title>
+  <title>1000km</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,80 +20,83 @@
 
   <meta content="telephone=no" name="format-detection">
   <meta name="HandheldFriendly" content="true">
-
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
   <header class="header">
-    <div class="header__top-bar">
-      <div class="container">
-        <div class="header__location">
-          <i class="fas fa-map-marker-alt"></i>
-          <span class="header__location-text">Минск</span>
+    <div class="header_holder">
+      <div class="header_top">
+        <div class="location">
+          <img class="location_icon" src="src/img/marker.svg" alt="">
+          <span class="location_text">Минск</span>
         </div>
 
-        <nav class="main-menu">
-          <ul class="main-menu__list">
-            <li class="main-menu__item"><a href="#" class="main-menu__link">Пункт меню</a></li>
-            <li class="main-menu__item"><a href="#" class="main-menu__link">Пункт меню</a></li>
-            <li class="main-menu__item"><a href="#" class="main-menu__link">Пункт меню</a></li>
-            <li class="main-menu__item"><a href="#" class="main-menu__link">Пункт меню</a></li>
-            <li class="main-menu__item"><a href="#" class="main-menu__link">Пункт меню</a></li>
-            <li class="main-menu__item"><a href="#" class="main-menu__link">Пункт меню</a></li>
-          </ul>
-        </nav>
+        <ul class="main-menu">
+          <li class="main-menu_item">
+            <a href="#" class="main-menu_link">О компании</a>
+          </li>
+          <li class="main-menu_item">
+            <a href="#" class="main-menu_link">Гарантия и возвраты</a>
+          </li>
+          <li class="main-menu_item">
+            <a href="#" class="main-menu_link">Оплата и доставка</a>
+          </li>
+          <li class="main-menu_item">
+            <a href="#" class="main-menu_link">Контакты</a>
+          </li>
+        </ul>
 
-        <div class="header__user-actions">
-          <a href="#" class="header__car-icon">
-            <i class="fas fa-car"></i>
+        <div class="header_user">
+          <a href="#" class="header_user-link">
+            <img class="location_user-icon" src="src/img/car.svg" alt="">
           </a>
-          <a href="#" class="header__personal">
-            <i class="fas fa-user"></i>
-            <span class="header__personal-text">Личный кабинет</span>
+          <a href="#" class="header_user-link">
+            <img class="location_user-icon" src="src/img/user.svg" alt="">
+            Личный кабинет
           </a>
         </div>
       </div>
-    </div>
 
-    <div class="header__middle-bar">
-      <div class="container">
-        <div class="logo">
-          <a href="/" class="logo__link">
-            <h1 class="logo__title">1000<span class="logo__title-accent">km</span></h1>
-            <p class="logo__subtitle">Интернет-магазин автозапчастей</p>
+      <div class="header_bottom">
+        <div class="header_logo">
+          <a href="/"  class="logo">
+            <img src="src/img/logo.svg" alt="" class="logo_icon">
+            Интернет-магазин автозапчастей
           </a>
         </div>
 
-        <div class="catalog">
-          <button class="button button--primary catalog__button">
-            <i class="fas fa-bars"></i>
-            Каталог з��пчастей
-          </button>
-        </div>
-
-        <div class="search">
-          <input type="text" class="search__input" placeholder="Поиск по артикулу, запчасти или VIN">
-          <button class="search__button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-
-        <div class="contact">
-          <div class="contact__phone">
-            <i class="fas fa-phone-alt contact__icon"></i>
-            <span class="contact__number">+375 (29) 891-81-73</span>
+        <div class="header_bottom-center">
+          <div class="catalog-menu">
+            <button class="catalog-menu_button">
+              <img src="src/img/catalog-menu-button.svg" alt="" class="catalog-menu_button-icon">
+              Каталог запчастей
+            </button>
           </div>
-          <div class="contact__phone">
-            <i class="fab fa-viber contact__icon"></i>
-            <span class="contact__number">+375 (44) 791-81-73</span>
+
+          <div class="search">
+            <input type="text" class="search_input" placeholder="Поиск по артикулу, запчасти или VIN">
+            <button class="search_button">
+              <img src="src/img/loop.svg" alt="">
+            </button>
           </div>
         </div>
 
-        <div class="cart">
-          <a href="#" class="cart__button">
-            <i class="fas fa-shopping-cart cart__icon"></i>
-            <span class="cart__text">Корзина</span>
+        <div class="header_bottom-right">
+          <div class="header_contacts">
+            <div class="header_contacts-item">
+              <img class="header_contacts-item-icon" src="src/img/mts.png" alt="">
+              <a href="tel:+375 (29) 891-81-73" class="header_contacts-item-value">+375 (29) 891-81-73</a>
+            </div>
+            <div class="header_contacts-item">
+              <img class="header_contacts-item-icon" src="src/img/a1.png" alt="">
+              <a href="tel:+375 (29) 891-81-73" class="header_contacts-item-value">+375 (44) 791-81-73</a>
+              <img class="header_contacts-item-icon header_contacts-item-icon__additional" src="src/img/viber.svg" alt="">
+            </div>
+          </div>
+
+          <a href="#" class="header_cart-button">
+            <img src="src/img/cart.svg" alt="">
+            Корзина
           </a>
         </div>
       </div>
@@ -101,35 +104,50 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <h2 class="hero__title">Оригинальные <br>запчасти <span class="hero__title-accent">BOSCH</span></h2>
-            <p class="hero__description">Мы работаем только с официальными поставщиками и продаем исключительно сертифицированные запчасти</p>
-            <a href="#" class="button button--outline hero__button">Перейти в каталог</a>
+    <div class="slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slider_item">
+              <div class="slider_item-content">
+                <h3 class="slider_item-title">Оригинальные запчасти <span>BOSCH</span></h3>
+                <p class="slider_item-text">Мы работаем только с официальными поставщиками и продаем исключительно сертифицированные запчасти</p>
+                <a href="#" class="button">Перейти в каталог</a>
+              </div>
+              <img src="src/img/temp/main-slider-1.png" alt="" class="slider_item-image">
+            </div>
           </div>
-          <div class="hero__image">
-            <img src="bosch-spark-plugs.jpg" alt="Свечи зажигания BOSCH" class="hero__img">
+          <div class="swiper-slide">
+            <div class="slider_item">
+              <div class="slider_item-content">
+                <h3 class="slider_item-title">Тормозные колодки спецпредложение</h3>
+                <p class="slider_item-text">Тормозные колодки спецпредложение и спецпредложение колодок тормозных</p>
+                <a href="#" class="button">Подробнее</a>
+              </div>
+              <img src="src/img/temp/main-slider-2.png" alt="" class="slider_item-image">
+            </div>
           </div>
         </div>
+        <div class="swiper-pagination"></div>
 
-        <div class="slider">
-          <button class="slider__arrow slider__arrow--prev">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="slider__dots">
-            <span class="slider__dot slider__dot--active"></span>
-            <span class="slider__dot"></span>
-            <span class="slider__dot"></span>
-            <span class="slider__dot"></span>
-          </div>
-          <button class="slider__arrow slider__arrow--next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-    </section>
+
+      <script src="./src/js/swiper.js"></script>
+      <script>
+        new Swiper('.swiper', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      </script>
+    </div>
 
     <section class="benefits">
       <div class="container">
@@ -186,358 +204,8 @@
     </section>
   </main>
 
-  <script src="./src/js/main.js?v=4"></script>
 
-  <style>
-    
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-/* Header styles */
-.header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.header__top-bar {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.header__top-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header__location {
-    display: flex;
-    align-items: center;
-    color: #777;
-    font-size: 14px;
-}
-
-.header__location i {
-    margin-right: 5px;
-}
-
-/* Main menu */
-.main-menu__list {
-    display: flex;
-    gap: 20px;
-}
-
-.main-menu__link {
-    color: #777;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.main-menu__link:hover {
-    color: #ff3a3a;
-}
-
-.header__user-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.header__car-icon, .header__personal {
-    display: flex;
-    align-items: center;
-    color: #777;
-    font-size: 14px;
-}
-
-.header__personal i {
-    margin-right: 5px;
-}
-
-/* Middle bar styles */
-.header__middle-bar {
-    padding: 15px 0;
-}
-
-.header__middle-bar .container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Logo */
-.logo__title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.logo__subtitle {
-    font-size: 12px;
-    color: #777;
-}
-
-.logo__title-accent {
-    color: #ff3a3a;
-}
-
-/* Button styles */
-.button {
-    border-radius: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.button--primary {
-    background-color: #ff3a3a;
-    color: white;
-    border: none;
-}
-
-.button--outline {
-    background: transparent;
-    border: 1px solid #333;
-    color: #333;
-    transition: all 0.3s;
-}
-
-.button--outline:hover {
-    background-color: #333;
-    color: white;
-}
-
-/* Search */
-.search {
-    flex-grow: 1;
-    display: flex;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    overflow: hidden;
-}
-
-.search__input {
-    flex-grow: 1;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-}
-
-.search__input:focus {
-    outline: none;
-}
-
-.search__button {
-    background: transparent;
-    border: none;
-    padding: 0 15px;
-    cursor: pointer;
-    color: #777;
-}
-
-/* Contact */
-.contact {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.contact__phone {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-}
-
-/* Cart */
-.cart__button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #ff3a3a;
-    border-radius: 25px;
-    padding: 10px 20px;
-    color: #ff3a3a;
-    transition: all 0.3s;
-}
-
-.cart__button:hover {
-    background-color: #ff3a3a;
-    color: white;
-}
-
-/* Hero section */
-.hero {
-    background-color: #f8f8f8;
-    padding: 40px 0;
-}
-
-.hero__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.hero__text {
-    max-width: 50%;
-}
-
-.hero__title {
-    font-size: 36px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero__title-accent {
-    color: #ff3a3a;
-}
-
-.hero__description {
-    color: #555;
-    margin-bottom: 30px;
-    max-width: 80%;
-}
-
-.hero__img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Slider */
-.slider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.slider__arrow {
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #777;
-}
-
-.slider__dots {
-    display: flex;
-    gap: 10px;
-    margin: 0 20px;
-}
-
-.slider__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ddd;
-    cursor: pointer;
-}
-
-.slider__dot--active {
-    background-color: #ff3a3a;
-}
-
-/* Benefits section */
-.benefits {
-    padding: 60px 0;
-}
-
-.benefits__grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 30px;
-}
-
-.benefit-card {
-    text-align: center;
-}
-
-.benefit-card__icon {
-    margin-bottom: 15px;
-}
-
-.benefit-card__img {
-    width: 60px;
-    height: 60px;
-}
-
-.benefit-card__title {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.benefit-card__text {
-    font-size: 14px;
-    color: #777;
-}
-
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .benefits__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .header__middle-bar .container {
-        flex-wrap: wrap;
-    }
-    
-    .logo, .catalog, .search {
-        margin-bottom: 15px;
-    }
-    
-    .search {
-        order: 3;
-        width: 100%;
-    }
-    
-    .hero__content {
-        flex-direction: column;
-    }
-    
-    .hero__text {
-        max-width: 100%;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-    
-    .benefits__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .header__top-bar .container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .main-menu__list {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .benefits__grid {
-        grid-template-columns: 1fr;
-    }
-}
-  </style>
+  <script src="./src/js/main.js"></script>
 </body>
 
 </html>

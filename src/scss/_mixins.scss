@@ -1,158 +1,97 @@
 @mixin invisible-text {
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
 }
+
 @mixin cutted-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 @mixin tablet() {
-    @media all and (min-width: 768px) { @content; }
+  @media all and (min-width: 768px) {
+    @content;
+  }
 }
+
 @mixin desktop() {
-    @media all and (min-width: 1360px) { @content; }
+  @media all and (min-width: 1360px) {
+    @content;
+  }
 }
+
 @mixin desktop-large() {
-    @media all and (min-width: 1600px) { @content; }
+  @media all and (min-width: 1600px) {
+    @content;
+  }
 }
-@mixin big-height() {
-    @media all and (min-height: 1000px) { @content; }
-}
+
 @mixin media($resolution) {
-    @media all and (min-width: $resolution) { @content; }
+  @media all and (min-width: $resolution) {
+    @content;
+  }
 }
+
 @mixin mediaHeight($resolution) {
-    @media all and (min-height: $resolution) { @content; }
+  @media all and (min-height: $resolution) {
+    @content;
+  }
 }
+
 @mixin placeholder-color($color) {
-    &::-webkit-input-placeholder {
-        color: $color;
-    }
-    &::-moz-placeholder {
-        color: $color;
-    }
-    &:-ms-input-placeholder
-    {
-        color: $color;
-    }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
 }
 
 @mixin layout {
-    padding-left: $indent * 2;
-    padding-right: $indent;
-    @include tablet() {
-        padding-left: $indent;
-    }
-    @include desktop {
-        max-width: $max-width;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@mixin layout-inner {
-    @include tablet() {
-        padding-left: 25%;
-    }
-}
-
-@mixin right-side-text {
-    width: 300px;
-    align-self: flex-end;
-    @include tablet {
-        width: 465px;
-    }
-    @include desktop {
-        width: 652px;
-    }
-}
-
-@mixin right-side-text-medium {
-    @include tablet {
-        align-self: flex-end;
-        max-width: 465px;
-    }
-    @include desktop {
-        max-width: 822px;
-    }
-}
-
-@mixin right-side-text-big {
-    @include tablet {
-        max-width: 660px;
-        align-self: flex-end;
-    }
-    @include desktop {
-        max-width: 1240px;
-    }
-    @include desktop-extra-large() {
-        max-width: 1380px;
-    }
+  padding-left: $indent * 2;
+  padding-right: $indent;
+  @include tablet() {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @mixin button-reset {
-    border: none;
-    padding: 0;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  height: auto;
+  line-height: 1.2;
+  min-width: 0;
+  width: auto;
+  border-radius: 0;
+  text-transform: none;
+
+  &:hover {
+    transform: none;
     background-color: transparent;
-    height: auto;
-    line-height: 1.2;
-    min-width: 0;
-    width: auto;
-    border-radius: 0;
-    text-transform: none;
+  }
 
-    &:hover {
-        transform: none;
-        background-color: transparent;
-    }
+  &:active {
+    transform: none;
+    background-color: transparent;
+  }
 
-    &:active {
-        transform: none;
-        background-color: transparent;
-    }
-
-    &::before {
-        content: none;
-    }
-}
-
-@mixin card-title {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 1s $easingSmooth transform .2s,
-                .9s $easingSmooth opacity .2s;
-    @include tablet {
-        opacity: 1;
-        transform: none;
-    }
-
-    .animated & {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@mixin card-text {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 1s $easingSmooth transform .4s,
-                .9s $easingSmooth opacity .4s;
-    @include tablet {
-        opacity: 1;
-        transform: none;
-    }
-
-    .animated & {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  &::before {
+    content: none;
+  }
 }
 
 @function vw($px) {
-    @return $px * 0.068vw
+  @return $px * 0.068vw
 }
-
-
-

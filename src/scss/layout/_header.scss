@@ -1,92 +1,88 @@
 .header {
-    z-index: 11;
-    color: $cLight;
-    width: 100%;
-    box-sizing: border-box;
-    transition: .2s $easing filter;
+  padding: 16px 0 5px;
+  z-index: 11;
+  background-color: $cBlue;
+  @include tablet {
+    padding: 43px 0 5px;
+  }
+
+  &_holder {
+    @include layout;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     @include tablet {
-        position: absolute;
-        right: 0;
-        top: 0;
-        transform: translateX(-50%);
-        left: 50%;
+      gap: 30px;
     }
-    
-    &_holder {
-        @include layout;
+  }
+
+  &_top,
+  &_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_top {
+    color: $cGray;
+  }
+
+  &_user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include tablet {
+      gap: 30px;
     }
+  }
 
-    &_content {
-        @include layout-inner;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 30px;
-        @include tablet {
-            min-height: 72px;
-            padding-top: 32px;
-            align-items: center;
-        }
+  &_user-link {
+    color: $cGray;
+    display: inline-flex;
+    gap: 6px;
+    align-items: baseline;
+  }
+
+  &_logo {
+    flex-shrink: 0;
+    @include tablet {
+      margin-right: 24px;
     }
-
-    &_button {
-        @include button-reset;
-        font-size: 24px;
-        letter-spacing: -1.6px;
-        color: $cLight;
-        padding: 14px 0 4px;
-        position: fixed;
-        right: 32px;
-        bottom: 45px;
-        z-index: 2;
-        @include tablet {
-            font-size: 32px;
-            position: relative;
-            right: 0;
-            bottom: 0;
-            padding: 14px 0 10px;
-        }
-        
-        .fp-viewing-2-0 &,
-        .fp-viewing-2-1 & {
-            color: $color;
-        }
+    @include desktop {
+      margin-right: 54px;
     }
+  }
 
-    &_right {
-        @include tablet {
-            display: flex;
-            align-items: center;
-            gap: 135px;
-        }
+  &_bottom-center {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    @include tablet {
+      flex-grow: 1;
+      margin-right: 16px;
     }
-
-    &_video-sound {
-        @include button-reset;
-        bottom: 115px;
-        right: $indent;
-        position: absolute;
-        z-index: 13;
-        opacity: 0;
-        transition: .2s $easingSmooth opacity;
-        @include tablet {
-            position: relative;
-            bottom: 0;
-            right: 0;
-            opacity: 1;
-        }
-
-        .fp-viewing-0 & {
-            opacity: 1;
-        }
-
-        .fp-viewing-2-0 &,
-        .fp-viewing-2-1 & {
-            filter: brightness(0);
-        }
-
-        & > * {
-            pointer-events: none;
-        }
+    @include desktop {
+      margin-right: 46px;
     }
+  }
+
+  &_bottom-right {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &_contacts-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &_contacts-item-value {
+    color: $cBlackLight;
+  }
+
+  &_cart-button {
+    @include button;
+  }
 }

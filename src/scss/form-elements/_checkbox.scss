@@ -58,8 +58,8 @@ input[type="checkbox"] {
     }
     &:checked + label {
         &::before {
-            background-color: $cGreen;
-            border-color: $cGreen;
+            background-color: $cBright;
+            border-color: $cBright;
         }
         &::after {
             opacity: 1;

@@ -1,0 +1,17 @@
+.search {
+  position: relative;
+  flex-grow: 1;
+
+  &_input[type] {
+    padding-left: 26px;
+    padding-right: 60px;
+    border-radius: 50px;
+  }
+
+  &_button {
+    @include button-reset;
+    position: absolute;
+    right: 24px;
+    top: 10px;
+  }
+}
