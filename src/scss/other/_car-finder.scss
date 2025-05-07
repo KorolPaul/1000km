@@ -1,0 +1,46 @@
+.car-finder {
+  background-color: $cBlue;
+  padding: 32px 0 26px;
+  @include tablet {
+    background-color: transparent;
+    padding: 40px 0 0;
+  }
+
+  &_title {
+    font-style: 28px;
+    line-height: 1;
+    margin: 0 auto 10px;
+    text-align: center;
+    @include tablet {
+      font-style: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &_subtitle {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+  }
+
+  &_filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: $cBlue;
+    padding: 24px 0 0;
+    position: relative;
+    @include tablet {
+      margin: 26px 0 0;
+      padding: 30px 20px;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+  &_filters-item {
+    @include tablet {
+      flex-grow: 1;
+    }
+  }
+}

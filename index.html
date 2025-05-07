@@ -105,38 +105,40 @@
 
   <main>
     <div class="slider">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="slider_item">
-              <div class="slider_item-content">
-                <h3 class="slider_item-title">Оригинальные запчасти <span>BOSCH</span></h3>
-                <p class="slider_item-text">Мы работаем только с официальными поставщиками и продаем исключительно сертифицированные запчасти</p>
-                <a href="#" class="button">Перейти в каталог</a>
+      <div class="slider_holder">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slider_item">
+                <div class="slider_item-content">
+                  <h3 class="slider_item-title">Оригинальные запчасти <span>BOSCH</span></h3>
+                  <p class="slider_item-text">Мы работаем только с официальными поставщиками и продаем исключительно сертифицированные запчасти</p>
+                  <a href="#" class="button">Перейти в каталог</a>
+                </div>
+                <img src="src/img/temp/main-slider-1.png" alt="" class="slider_item-image">
               </div>
-              <img src="src/img/temp/main-slider-1.png" alt="" class="slider_item-image">
+            </div>
+            <div class="swiper-slide">
+              <div class="slider_item">
+                <div class="slider_item-content">
+                  <h3 class="slider_item-title">Тормозные колодки спецпредложение</h3>
+                  <p class="slider_item-text">Тормозные колодки спецпредложение и спецпредложение колодок тормозных</p>
+                  <a href="#" class="button">Подробнее</a>
+                </div>
+                <img src="src/img/temp/main-slider-2.png" alt="" class="slider_item-image">
+              </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="slider_item">
-              <div class="slider_item-content">
-                <h3 class="slider_item-title">Тормозные колодки спецпредложение</h3>
-                <p class="slider_item-text">Тормозные колодки спецпредложение и спецпредложение колодок тормозных</p>
-                <a href="#" class="button">Подробнее</a>
-              </div>
-              <img src="src/img/temp/main-slider-2.png" alt="" class="slider_item-image">
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
+          <div class="swiper-pagination"></div>
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
 
       <script src="./src/js/swiper.js"></script>
       <script>
-        new Swiper('.swiper', {
+        new Swiper('.slider .swiper', {
           loop: true,
           pagination: {
             el: '.swiper-pagination',
@@ -150,58 +152,931 @@
     </div>
 
     <section class="benefits">
-      <div class="container">
-        <div class="benefits__grid">
-          <div class="benefit-card">
-            <div class="benefit-card__icon">
-              <img src="medal-icon.svg" alt="Медаль" class="benefit-card__img">
-            </div>
-            <h3 class="benefit-card__title">Работаем более 7 лет.</h3>
-            <p class="benefit-card__text">Менеджеры с опытом работы от 12 лет</p>
-          </div>
+      <div class="benefits_card">
+        <div class="benefits_card-icon-icon-wrapper">
+          <img src="./src/img/advantages/advantage-1.svg" alt="Медаль" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Работаем более 7 лет. Менеджеры с опытом работы от 12 лет</span>
+      </div>
 
-          <div class="benefit-card">
-            <div class="benefit-card__icon">
-              <img src="warehouse-icon.svg" alt="Склад" class="benefit-card__img">
-            </div>
-            <h3 class="benefit-card__title">Более 21 000 000 запчастей на складах</h3>
-            <p class="benefit-card__text">с доставкой по всей Беларуси</p>
-          </div>
+      <div class="benefits_card">
+        <div class="benefits_card-icon-icon-wrapper">
+          <img src="./src/img/advantages/advantage-2.svg" alt="Склад" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Более 21 000 000 запчастей на складах с доставкой по всей Беларуси</span>
+      </div>
 
-          <div class="benefit-card">
-            <div class="benefit-card__icon">
-              <img src="piggy-bank-icon.svg" alt="Копилка" class="benefit-card__img">
-            </div>
-            <h3 class="benefit-card__title">У нас выгодные и приятные цены,</h3>
-            <p class="benefit-card__text">которые вас удивят</p>
-          </div>
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-3.svg" alt="Копилка" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">У нас выгодные и приятные цены, которые вас удивят</span>
+      </div>
 
-          <div class="benefit-card">
-            <div class="benefit-card__icon">
-              <img src="delivery-icon.svg" alt="Доставка" class="benefit-card__img">
-            </div>
-            <h3 class="benefit-card__title">Самая быстрая и удобная доставка</h3>
-            <p class="benefit-card__text">в любую точку Беларуси</p>
-          </div>
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-4.svg" alt="Доставка" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Самая быстрая и удобная доставка в любую точку Беларуси</span>
+      </div>
 
-          <div class="benefit-card">
-            <div class="benefit-card__icon">
-              <img src="timer-icon.svg" alt="Таймер" class="benefit-card__img">
-            </div>
-            <h3 class="benefit-card__title">Доставка в течение дня</h3>
-            <p class="benefit-card__text">по Минску (при условии заказа до 15:00)</p>
-          </div>
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-5.svg" alt="Таймер" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Доставка в течение дня по Минску (при условии заказа до 15:00)</span>
+      </div>
 
-          <div class="benefit-card">
-            <div class="benefit-card__icon">
-              <img src="return-icon.svg" alt="Возврат" class="benefit-card__img">
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-6.svg" alt="Возврат" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Возврат без проблем в течение 14 дней</span>
+      </div>
+    </section>
+
+    <section class="car-finder">
+      <h2 class="car-finder_title">Начните с выбора автомобиля</h2>
+      <p class="car-finder_subtitle">Выбор автомобиля позволяет отобразить только те запчасти, которые подходят к вашему автомобилю</p>
+
+      <div class="car-finder_filters">
+        <div class="car-finder_filters-item">
+          <div class="fake-select">
+            <button class="fake-select_button">
+              2015
+            </button>
+            <div class="fake-select_popup">
+              <span class="fake-select_value" data-year="2025">2025</span>
+              <span class="fake-select_value" data-year="2024">2024</span>
+              <span class="fake-select_value" data-year="2023">2023</span>
+              <span class="fake-select_value" data-year="2022">2022</span>
+              <span class="fake-select_value" data-year="2021">2021</span>
+              <span class="fake-select_value" data-year="2020">2020</span>
+              <span class="fake-select_value" data-year="2019">2019</span>
+              <span class="fake-select_value" data-year="2018">2018</span>
+              <span class="fake-select_value" data-year="2017">2017</span>
+              <span class="fake-select_value" data-year="2016">2016</span>
+              <span class="fake-select_value" data-year="2015">2015</span>
+              <span class="fake-select_value" data-year="2014">2014</span>
+              <span class="fake-select_value" data-year="2013">2013</span>
+              <span class="fake-select_value" data-year="2012">2012</span>
+              <span class="fake-select_value" data-year="2011">2011</span>
+              <span class="fake-select_value" data-year="2010">2010</span>
+              <span class="fake-select_value" data-year="2009">2009</span>
+              <span class="fake-select_value" data-year="2008">2008</span>
+              <span class="fake-select_value" data-year="2007">2007</span>
+              <span class="fake-select_value" data-year="2006">2006</span>
+              <span class="fake-select_value" data-year="2005">2005</span>
+              <span class="fake-select_value" data-year="2004">2004</span>
+              <span class="fake-select_value" data-year="2003">2003</span>
+              <span class="fake-select_value" data-year="2002">2002</span>
+              <span class="fake-select_value" data-year="2001">2001</span>
+              <span class="fake-select_value" data-year="2000">2000</span>
+              <span class="fake-select_value" data-year="1999">1999</span>
+              <span class="fake-select_value" data-year="1998">1998</span>
+              <span class="fake-select_value" data-year="1997">1997</span>
+              <span class="fake-select_value" data-year="1996">1996</span>
+              <span class="fake-select_value" data-year="1995">1995</span>
+              <span class="fake-select_value" data-year="1994">1994</span>
+              <span class="fake-select_value" data-year="1993">1993</span>
+              <span class="fake-select_value" data-year="1992">1992</span>
+              <span class="fake-select_value" data-year="1991">1991</span>
+              <span class="fake-select_value" data-year="1990">1990</span>
+              <span class="fake-select_value" data-year="1989">1989</span>
             </div>
-            <h3 class="benefit-card__title">Возврат без проблем</h3>
-            <p class="benefit-card__text">в течение 14 дней</p>
+          </div>
+        </div>
+        <div class="car-finder_filters-item">
+          <div class="fake-select">
+            <button class="fake-select_button">
+              Марка
+            </button>
+            <div class="fake-select_popup">
+              <span class="fake-select_value" data-year="2025">2025</span>
+              <span class="fake-select_value" data-year="2024">2024</span>
+              <span class="fake-select_value" data-year="2023">2023</span>
+              <span class="fake-select_value" data-year="2022">2022</span>
+              <span class="fake-select_value" data-year="2021">2021</span>
+              <span class="fake-select_value" data-year="2020">2020</span>
+            </div>
+          </div>
+        </div>
+        <div class="car-finder_filters-item">
+          <div class="fake-select">
+            <button class="fake-select_button">
+              Модель
+            </button>
+            <div class="fake-select_popup">
+              <span class="fake-select_value" data-year="2025">2025</span>
+              <span class="fake-select_value" data-year="2024">2024</span>
+              <span class="fake-select_value" data-year="2023">2023</span>
+              <span class="fake-select_value" data-year="2022">2022</span>
+              <span class="fake-select_value" data-year="2021">2021</span>
+              <span class="fake-select_value" data-year="2020">2020</span>
+            </div>
+          </div>
+        </div>
+        <div class="car-finder_filters-item">
+          <div class="fake-select">
+            <button class="fake-select_button">
+              Кузов
+            </button>
+            <div class="fake-select_popup">
+              <span class="fake-select_value" data-year="2025">2025</span>
+              <span class="fake-select_value" data-year="2024">2024</span>
+              <span class="fake-select_value" data-year="2023">2023</span>
+              <span class="fake-select_value" data-year="2022">2022</span>
+              <span class="fake-select_value" data-year="2021">2021</span>
+              <span class="fake-select_value" data-year="2020">2020</span>
+            </div>
+          </div>
+        </div>
+        <div class="car-finder_filters-item">
+          <div class="fake-select">
+            <button class="fake-select_button">
+              Двигатель
+            </button>
+            <div class="fake-select_popup">
+              <span class="fake-select_value" data-year="2025">2025</span>
+              <span class="fake-select_value" data-year="2024">2024</span>
+              <span class="fake-select_value" data-year="2023">2023</span>
+              <span class="fake-select_value" data-year="2022">2022</span>
+              <span class="fake-select_value" data-year="2021">2021</span>
+              <span class="fake-select_value" data-year="2020">2020</span>
+            </div>
+          </div>
+        </div>
+        <div class="car-finder_filters-item">
+          <div class="fake-select">
+            <button class="fake-select_button">
+              Модификация
+            </button>
+            <div class="fake-select_popup">
+              <span class="fake-select_value" data-year="2025">2025</span>
+              <span class="fake-select_value" data-year="2024">2024</span>
+              <span class="fake-select_value" data-year="2023">2023</span>
+              <span class="fake-select_value" data-year="2022">2022</span>
+              <span class="fake-select_value" data-year="2021">2021</span>
+              <span class="fake-select_value" data-year="2020">2020</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="categories-grid">
+      <h3 class="categories-grid_title">Запчасти по категориям</h3>
+      <div class="categories-grid_items">
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-1.png" alt="" class="categories-grid_image">
+          Подвеска
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-2.png" alt="" class="categories-grid_image">
+          Тормозная система
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-3.png" alt="" class="categories-grid_image">
+          Датчики
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-4.png" alt="" class="categories-grid_image">
+          Ременной привод
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-5.png" alt="" class="categories-grid_image">
+          Трансмиссия
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-6.png" alt="" class="categories-grid_image">
+          Фильтры
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-7.png" alt="" class="categories-grid_image">
+          Технические жидкости
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-8.png" alt="" class="categories-grid_image">
+          Насосы и помпы
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-9.png" alt="" class="categories-grid_image">
+          Электрика
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-10.png" alt="" class="categories-grid_image">
+          Охлаждение
+        </a>
+      </div>
+
+      <h3 class="categories-grid_title">Масла и автохимия</h3>
+      <div class="categories-grid_items">
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-11.png" alt="" class="categories-grid_image">
+          Масла моторные
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-12.png" alt="" class="categories-grid_image">
+          Масла трансмиссионные
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-13.png" alt="" class="categories-grid_image">
+          Масла гидравлические
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-14.png" alt="" class="categories-grid_image">
+          Антифриз
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-15.png" alt="" class="categories-grid_image">
+          Присадки
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-16.png" alt="" class="categories-grid_image">
+          Смазки
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-17.png" alt="" class="categories-grid_image">
+          Герметики
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-18.png" alt="" class="categories-grid_image">
+          Автокосметика
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-19.png" alt="" class="categories-grid_image">
+          Тормозная жидкость
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-20.png" alt="" class="categories-grid_image">
+          Стеклоомывающая жидкость
+        </a>
+      </div>
+
+      <h3 class="categories-grid_title">Садовая техника и инструмент</h3>
+      <div class="categories-grid_items">
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-21.png" alt="" class="categories-grid_image">
+          Электроинструмент
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-22.png" alt="" class="categories-grid_image">
+          Бензоинструмент
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-23.png" alt="" class="categories-grid_image">
+          Садовая техника
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-24.png" alt="" class="categories-grid_image">
+          Ручной инструмент
+        </a>
+        <a href="#" class="categories-grid_link">
+          <img src="src/img/categories/category-25.png" alt="" class="categories-grid_image">
+          Расходные материалы
+        </a>
+      </div>
+    </section>
+
+    <div class="banner">
+      <div class="banner_holder">
+        <img class="banner_bg" src="src/img/temp/banner-home.png" alt="images" data-ignore="true">
+
+        <div class="banner_content">
+          <h4 class="banner_title">
+            Нужна помощь в подборе запчастей?
+          </h4>
+          <p class="banner_text">
+            Наши <span class="bright">опытные менеджеры</span> всегда зададут правильные вопросы и экспертно помогут в подборе нужной Вам запчасти
+          </p>
+          <div class="banner_contact">
+            <span class="banner_contact-item">Звоните!</span>
+            <a class="banner_contact-item" href="tel:375298918173">
+              <img class="banner_contact-item-icon" src="src/img/mts.png" alt="">
+              +375 (29) 891-81-73
+            </a>
+            <a class="banner_contact-item" href="tel:375447918173">
+              <img class="banner_contact-item-icon" src="src/img/a1.png" alt="">
+              +375 (44) 791-81-73
+              <img class="banner_contact-item-icon" src="src/img/viber.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section_title">Популярные товары</h2>
+
+      <div class="products-carousel">
+        <div class="products-carousel_holder">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Total</span>
+                    <h3 class="products-carousel_item-title">Герметик силиконовый черный RTV-Gasket Maker</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Champion</span>
+                    <h3 class="products-carousel_item-title">Champion Active Defence 10W40 В4 Diesel, 1 л</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">28</span> руб
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Evolution </span>
+                    <h3 class="products-carousel_item-title">Масло моторное синтетическое Evolution</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Total</span>
+                    <h3 class="products-carousel_item-title">Герметик силиконовый черный RTV-Gasket Maker</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Champion</span>
+                    <h3 class="products-carousel_item-title">Champion Active Defence 10W40 В4 Diesel, 1 л</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">28</span> руб
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Evolution </span>
+                    <h3 class="products-carousel_item-title">Масло моторное синтетическое Evolution</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+
+        <script>
+          new Swiper('.products-carousel .swiper', {
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 2,
+            spaceBetween: 10,
+            breakpoints: {
+              640: {
+                slidesPerView: 4,
+                spaceBetween: 16
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 16
+              }
+            }
+          });
+        </script>
+      </div>
+
+      <h2 class="section_title">Поиск по марке  автомобиля</h2>
+      <div class="car-brands">
+        <div class="car-brands_columns">
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">A</span>
+
+            <span class="car-brands_item">
+              <a href="acura" class="car-brands_item-value">ACURA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="alfa-romeo" class="car-brands_item-value">ALFA ROMEO</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="audi" class="car-brands_item-value">AUDI</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">B</span>
+
+            <span class="car-brands_item">
+              <a href="bmw" class="car-brands_item-value">BMW</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">C</span>
+
+            <span class="car-brands_item">
+              <a href="cadillac" class="car-brands_item-value">CADILLAC</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="chery" class="car-brands_item-value">CHERY</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="chevrolet" class="car-brands_item-value">CHEVROLET</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="chrysler" class="car-brands_item-value">CHRYSLER</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="citron" class="car-brands_item-value">CITROËN</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">D</span>
+
+            <span class="car-brands_item">
+              <a href="dacia" class="car-brands_item-value">DACIA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="daewoo" class="car-brands_item-value">DAEWOO</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="daihatsu" class="car-brands_item-value">DAIHATSU</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="dodge" class="car-brands_item-value">DODGE</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">E</span>
+
+            <span class="car-brands_item">
+              <a href="emgrand-geely" class="car-brands_item-value">EMGRAND (GEELY)</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="englon-geely" class="car-brands_item-value">ENGLON (GEELY)</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">F</span>
+
+            <span class="car-brands_item">
+              <a href="fiat" class="car-brands_item-value">FIAT</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="ford" class="car-brands_item-value">FORD</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">G</span>
+
+            <span class="car-brands_item">
+              <a href="gaz" class="car-brands_item-value">GAZ</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="geely" class="car-brands_item-value">GEELY</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="gmc" class="car-brands_item-value">GMC</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">H</span>
+
+            <span class="car-brands_item">
+              <a href="honda" class="car-brands_item-value">HONDA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="hyundai" class="car-brands_item-value">HYUNDAI</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">I</span>
+
+            <span class="car-brands_item">
+              <a href="infiniti" class="car-brands_item-value">INFINITI</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="isuzu" class="car-brands_item-value">ISUZU</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="iveco" class="car-brands_item-value">IVECO</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">J</span>
+
+            <span class="car-brands_item">
+              <a href="jaguar" class="car-brands_item-value">JAGUAR</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="jeep" class="car-brands_item-value">JEEP</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">K</span>
+
+            <span class="car-brands_item">
+              <a href="kia" class="car-brands_item-value">KIA</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">L</span>
+
+            <span class="car-brands_item">
+              <a href="lada" class="car-brands_item-value">LADA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="lancia" class="car-brands_item-value">LANCIA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="land-rover" class="car-brands_item-value">LAND ROVER</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="lexus" class="car-brands_item-value">LEXUS</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="lifan" class="car-brands_item-value">LIFAN</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">M</span>
+
+            <span class="car-brands_item">
+              <a href="mazda" class="car-brands_item-value">MAZDA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="mercedes-benz" class="car-brands_item-value">MERCEDES-BENZ</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="mini" class="car-brands_item-value">MINI</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="mitsubishi" class="car-brands_item-value">MITSUBISHI</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">N</span>
+
+            <span class="car-brands_item">
+              <a href="nissan" class="car-brands_item-value">NISSAN</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">O</span>
+
+            <span class="car-brands_item">
+              <a href="opel" class="car-brands_item-value">OPEL</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">P</span>
+
+            <span class="car-brands_item">
+              <a href="peugeot" class="car-brands_item-value">PEUGEOT</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="pontiac" class="car-brands_item-value">PONTIAC</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="porsche" class="car-brands_item-value">PORSCHE</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">R</span>
+
+            <span class="car-brands_item">
+              <a href="renault" class="car-brands_item-value">RENAULT</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="rover" class="car-brands_item-value">ROVER</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">S</span>
+
+            <span class="car-brands_item">
+              <a href="saab" class="car-brands_item-value">SAAB</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="seat" class="car-brands_item-value">SEAT</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="skoda" class="car-brands_item-value">SKODA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="smart" class="car-brands_item-value">SMART</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="ssangyong" class="car-brands_item-value">SSANGYONG</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="subaru" class="car-brands_item-value">SUBARU</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="suzuki" class="car-brands_item-value">SUZUKI</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">T</span>
+
+            <span class="car-brands_item">
+              <a href="tesla" class="car-brands_item-value">TESLA</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="toyota" class="car-brands_item-value">TOYOTA</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">U</span>
+
+            <span class="car-brands_item">
+              <a href="uaz" class="car-brands_item-value">UAZ</a>
+            </span>
+          </div>
+          <div class="car-brands_letter">
+            <span class="car-brands_letter-value">V</span>
+
+            <span class="car-brands_item">
+              <a href="volvo" class="car-brands_item-value">VOLVO</a>
+            </span>
+
+            <span class="car-brands_item">
+              <a href="vw" class="car-brands_item-value">VW</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="about">
+        <div class="reviews">
+          <h3 class="reviews_title">Отзывы клиентов</h3>
+
+          <div class="reviews_items">
+            <div class="reviews_item">
+              <div class="reviews_item-head">
+                <span class="reviews_item-name">Денис</span>
+                <span class="reviews_item-date">06.05.2025</span>
+              </div>
+              <div class="reviews_item-rating">
+                <div class="rating">
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star"></div>
+                </div>
+              </div>
+              <p class="reviews_item-text">
+                Очень нравится магазин. Всегда все вовремя, в наличии много товара!
+              </p>
+            </div>
+            <div class="reviews_item">
+              <div class="reviews_item-head">
+                <span class="reviews_item-name">Валерий</span>
+                <span class="reviews_item-date">12.05.2025</span>
+              </div>
+              <div class="reviews_item-rating">
+                <div class="rating">
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star rating_star__filled"></div>
+                  <div class="rating_star rating_star__filled"></div>
+                </div>
+              </div>
+              <p class="reviews_item-text">
+                Очень нравится магазин. Всегда все вовремя, в наличии много товара!
+              </p>
+            </div>
+          </div>
+
+          <a href="#" class="reviews_more">Читать все отзывы</a>
+        </div>
+
+        <div class="about_content">
+          <h2 class="about_title"> Хотите купить автозапчасти в Минске и Беларуси?</h2>
+
+          <p>Интернет-магазин запчастей 1000km.by находится в Минске. У нас вы можете купить автозапчасти практически для любого автомобиля. Доставляем по всей Беларуси! Если Вы не нашли нужную деталь или сомневаетесь в выборе, звоните, мы с радостью поможем!</p>
+          <p>
+            <strong>Работаем больше 10 лет (с 2014 года).</strong>
+            <br>
+            Мы сконцентрировались на том, чтобы быстро и качественно подобрать и доставить вам практически любую автозапчасть в любую точку Беларуси, в течение 1 дня.
+          </p>
+          <p> Мы постарались не усложнять этот процесс. Выберите свой авто, добавьте интересующие запчасти в корзину, укажите адрес доставки, а дальше всё сделает наша скоростная курьерская служба! Если купленная автодеталь не подходит - мы примем её в течение 14 дней.</p>
+
+          <p>
+            <strong>Почему покупать запчасти в 1000km.by удобно?</strong>
+            <ul>
+              <li>Официальная гарантия и сертификаты качества на все автозапчасти нашего магазина</li>
+              <li>Если запчасть не подходит, можно вернуть в течение 14 дней</li>
+              <li>Удобная доставка по Минску и в любую точку Беларуси, курьером</li>
+            </ul>
+          </p>
+
+          <h3>21 053 385 автодеталей</h3>
+          <p>для более чем <strong>600 моделей</strong> автомобилей</p>
+
+          <h3>Подбор запчастей для вашего авто</h3>
+          <p>
+            Мы собрали множество запчастей от различных производителей. В каталоге можно найти как изделия именитых мировых брендов, так и более дешевые аналоги, произведенные в Азии. Право выбора мы предоставляем покупателю. В каталоге содержится более 21 000 000 наименований запчастей для 600 различных моделей авто.
+            Для прохождения техобслуживания, вам пригодятся фильтры, тормозные диски, свечи зажигания, моторные масла.
+          </p>
+
+          <h3>Как купить автозапчасти в Минске и всей Беларуси?</h3>
+          <p>Добавьте интересующие товары в корзину и оформите заказ, став участником дисконтной программы. А если вам понадобится помощь в подборе запчастей именно на вашу модель, звоните, подскажем: <strong>+375 (29) 891-81-73</strong>. После получения заявки, наши менеджеры свяжутся с вами, для уточнения деталей заказа.</p>
+
+          <h3>Гарантия</h3>
+          <p>Если купленная запчасть не подошла, вы можете сдать или обменять её в течение 14 дней с момента приобретения. Мы понимаем, что подбор автозапчастей - дело непростое и можно легко запутаться среди множества вариантов. Главные условия возврата - наличие документов и коробки, товарный вид. Если всё хорошо, мы обменяем её на другой товар.</p>
+
+          <h3>Доставка</h3>
+          <p>Как правило, мы доставляем товары на следующий день после подтверждения заказа. При этом мы понимаем, что бывают экстренные случаи, когда заменить запчасть нужно как можно скорее. Для таких случаев у нас есть спец-доставка запчастей - в этом случае мы оформляем и доставляем заказ в течение 4 часов.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 

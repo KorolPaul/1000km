@@ -1,0 +1,40 @@
+.number-input {
+  position: relative;
+
+  &_input[type] {
+    background-color: #F4F4F4;
+    text-align: center;
+  }
+
+  &_button {
+    @include button-reset;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 48px;
+    background: no-repeat center;
+    filter: grayscale(1) brightness(1.8);
+    transition: .2s $easing filter;
+    @include tablet {
+      width: 36px;
+    }
+
+    &:hover {
+      filter: grayscale(0) brightness(1);
+    }
+
+    &:active {
+      filter: grayscale(0.2) brightness(1.5);
+    }
+
+    &__minus {
+      left: 0;
+      background-image: url(#{$img}/minus.svg);
+    }
+
+    &__plus {
+      right: 0;
+      background-image: url(#{$img}/plus.svg);
+    }
+  }
+}

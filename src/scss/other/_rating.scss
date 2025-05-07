@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  align-items: center;
+
+  &_star {
+    height: 18px;
+    width: 18px;
+    background: url(#{$img}/star.svg) no-repeat center;
+
+    &__filled {
+      background-image: url(#{$img}/star-filled.svg);
+    }
+  }
+}

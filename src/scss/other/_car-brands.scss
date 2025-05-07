@@ -1,0 +1,52 @@
+.car-brands {
+  @include layout;
+
+  &_columns {
+    background-color: $cLight;
+    padding: 30px 15px;
+    columns: 2;
+    @include tablet {
+      padding: 50px 68px;
+      columns: 4;
+    }
+    @include desktop {
+      columns: 6;
+    }
+  }
+
+  &_letter {
+    position: relative;
+    padding: 0 0 0 33px;
+    margin: 0 0 18px;
+    -webkit-column-break-inside: avoid;
+    /* Chrome, Safari, Opera */
+    page-break-inside: avoid;
+    /* Firefox */
+    break-inside: avoid;
+    /* IE 10+ */
+    break-inside: avoid-column;
+  }
+
+  &_letter-value {
+    position: absolute;
+    top: -4.5px;
+    left: 0;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    background: $cBlue;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
+  &_item {
+    display: block;
+    margin: 0 0 18px;
+  }
+
+  &_item-value {
+    font-size: 16px;
+    position: relative;
+  }
+}

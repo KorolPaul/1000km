@@ -1,0 +1,9 @@
+.about {
+  @include layout;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  @include tablet {
+    flex-direction: row;
+  }
+}

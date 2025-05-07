@@ -1,0 +1,43 @@
+.benefits {
+  @include layout;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px 24px;
+  @include tablet {
+    padding-top: 50px;
+    flex-wrap: nowrap;
+  }
+
+  &_card {
+    width: calc(50% - 24px);
+    text-align: center;
+    @include tablet {
+      flex-grow: 1;
+      width: auto;
+    }
+  }
+
+  &_card-icon-wrapper {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+
+  &_card-icon {
+    max-width: 100%;
+  }
+
+  &_card-title {
+    font-size: 15px;
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+}

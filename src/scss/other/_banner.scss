@@ -1,0 +1,82 @@
+.banner {
+  background-color: $cBlue;
+  box-shadow: 0 0 15px #0055FF1A inset;
+
+  &_holder {
+    @include layout;
+    position: relative;
+    overflow: hidden;
+    padding-top: 33px;
+    padding-bottom: 40px;
+    @include tablet {
+      padding-top: 38px;
+      padding-bottom: 30px;
+      overflow: visible;
+    }
+  }
+
+  &_bg {
+    display: none;
+    @include tablet {
+      display: block;
+      position: absolute;
+      right: -50px;
+      top: 0;
+      height: 100%;
+    }
+    @include desktop {
+      right: -80px;
+    }
+  }
+
+  &_content {
+    position: relative;
+    z-index: 1;
+    @include tablet {
+      max-width: 554px;
+    }
+  }
+
+  &_title {
+    color: $cBright;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 16px;
+  }
+
+  &_text {
+    font-size: 18px;
+    margin: 0 0 18px;
+
+    span {
+      font-size: 20px;
+      color: $cBright;
+    }
+  }
+
+  &_contact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    @include tablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &_contact-item {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:first-child {
+      margin: 0 0 3px;
+      @include tablet {
+        margin: 0 -8px 0 0;
+      }
+    }
+  }
+}

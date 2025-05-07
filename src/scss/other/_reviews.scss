@@ -1,0 +1,52 @@
+.reviews {
+
+  &_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include tablet {
+      gap: 12px;
+    }
+  }
+
+  &_item {
+    background-color: $cLight;
+    border-radius: 20px;
+    border: 1px solid $cGray;
+    padding: 26px 24px;
+  }
+
+  &_item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 8px;
+  }
+
+  &_item-name {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &_item-date {
+    color: $cGrayLight;
+    font-size: 16px;
+  }
+
+  &_item-rating {
+    margin-bottom: 12px;
+  }
+
+  &_item-text {
+    font-size: 16px;
+  }
+
+  &_more {
+    color: $cGray;
+    font-size: 16px;
+    display: block;
+    margin-top: 16px;
+    text-align: right;
+  }
+}

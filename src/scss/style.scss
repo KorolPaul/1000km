@@ -17,6 +17,8 @@
 @import "form-elements/label";
 @import "form-elements/form";
 @import "form-elements/submit";
+@import "form-elements/fake-select";
+@import "form-elements/number-input";
 
 /*layout*/
 @import "layout/headings";
@@ -25,6 +27,7 @@
 @import "layout/footer";
 @import "layout/menu";
 @import "layout/tabs";
+@import "layout/section";
 
 /* other */
 @import "other/location";
@@ -32,6 +35,15 @@
 @import "other/catalog-menu";
 @import "other/search";
 @import "other/slider";
+@import "other/benefits";
+@import "other/car-finder";
+@import "other/categories-grid";
+@import "other/banner";
+@import "other/products-carousel";
+@import "other/car-brands";
+@import "other/rating";
+@import "other/about";
+@import "other/reviews";
 
 /* plugins */
 @import "plugins/swiper";
