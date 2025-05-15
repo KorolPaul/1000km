@@ -1,40 +1,175 @@
 .footer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 68px;
-    z-index: 2;
+  &_top {
+    background-color: #E5EAF2;
+  }
+
+  &_disclaimer {
     @include layout;
+    font-size: 14px;
+    line-height: 18px;
+    color: $cBlackLight;
+    padding-top: 20px;
+    padding-bottom: 24px;
     @include tablet {
-        bottom: 46px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &_content {
+    @include layout;
+    padding-top: 40px;
+    padding-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &_bottom {
+    @include layout;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 1px solid $cGray;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &_copyright {
+    line-height: 17px;
+    color: $cGray;
+    margin: 0;
+  }
+
+  &_section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    @include tablet {
+      gap: 20px;
+      max-width: 400px;
+    }
+  }
+
+  &_section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: $cBlackLight;
+    text-transform: uppercase;
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+
+  &_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    @include tablet {
+      gap: 10px;
+    }
+  }
+
+  &_menu-link {
+    color: $cGray;
+    font-size: 18px;
+    @include tablet {
+      font-size: 15px;
     }
 
-    &_holder {
-        position: relative;
-        @include tablet {
-            display: flex;
-            align-items: center;
-            gap: 100px;
-        }
-        @include desktop-large {
-            gap: 200px;
-        }
-    }
-
-    &_menu {
-        display: none;
-        @include tablet {
-            display: flex;
-            gap: 16px;
-        }
-    }
-
-    &_menu-link {
+    &[href^="tel"] {
+      font-size: 20px;
+      font-weight: 700;
+      color: $cBlackLight;
+      @include tablet {
         font-size: 16px;
-        color: $cLight;
+      }
 
-        [data-page="3"] & {
-            color: $color;
+      & + & {
+        margin-top: -6px;
+        @include tablet {
+          font-size: -4px;
         }
+      }
     }
+  }
+
+  &_menu-button {
+    border-radius: 5px;
+    width: auto;
+    color: $cBright;
+    margin: 0 0 8px;
+  }
+
+  &_payment-methods {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    @include tablet {
+      gap: 14px;
+    }
+
+    img {
+      width: calc(20% - 12px);
+      max-height: 22px;
+      object-fit: contain;
+      @include tablet {
+        max-height: none;
+        width: auto;
+      }
+    }
+  }
+
+  &_rating-title {
+    display: block;
+    margin: 0 0 6px;
+    color: $cGray;
+    font-size: 18px;
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+
+  &_rating-value {
+    display: block;
+    margin: 18px 0 14px;
+    color: $cGray;
+    font-size: 18px;
+    @include tablet {
+      font-size: 15px;
+    }
+
+    strong {
+      color: $cBlack;
+    }
+  }
+
+  &_rating-link {
+    color: $cBlackLight;
+    font-size: 16px;
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+
+  &_text {
+    color: $cGray;
+    font-size: 18px;
+    line-height: 22px;
+    @include tablet {
+      font-size: 16px;
+    }
+  }
 }

@@ -1,11 +1,95 @@
 .main-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: $cLight;
+  z-index: 3;
+  overflow: auto;
+  height: 100dvh;
+  @include desktop {
+    display: flex;
+    position: static;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .menu-opened & {
+    display: block;
+  }
+
+  &_close {
+    @include button-reset;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    height: 30px;
+    width: 30px;
+    background: url(#{$img}/close.svg) no-repeat center;
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &_list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+
+  &_item {
+    @include desktop {
+      display: none;
+    }
+
+    &__desktop {
+      @include desktop {
+        display: inline;
+      }
+    }
+  }
 
   &_link {
-    padding: 15px 23px;
+    padding: 8px 0;
+    color: $cBlackLight;
+    font-size: 18px;
+    display: block;
+    @include desktop {
+      color: $cGray;
+      padding: 15px 23px;
+    }
+
+    &[href^="tel"] {
+      font-size: 20px;
+      line-height: 0.6;
+      font-weight: 700;
+      color: $cBlackLight;
+    }
+  }
+
+  &_title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 14px 0 8px;
+    display: block;
+  }
+
+  &_button {
+    border-radius: 5px;
+    width: auto;
+    color: $cBright;
+    margin: 12px 0 0;
+  }
+
+  &_text {
     color: $cGray;
+    font-size: 18px;
+    line-height: 22px;
+    @include tablet {
+      font-size: 16px;
+    }
   }
 }

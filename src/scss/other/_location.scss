@@ -1,9 +1,12 @@
 .location {
   color: $cGray;
   font-size: 15px;
-  display: flex;
+  display: none;
   align-items: flex-end;
   gap: 6px;
+  @include tablet {
+    display: flex;
+  }
 
   &_icon {
     display: block;

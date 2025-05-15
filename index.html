@@ -26,25 +26,91 @@
   <header class="header">
     <div class="header_holder">
       <div class="header_top">
+        <button class="menu-toggle">
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_dioganal-line"></div>
+          <div class="menu-toggle_dioganal-line"></div>
+        </button>
+
         <div class="location">
           <img class="location_icon" src="src/img/marker.svg" alt="">
           <span class="location_text">Минск</span>
         </div>
 
-        <ul class="main-menu">
-          <li class="main-menu_item">
-            <a href="#" class="main-menu_link">О компании</a>
-          </li>
-          <li class="main-menu_item">
-            <a href="#" class="main-menu_link">Гарантия и возвраты</a>
-          </li>
-          <li class="main-menu_item">
-            <a href="#" class="main-menu_link">Оплата и доставка</a>
-          </li>
-          <li class="main-menu_item">
-            <a href="#" class="main-menu_link">Контакты</a>
-          </li>
-        </ul>
+        <div class="main-menu">
+          <button class="main-menu_close"></button>
+
+          <ul class="main-menu_list">
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">Контакты</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="tel:+375448918173" class="main-menu_link">+375 (29) 891-81-73</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="tel:+375447918173" class="main-menu_link">+375 (29) 791-81-73</a>
+            </li>
+            <li class="main-menu_item">
+              <button class="main-menu_button">Заказать звонок</button>
+            </li>
+            <li class="main-menu_item">
+              <a class="main-menu_link" href="mailto:Info@1000km.by">Info@1000km.by</a>
+            </li>
+            <li class="main-menu_item">
+              <p class="main-menu_text">
+                пн-пт: 9:00 - 19:00
+                <br>
+                сб, вс: выходной
+              </p>
+            </li>
+
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">ИНФОРМАЦИЯ</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">О компании</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Гарантия и возвраты</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Оплата и доставка</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Контакты</a>
+            </li>
+
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">ЛИЧНЫЙ КАБИНЕТ</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Персональные данные</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">История операций</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Заказы</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Избранное</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Мое авто</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Запросы по VIN</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Войти</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Регистрация</a>
+            </li>
+          </ul>
+        </div>
 
         <div class="header_user">
           <a href="#" class="header_user-link">
@@ -59,7 +125,7 @@
 
       <div class="header_bottom">
         <div class="header_logo">
-          <a href="/"  class="logo">
+          <a href="/" class="logo">
             <img src="src/img/logo.svg" alt="" class="logo_icon">
             Интернет-магазин автозапчастей
           </a>
@@ -1076,6 +1142,99 @@
         </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="footer_top">
+        <div class="footer_disclaimer">
+          <span>Информация о товаре предоставлена для ознакомления и не является публичной офертой. Производители оставляют за собой право изменять внешний вид, характеристики и комплектацию товара, предварительно не уведомляя продавцов и потребителей. Просим вас отнестись с пониманием к данному факту и заранее приносим извинения за возможные неточности в описании и фотографиях товара. Будем благодарны вам за сообщение об ошибках — это поможет сделать наш каталог еще точнее!</span>
+        </div>
+      </div>
+      <div class="footer_content">
+        <div class="footer_section">
+          <a href="/" class="logo">
+            <img src="src/img/logo.svg" alt="" class="logo_icon">
+            Интернет-магазин автозапчастей
+          </a>
+          <div class="footer_rating">
+            <span class="footer_rating-title">Рейтинг магазина:</span>
+            <div class="rating">
+              <div class="rating_star rating_star__filled"></div>
+              <div class="rating_star rating_star__filled"></div>
+              <div class="rating_star rating_star__filled"></div>
+              <div class="rating_star rating_star__filled"></div>
+              <div class="rating_star rating_star__filled"></div>
+            </div>
+            <span class="footer_rating-value">
+              <strong>4.7</strong> баллов (8203 отзыва)
+            </span>
+            <a href="" class="footer_rating-link">Смотреть отзывы</a>
+          </div>
+        </div>
+
+        <div class="footer_section">
+          <a class="footer_section-title" class="#" href="https://1000km.by/about/">Покупателям</a>
+          <div class="footer_menu">
+            <a class="footer_menu-link" class="#" href="/use-zapchasty/">Каталог запчастей</a>
+            <a class="footer_menu-link" class="#" href="/about-us/">О магазине</a>
+            <a class="footer_menu-link" class="#" href="/shipping-and-payment/">Оплата и доставка</a>
+            <a class="footer_menu-link" class="#" href="/warranty/">Гарантия и возврат</a>
+            <a class="footer_menu-link" class="#" href="/contacts/">Контакты</a>
+          </div>
+        </div>
+
+        <div class="footer_section">
+          <a class="footer_section-title" class="#" href="https://1000km.by/about/">Профиль</a>
+          <div class="footer_menu">
+            <a class="footer_menu-link" class="#" href="/use-zapchasty/">Вход</a>
+            <a class="footer_menu-link" class="#" href="/about-us/">Регистрация</a>
+            <a class="footer_menu-link" class="#" href="/shipping-and-payment/">Оплата и доставка</a>
+            <a class="footer_menu-link" class="#" href="/warranty/">Гарантия и возврат</a>
+            <a class="footer_menu-link" class="#" href="/contacts/">Контакты</a>
+          </div>
+        </div>
+
+        <div class="footer_section">
+          <a class="footer_section-title" class="#" href="https://1000km.by/about/">Контакты</a>
+          <div class="footer_menu">
+            <a class="footer_menu-link" href="tel:+375298918173">+375 (29) 891-81-73</a>
+            <a class="footer_menu-link" href="tel:+375447918173">+375 (44) 791-81-73</a>
+            <button class="footer_menu-button">Заказать звонок</button>
+            <a class="footer_menu-link" href="mailto:Info@1000km.by">Info@1000km.by</a>
+          </div>
+
+          <p class="footer_text">
+            пн-пт: 9:00 - 19:00
+            <br>
+            сб, вс: выходной
+          </p>
+        </div>
+
+        <div class="footer_section">
+          <span class="footer_section-title">Доставка</span>
+          <p class="footer_text">
+            Минск, Бобруйск, Гомель, Борисов, Витебск, Могилев, Гродно, Брест, Барановичи, Борисов, Пинск, Орша, Мозырь, Солигорск, Новополоцк,
+            Лида и другие населенные пункты Беларуси.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <p class="footer_copyright">
+          © 2013-2022. Магазин автозапчастей 1000km.by. Общество с ограниченной ответственностью "1000км бай".
+          <br>
+          УНП 193575397, 2201144 г. Минск ул. Максима Танка, 30, пом. 1Н-8 р/c BY28MTBK30120001093300103454 в ЗАО МТБанк
+        </p>
+
+        <div class="footer_payment-methods">
+          <img src="src/img/payments/visa.png" alt="">
+          <img src="src/img/payments/verified-visa.png" alt="">
+          <img src="src/img/payments/mastercard.png" alt="">
+          <img src="src/img/payments/mastercard-secure.png" alt="">
+          <img src="src/img/payments/belcard.png" alt="">
+          <img src="src/img/payments/be-paid.png" alt="">
+        </div>
+      </div>
+    </footer>
 
   </main>
 

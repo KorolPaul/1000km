@@ -2,4 +2,32 @@
   &_button {
     @include button-filled;
   }
+
+  &_popup {
+    padding: 34px;
+    box-sizing: border-box;
+    background-color: $cLight;
+    z-index: 3;
+    @include desktop {
+      display: flex;
+      position: static;
+      padding: 0;
+      background-color: transparent;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 20px;
+      height: 40px;
+      width: 40px;
+      background-color: $cLight;
+      border-radius: 8px;
+      transform: rotate(45deg) translate(32px, 6px);
+      @include desktop {
+        display: none;
+      }
+    }
+  }
 }
