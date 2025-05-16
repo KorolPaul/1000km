@@ -12,9 +12,11 @@
   height: 100dvh;
   @include desktop {
     display: flex;
+    justify-content: center;
     position: static;
     padding: 0;
     background-color: transparent;
+    height: auto;
   }
 
   .menu-opened & {
@@ -38,6 +40,9 @@
     padding: 0;
     list-style: none;
     margin: 0;
+    @include desktop {
+      display: flex;
+    }
   }
 
   &_item {
@@ -60,6 +65,7 @@
     @include desktop {
       color: $cGray;
       padding: 15px 23px;
+      font-size: 15px;
     }
 
     &[href^="tel"] {

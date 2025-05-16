@@ -17,7 +17,7 @@
 }
 
 @mixin desktop() {
-  @media all and (min-width: 1360px) {
+  @media all and (min-width: 1024px) {
     @content;
   }
 }
@@ -55,7 +55,7 @@
 }
 
 @mixin layout {
-  padding-left: $indent * 2;
+  padding-left: $indent;
   padding-right: $indent;
   @include tablet() {
     max-width: $max-width;

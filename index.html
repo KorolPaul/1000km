@@ -113,10 +113,13 @@
         </div>
 
         <div class="header_user">
-          <a href="#" class="header_user-link">
+          <button class="header_user-link js-search-toggle">
+            <img class="location_user-icon" src="src/img/loop-gray.svg" alt="">
+          </button>
+          <a href="#" class="header_user-link header_user-link__desktop">
             <img class="location_user-icon" src="src/img/car.svg" alt="">
           </a>
-          <a href="#" class="header_user-link">
+          <a href="#" class="header_user-link header_user-link__desktop">
             <img class="location_user-icon" src="src/img/user.svg" alt="">
             Личный кабинет
           </a>
@@ -133,17 +136,161 @@
 
         <div class="header_bottom-center">
           <div class="catalog-menu">
-            <button class="catalog-menu_button">
+            <button class="catalog-menu_button js-toggle-catalog-menu">
               <img src="src/img/catalog-menu-button.svg" alt="" class="catalog-menu_button-icon">
               Каталог запчастей
             </button>
+
+            <div class="catalog-menu_popup">
+              <button class="catalog-menu_close js-toggle-catalog-menu"></button>
+              <div class="catalog-menu_popup-content">
+                <ul class="catalog-menu_categories">
+                  <li class="catalog-menu_category-item" data-catalog-menu="1">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-1.png" alt="">
+                    <a class="catalog-menu_category-link" href="/to-and-filters/">Подвеска</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="2">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-2.png" alt="">
+                    <a class="catalog-menu_category-link" href="/tormoznaya-sistema/">Тормозная система</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="3">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-3.png" alt="">
+                    <a class="catalog-menu_category-link" href="/dvigatel-sistems-vyhlopa/">Датчики</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="4">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-4.png" alt="">
+                    <a class="catalog-menu_category-link" href="/podveska-i-rulevoe/">Ременной привод</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="5">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-5.png" alt="">
+                    <a class="catalog-menu_category-link" href="/korobka-peredach/">Трансмиссия</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="6">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-6.png" alt="">
+                    <a class="catalog-menu_category-link" href="/ohlajdenie-i-otoplenie/">Фильтры</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="7">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-7.png" alt="">
+                    <a class="catalog-menu_category-link" href="/elektrika-i-osveschenie/">Технические жидкости</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="8">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-8.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Насосы и помпы</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="9">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-9.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Электрика</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="10">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-10.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Охлаждение</a>
+                  </li>
+                </ul>
+
+                <div class="catalog-menu_subcategories">
+                  <div class="catalog-menu_subcategory" data-catalog-menu="1">
+                    <a class="catalog-menu_subcategory-title" href="#">Подвеска</a>
+                    <ul class="catalog-menu_subcategory-list">
+                      <li>
+                        <a class="catalog-menu_category-link" href="/tires/">Шины</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-motornyie/">Моторное масло в двигатель</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-transmissionnyie/">Масла трансмиссионные</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-ohlajdayuschie/">Антифризы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-tormoznyie/">Тормозные жидкости</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/jidkosti-gidravlicheskie/">Жидкости гидравлические</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-dlya-omyivatelya-stekla/">Жидкость стеклоомывающая</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/lampyi-chifyir-chifyir/">Автолампы (галоген, ксенон, светодиод), блоки розжига</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/akkumulyatoryi-2020/">Аккумуляторы (АКБ)</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/schetki-dvirniki/">Дворники</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/lamp/">Автомобильные лампы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-reduktornyie/">Масла редукторные</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/akkumulyatoryi-new/">Аккумуляторы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/germetiki/">Герметики</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/">Лакокрасочные материалы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/prisadki/">Присадки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/avtohimiya/">Промывки и очистители</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/smazki/">Смазки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/kuzovnyie-detali/12157/">Кузовные детали</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="catalog-menu_subcategory" data-catalog-menu="2">
+                    <a class="catalog-menu_subcategory-title" href="#">Тормозная система</a>
+                    <ul class="catalog-menu_subcategory-list">
+                      <li>
+                        <a class="catalog-menu_category-link" href="/tires/">Шины</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-motornyie/">Моторное масло в двигатель</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/schetki-dvirniki/">Дворники</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/">Лакокрасочные материалы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/prisadki/">Присадки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/avtohimiya/">Промывки и очистители</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/smazki/">Смазки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/kuzovnyie-detali/12157/">Кузовные детали</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="search">
-            <input type="text" class="search_input" placeholder="Поиск по артикулу, запчасти или VIN">
-            <button class="search_button">
-              <img src="src/img/loop.svg" alt="">
-            </button>
+          <div class="header_search">
+            <div class="search">
+              <input type="text" class="search_input" placeholder="Поиск по артикулу, запчасти или VIN">
+              <button class="search_button">
+                <img src="src/img/loop.svg" alt="">
+              </button>
+            </div>
           </div>
         </div>
 
@@ -163,6 +310,7 @@
           <a href="#" class="header_cart-button">
             <img src="src/img/cart.svg" alt="">
             Корзина
+            <sup class="header_cart-button-count">2</sup>
           </a>
         </div>
       </div>
@@ -1057,49 +1205,51 @@
 
     <section class="section">
       <div class="about">
-        <div class="reviews">
-          <h3 class="reviews_title">Отзывы клиентов</h3>
+        <div class="about_sidebar">
+          <div class="reviews">
+            <h3 class="reviews_title">Отзывы клиентов</h3>
 
-          <div class="reviews_items">
-            <div class="reviews_item">
-              <div class="reviews_item-head">
-                <span class="reviews_item-name">Денис</span>
-                <span class="reviews_item-date">06.05.2025</span>
-              </div>
-              <div class="reviews_item-rating">
-                <div class="rating">
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star"></div>
+            <div class="reviews_items">
+              <div class="reviews_item">
+                <div class="reviews_item-head">
+                  <span class="reviews_item-name">Денис</span>
+                  <span class="reviews_item-date">06.05.2025</span>
                 </div>
-              </div>
-              <p class="reviews_item-text">
-                Очень нравится магазин. Всегда все вовремя, в наличии много товара!
-              </p>
-            </div>
-            <div class="reviews_item">
-              <div class="reviews_item-head">
-                <span class="reviews_item-name">Валерий</span>
-                <span class="reviews_item-date">12.05.2025</span>
-              </div>
-              <div class="reviews_item-rating">
-                <div class="rating">
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star rating_star__filled"></div>
-                  <div class="rating_star rating_star__filled"></div>
+                <div class="reviews_item-rating">
+                  <div class="rating">
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star"></div>
+                  </div>
                 </div>
+                <p class="reviews_item-text">
+                  Очень нравится магазин. Всегда все вовремя, в наличии много товара!
+                </p>
               </div>
-              <p class="reviews_item-text">
-                Очень нравится магазин. Всегда все вовремя, в наличии много товара!
-              </p>
+              <div class="reviews_item">
+                <div class="reviews_item-head">
+                  <span class="reviews_item-name">Валерий</span>
+                  <span class="reviews_item-date">12.05.2025</span>
+                </div>
+                <div class="reviews_item-rating">
+                  <div class="rating">
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star rating_star__filled"></div>
+                    <div class="rating_star rating_star__filled"></div>
+                  </div>
+                </div>
+                <p class="reviews_item-text">
+                  Очень нравится магазин. Всегда все вовремя, в наличии много товара!
+                </p>
+              </div>
             </div>
+
+            <a href="#" class="reviews_more">Читать все отзывы</a>
           </div>
-
-          <a href="#" class="reviews_more">Читать все отзывы</a>
         </div>
 
         <div class="about_content">

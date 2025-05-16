@@ -1,18 +1,29 @@
 .catalog-menu {
+  width: 100%;
+  @include desktop {
+    width: auto;
+  }
+
   &_button {
     @include button-filled;
   }
 
   &_popup {
-    padding: 34px;
     box-sizing: border-box;
     background-color: $cLight;
     z-index: 3;
+    position: absolute;
+    left: 0;
+    top: 220px;
+    width: 100vw;
+    z-index: 3;
+    display: none;
     @include desktop {
-      display: flex;
-      position: static;
       padding: 0;
-      background-color: transparent;
+    }
+
+    .opened & {
+      display: block;
     }
 
     &::before {
@@ -26,7 +37,138 @@
       border-radius: 8px;
       transform: rotate(45deg) translate(32px, 6px);
       @include desktop {
-        display: none;
+        left: calc(50% - 380px);
+      }
+    }
+  }
+
+  &_close {
+    @include button-reset;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    height: 30px;
+    width: 30px;
+    background: url(#{$img}/close.svg) no-repeat center;
+    @include desktop {
+    }
+  }
+
+  &_popup-content {
+    @include desktop {
+      @include layout;
+      display: flex;
+    }
+  }
+
+  &_categories,
+  &_subcategory-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &_categories {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 36px;
+    @include desktop {
+      margin: 50px 0;
+      padding: 0 30px 0 0;
+      width: 300px;
+      border-right: 1px solid $cGrayLight;
+      flex-shrink: 0;
+    }
+  }
+
+  &_subcategories {
+    @include desktop {
+      padding: 50px 30px 50px 80px;
+      flex-grow: 1;
+    }
+  }
+
+  &_category-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+
+    &.active::after {
+      @include desktop {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: calc(100% + 20px);
+        height: 20px;
+        width: 20px;
+        background-color: $cLight;
+        border-top: 1px solid $cGrayLight;
+        border-right: 1px solid $cGrayLight;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &_category-icon {
+    height: 40px;
+    width: 53px;
+    object-fit: contain;
+  }
+
+  &_category-link {
+    font-size: 18px;
+    color: $cBlackLight;
+  }
+
+  &_subcategory {
+    display: none;
+
+    &.opened {
+      display: block;
+    }
+  }
+
+  &_subcategory-list {
+    padding: 25px 75px;
+    @include desktop {
+      padding: 0;
+      columns: 2;
+    }
+
+    li {
+      padding: 26px 0;
+      @include desktop {
+        padding: 0 0 16px;
+      }
+    }
+  }
+
+  &_subcategory-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 20px 72px;
+    border-bottom: 1px solid $cGrayLighter;
+    background: url(#{$img}/back.svg) no-repeat left 35px center;
+    position: relative;
+    display: block;
+    @include desktop {
+      border-bottom: none;
+      background-image: none;
+      padding: 0;
+      margin: 0 0 40px;
+    }
+
+    &::after {
+      content: '';
+      background: url(#{$img}/close.svg) no-repeat center;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      @include desktop {
+        content: none;
       }
     }
   }

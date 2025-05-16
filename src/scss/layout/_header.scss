@@ -1,5 +1,5 @@
 .header {
-  padding: 16px 0 5px;
+  padding: 22px 0 5px;
   z-index: 11;
   background-color: $cBlue;
   @include tablet {
@@ -25,6 +25,17 @@
 
   &_top {
     color: $cGray;
+    padding-right: 38px;
+    @include desktop {
+      padding-right: 0;
+    }
+  }
+
+  &_bottom {
+    flex-wrap: wrap;
+    @include desktop {
+      flex-wrap: nowrap;
+    }
   }
 
   &_user {
@@ -33,22 +44,52 @@
     gap: 20px;
     @include tablet {
       gap: 30px;
+      flex-shrink: 0
     }
   }
 
   &_user-link {
+    @include button-reset;
     color: $cGray;
     display: inline-flex;
     gap: 6px;
     align-items: baseline;
+    font-size: 0;
+    @include desktop {
+      font-size: 14px;
+      display: none;
+    }
+
+    &__desktop {
+      @include desktop {
+        display: inline-flex;
+      }
+    }
+  }
+
+  &_user-link-count {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   &_logo {
     flex-shrink: 0;
+    order: 1;
+    width: 140px;
+    position: absolute;
+    top: 18px;
+    left: 72px;
+    display: none;
+    @include media(400px) {
+      display: block;
+    }
     @include tablet {
       margin-right: 24px;
+      width: auto;
     }
     @include desktop {
+      position: static;
       margin-right: 54px;
     }
   }
@@ -57,11 +98,15 @@
     display: flex;
     gap: 16px;
     align-items: center;
+    order: 3;
+    width: 100%;
     @include tablet {
       flex-grow: 1;
       margin-right: 16px;
     }
     @include desktop {
+      width: auto;
+      order: 2;
       margin-right: 46px;
     }
   }
@@ -70,6 +115,28 @@
     display: flex;
     gap: 40px;
     align-items: center;
+    order: 2;
+    width: 100%;
+    margin: 0 0 20px;
+    @include desktop {
+      order: 3;
+      width: auto;
+      margin: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  &_contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    @include desktop {
+      display: block;
+      width: auto;
+    }
   }
 
   &_contacts-item {
@@ -80,9 +147,37 @@
 
   &_contacts-item-value {
     color: $cBlackLight;
+    white-space: nowrap;
   }
 
   &_cart-button {
-    @include button;
+    position: absolute;
+    top: 24px;
+    right: 26px;
+    font-size: 0;
+    filter: grayscale(1) brightness(1.2);
+    @include desktop {
+      @include button;
+      position: static;
+      filter: none;
+    }
+  }
+
+  &_cart-button-count {
+    font-size: 12px;
+    position: absolute;
+    right: -9px;
+    top: 0;
+    @include desktop {
+      position: static;
+    }
+  }
+
+  &_search {
+    display: none;
+    flex-grow: 1;
+    @include desktop {
+      display: block;
+    }
   }
 }

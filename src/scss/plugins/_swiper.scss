@@ -271,9 +271,11 @@
 
 .swiper-pagination {
   position: absolute;
+  bottom: 30px;
+  left: 50%;
   text-align: center;
   transition: .3s opacity;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(-50%, 0, 0);
   z-index: 1;
   display: flex;
   gap: 6px;
@@ -289,15 +291,6 @@
   display: none !important
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  bottom: var(--swiper-pagination-bottom, 8px);
-  top: var(--swiper-pagination-top, auto);
-  left: 0;
-  width: 100%
-}
 
 .swiper-pagination-bullet {
   width: 6px;
