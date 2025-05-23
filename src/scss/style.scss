@@ -30,6 +30,11 @@
 @import "layout/tabs";
 @import "layout/section";
 
+/* catalog */
+@import "catalog/catalog";
+@import "catalog/product-card";
+@import "catalog/filters";
+
 /* other */
 @import "other/location";
 @import "other/main-menu";
@@ -45,6 +50,7 @@
 @import "other/rating";
 @import "other/about";
 @import "other/reviews";
+@import "other/pagination";
 
 /* plugins */
 @import "plugins/swiper";

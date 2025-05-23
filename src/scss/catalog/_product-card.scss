@@ -1,0 +1,248 @@
+.product-card {
+  position: relative;
+  background-color: $cLight;
+  padding: 56px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include tablet {
+    padding: 0 0 0 40px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &_label {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    background-color: #75A84C;
+    font-size: 12px;
+    color: $cLight;
+    text-align: center;
+    padding: 5px 20px;
+    min-width: 98px;
+    z-index: 1;
+    @include tablet {
+      top: 28px;
+      min-width: 120px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 28px;
+      width: 24px;
+      top: 2px;
+      left: calc(100% - 10px);
+      transform: rotate(30deg);
+      background-color: $cLight;
+    }
+  }
+
+  &_content {
+    display: contents;
+    @include tablet {
+      display: flex;
+      flex-grow: 1;
+      padding-top: 24px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &_image-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding-top: 8px;
+    position: absolute;
+    left: 16px;
+    top: 62px;
+    width: 132px;
+    @include tablet {
+      position: static;
+      width: 165px;
+      flex-shrink: 0;
+      padding-top: 0;
+    }
+  }
+
+  &_compare {
+    input + label:not([class]) {
+      color: $cGray;
+      font-size: 12px;
+    }
+  }
+
+  &_compare-desktop {
+    display: none;
+    @include tablet {
+      display: inline;
+    }
+  }
+
+  &_image {
+    width: 100%;
+  }
+
+  &_data {
+    display: contents;
+    @include tablet {
+      display: block;
+      flex-grow: 1;
+      margin: 0 30px 0 40px;
+    }
+  }
+
+  &_title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    padding-left: 152px;
+    order: 1;
+    @include tablet {
+      margin-bottom: 24px;
+      padding-left: 0;
+      order: initial;
+    }
+  }
+
+  &_params {
+    display: flex;
+    flex-direction: column;
+    order: 3;
+    margin: 20px 0 6px;
+    @include tablet {
+      margin: 0;
+      flex-direction: row;
+      gap: 25px;
+      order: initial;
+    }
+    @include desktop {
+      gap: 50px;
+    }
+  }
+
+  &_params-column {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &_param {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 2px 0;
+    border-bottom: 1px solid $cGrayLighter;
+  }
+
+  &_param-value {
+    display: block;
+    text-align: right;
+  }
+
+  &_additional-info {
+    display: block;
+    margin: 6px 0 0;
+    padding: 6px 16px;
+    font-size: 13px;
+    background: $cBlue;
+    border-radius: 3px;
+    order: 4;
+    @include tablet {
+      order: initial;
+    }
+  }
+
+  &_controls {
+    order: 2;
+    @include tablet {
+      position: relative;
+      order: initial;
+      max-width: 268px;
+      border-left: 1px solid $cGrayLighter;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      @include tablet {
+        justify-content: center;
+      }
+    }
+  }
+
+  &_prices {
+    padding-left: 152px;
+    min-height: 100px;
+    @include tablet {
+      min-height: 0;
+      padding-left: 0;
+    }
+  }
+
+  &_sku {
+    font-weight: 13px;
+    color: $cGrayLight;
+    position: absolute;
+    left: 16px;
+    top: 20px;
+    @include tablet {
+      top: 13px;
+    }
+  }
+
+  &_old-price {
+    text-decoration: line-through;
+    color: $cGrayLight;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  &_price {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+
+  &_price-value {
+    font-size: 22px;
+  }
+
+  &_discount {
+    font-size: 13px;
+    font-weight: 700;
+    color: $cLight;
+    background-color: #EF344F;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin: 0 0 0 5px;
+    vertical-align: 1px;
+  }
+
+  &_action {
+    font-size: 12px;
+    color: $cBright;
+  }
+
+  &_avalability {
+    font-size: 14px;
+    display: block;
+    color: $cGray;
+    margin-top: 10px;
+  }
+
+  &_avalability-value {
+    font-weight: 700;
+
+    &__in-stock {
+      color: #75A84C;
+    }
+  }
+
+  &_buttons {
+    margin-top: 16px;
+    display: flex;
+    gap: 6px;
+  }
+}

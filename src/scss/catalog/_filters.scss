@@ -1,0 +1,49 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &_section-title {
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    margin: 0 0 12px;
+  }
+
+  &_section-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    & > *,
+    & > *[type] {
+      box-sizing: border-box;
+      width: calc(50% - 8px);
+    }
+
+    &__wide > *  {
+      width: 100%;
+    }
+  }
+
+  &_more {
+    @include button-reset;
+    color: $cGray;
+    width: 100%;
+    text-align: left;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
+  &_more[class] ~ *:not([class]) {
+    display: none;
+  }
+
+  &_more-icon {
+    background: url(#{$img}/arrow-right.svg) no-repeat center;
+    display: inline-block;
+    height: 8px;
+    width: 15px;
+  }
+}
