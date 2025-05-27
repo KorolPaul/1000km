@@ -157,16 +157,38 @@
 
   &_controls {
     order: 2;
+    position: relative;
     @include tablet {
-      position: relative;
       order: initial;
-      max-width: 268px;
+      width: 268px;
       border-left: 1px solid $cGrayLighter;
       padding: 26px;
       display: flex;
       flex-direction: column;
       @include tablet {
         justify-content: center;
+      }
+    }
+
+    &.loading {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($cLight, .8);
+      }
+
+      &::after {
+        content: '';
+        @include spinner;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
       }
     }
   }
@@ -244,5 +266,26 @@
     margin-top: 16px;
     display: flex;
     gap: 6px;
+  }
+
+  &_button {
+    @include button-filled;
+    padding: 9px 12px;
+    border-radius: 5px;
+    font-size: 15px;
+    min-width: 0;
+    @include tablet {
+      flex-shrink: 0;
+      gap: 4px;
+    }
+
+    img {
+      width: 16px;
+    }
+  }
+
+  &_show-price {
+    border-radius: 5px;
+    width: 100%;
   }
 }

@@ -40,7 +40,6 @@ function selectCategory(e) {
   e.currentTarget.classList.add('active');
 
   const index = e.currentTarget.dataset.catalogMenu;
-  console.log(e.currentTarget.dataset.catalogMenu);
 
 
   catalogMenuCategoriesElements.forEach((el) => el.classList.remove('active'));
@@ -52,3 +51,41 @@ function selectCategory(e) {
 }
 
 catalogMenuCategoriesElements.forEach((el) => el.addEventListener('click', selectCategory));
+
+
+/* category page */
+const updatePriceButtons = document.querySelectorAll('.js-update-price');
+
+async function loadPrice(e) {
+  e.preventDefault();
+
+  const cardControls = e.target.parentElement.parentElement.parentElement;
+  const art = e.target.dataset['art'];
+  const brand = e.target.dataset['brand'];
+  const artbrand = e.target.dataset['artbrand'];
+
+  cardControls.classList.add('loading');
+
+  const responce = await fetch('/service-request/get-price/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify({
+      art,
+      brand,
+      artbrand,
+    }),
+  });
+
+  const data = await responce.json();
+  if (data) {
+
+    document.querySelector('[data-id=' + artbrand + ']').innerHTML = data.html;
+  }
+
+  cardControls.classList.remove('loading');
+
+}
+
+updatePriceButtons.forEach((el) => el.addEventListener('click', loadPrice));
