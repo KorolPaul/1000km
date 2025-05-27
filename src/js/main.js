@@ -52,6 +52,19 @@ function selectCategory(e) {
 
 catalogMenuCategoriesElements.forEach((el) => el.addEventListener('click', selectCategory));
 
+/* fake select */
+const fakeSelects = document.querySelectorAll('.fake-select_button');
+const fakeSelectPopups = document.querySelectorAll('.fake-select_popup');
+
+function toggleFakeSelect(e) {
+  e.preventDefault();
+
+  fakeSelectPopups.forEach((el => el.classList.remove('opened')));
+
+  e.target.nextElementSibling.classList.toggle('opened');
+}
+
+fakeSelects.forEach((el => el.addEventListener('click', toggleFakeSelect)));
 
 /* category page */
 const updatePriceButtons = document.querySelectorAll('.js-update-price');

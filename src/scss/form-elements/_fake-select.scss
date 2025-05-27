@@ -19,5 +19,36 @@
     left: 0;
     top: 100%;
     width: 100%;
+    background-color: $cLight;
+    padding: 20px 25px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s $easing opacity;
+
+    &.opened {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &_value {
+    padding: 15px;
+    width: 12.5%;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s $easing background,
+                .2s $easing color;
+
+    &:hover {
+      background-color: $cBright;
+      color: $cLight;
+    }
+
+    &:active {
+      background-color: $cBrightLight;
+    }
   }
 }

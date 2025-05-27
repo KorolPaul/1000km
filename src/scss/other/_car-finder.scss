@@ -24,14 +24,20 @@
   }
 
   &_filters {
+    background-color: $cBlue;
+    @include tablet {
+      margin-top: 26px;
+    }
+  }
+
+  &_filters-container {
+    @include layout;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color: $cBlue;
-    padding: 24px 0 0;
-    position: relative;
+    padding-top: 24px;
     @include tablet {
-      margin: 26px 0 0;
       padding: 30px 20px;
       flex-direction: row;
       gap: 10px;
