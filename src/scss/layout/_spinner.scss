@@ -1,0 +1,26 @@
+@mixin spinner {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: $cBright;
+  --_m:
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: spinner-rotation 1s infinite linear;
+}
+
+.loader,
+.spinner {
+  @include spinner;
+}
+
+@keyframes spinner-rotation {
+  to {
+    transform: rotate(1turn)
+  }
+}

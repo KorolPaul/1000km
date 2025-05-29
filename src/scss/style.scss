@@ -29,6 +29,13 @@
 @import "layout/menu-toggle";
 @import "layout/tabs";
 @import "layout/section";
+@import "layout/spinner";
+@import "layout/breadcrumbs";
+
+/* catalog */
+@import "catalog/catalog";
+@import "catalog/product-card";
+@import "catalog/filters";
 
 /* other */
 @import "other/location";
@@ -45,6 +52,9 @@
 @import "other/rating";
 @import "other/about";
 @import "other/reviews";
+@import "other/pagination";
+@import "other/text-page";
+@import "other/sidebar-menu";
 
 /* plugins */
 @import "plugins/swiper";

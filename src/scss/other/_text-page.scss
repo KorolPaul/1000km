@@ -1,0 +1,18 @@
+.text-page {
+  @include layout;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include tablet {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  h2 {
+    color: $cBright;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
