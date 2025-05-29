@@ -67,26 +67,8 @@ li {
   line-height: 1.6;
 }
 
-td,
-th {
-  padding: 16px 8px;
-
-  @include desktop {
-    padding: 24px 16px;
-  }
-}
-
-td {
-  border: 1px solid $cGray;
-}
-
-tr:nth-child(odd) td {
-  background-color: rgba($cGray, .1);
-}
-
-.light-page {
-  background-color: $cLight;
-  color: $color;
+main {
+  padding: $indent;
 }
 
 .menu-opened {

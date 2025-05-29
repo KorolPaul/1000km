@@ -1,44 +1,27 @@
 %heading-1 {
   font-family: $font-family;
-  font-size: 80px;
+  font-size: 22px;
   font-style: normal;
-  font-weight: 400;
-  line-height: .9;
-  margin: 0 0 32px;
-
-  @include tablet {
-    font-size: 200px;
-  }
-
-  @include desktop-large {
-    font-size: 350px;
-    line-height: .95;
-  }
+  font-weight: 700;
+  line-height: 1;
+  margin: 6px 0 12px;
 }
 
 %heading-2 {
   font-family: $font-family;
   font-size: 30px;
-  line-height: 1;
-  font-weight: 500;
-  margin: 80px 0 40px;
-  @include desktop {
-    font-size: 48px;
-    margin-top: 180px;
-    margin-bottom: 72px;
-  }
+  line-height: 34px;
+  font-weight: 700;
+  margin: 40px 0 22px;
 }
 
 %heading-3 {
   font-family: $font-family;
-  font-size: 26px;
-  line-height: 1.2;
-  font-weight: 400;
-  margin-top: 48px;
-  margin-bottom: 24px;
-  @include tablet {
-    font-size: 32px;
-  }
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
 %heading-4 {

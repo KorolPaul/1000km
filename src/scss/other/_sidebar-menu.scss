@@ -1,0 +1,11 @@
+.sidebar-menu {
+  @include tablet {
+    width: 250px;
+  }
+
+  &_link {
+    display: block;
+    padding: 9px 0;
+    font-size: 16px;
+  }
+}
