@@ -19,6 +19,7 @@
 @import "form-elements/submit";
 @import "form-elements/fake-select";
 @import "form-elements/number-input";
+@import "form-elements/select";
 
 /*layout*/
 @import "layout/headings";
@@ -39,6 +40,7 @@
 @import "catalog/filters";
 @import "catalog/catalog-head";
 @import "catalog/catalog-brands";
+@import "catalog/compare-counter";
 
 /* other */
 @import "other/location";

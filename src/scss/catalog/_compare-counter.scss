@@ -1,0 +1,23 @@
+.compare-counter {
+  border-radius: 3px;
+  background-color: $cBlue;
+  padding: 8px 40px 8px 18px;
+  font-size: 14px;
+  position: relative;
+
+  &_count {
+    font-weight: 700;
+    margin-left: 2px
+  }
+
+  &_clear {
+    @include button-reset;
+    height: 21px;
+    width: 21px;
+    background: url(#{$img}/close.svg) no-repeat center / 100%;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -10px;
+  }
+}

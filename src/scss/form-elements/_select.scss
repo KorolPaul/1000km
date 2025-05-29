@@ -1,0 +1,8 @@
+select {
+  appearance: none;
+  background: $cLight url(#{$img}/chevron-down.svg) no-repeat right 16px center;
+  border-radius: 3px;
+  border: 1px solid $cGray;
+  padding: 8px 30px 8px 16px;
+  font-size: 14px;
+}
