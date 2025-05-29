@@ -12,12 +12,30 @@
     flex-wrap: nowrap;
   }
 
+  &__small {
+    flex-direction: column;
+    background-color: $cLight;
+    border-radius: 5px;
+    padding: 12px;
+    @include tablet {
+      padding: 26px;
+    }
+  }
+
   &_card {
     width: calc(50% - 24px);
     text-align: center;
     @include tablet {
       flex-grow: 1;
       width: auto;
+    }
+
+    .benefits__small & {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      text-align: left;
+      width: 100%;
     }
   }
 
@@ -28,6 +46,13 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 12px;
+
+    .benefits__small & {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      margin: 0;
+    }
   }
 
   &_card-icon {
@@ -38,6 +63,11 @@
     font-size: 15px;
     @include tablet {
       font-size: 16px;
+    }
+
+    .benefits__small & {
+      font-size: 13px;
+      color: $cGrayLight;
     }
   }
 }

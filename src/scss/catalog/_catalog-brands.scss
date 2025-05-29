@@ -1,0 +1,22 @@
+.catalog-brands {
+  @include layout;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: $indent;
+  @include tablet {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &_sidebar {
+    width: 336px;
+    flex-shrink: 0;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 0 0 14px;
+  }
+}

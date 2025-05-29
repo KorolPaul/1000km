@@ -3,6 +3,7 @@
 
   &_columns {
     background-color: $cLight;
+    border-radius: 5px;
     padding: 30px 15px;
     columns: 2;
     @include tablet {
@@ -11,6 +12,12 @@
     }
     @include desktop {
       columns: 6;
+    }
+
+    .car-brands__small & {
+      @include tablet {
+        padding: 30px 40px;
+      }
     }
   }
 
@@ -25,6 +32,10 @@
     break-inside: avoid;
     /* IE 10+ */
     break-inside: avoid-column;
+
+    .car-brands__small & {
+      padding-left: 15px;
+    }
   }
 
   &_letter-value {

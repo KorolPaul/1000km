@@ -1,0 +1,36 @@
+.catalog-head {
+  &_count {
+    font-size: 18px;
+    font-weight: 400;
+    color: $cGrayLight;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    @include tablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &_contacts {
+    @include tablet {
+      text-align: right;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    a {
+      display: block;
+      font-weight: 700;
+    }
+  }
+}

@@ -31,11 +31,14 @@
 @import "layout/section";
 @import "layout/spinner";
 @import "layout/breadcrumbs";
+@import "layout/container";
 
 /* catalog */
 @import "catalog/catalog";
 @import "catalog/product-card";
 @import "catalog/filters";
+@import "catalog/catalog-head";
+@import "catalog/catalog-brands";
 
 /* other */
 @import "other/location";
