@@ -1,5 +1,6 @@
 .slider {
   background: $cBlue;
+  margin-top: -$indent;
 
   &_holder {
     @include layout;
