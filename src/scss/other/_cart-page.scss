@@ -1,0 +1,10 @@
+.cart-page {
+  @include layout;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  @include desktop {
+    flex-direction: row;
+    gap: 40px;
+  }
+}

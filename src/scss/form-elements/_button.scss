@@ -60,3 +60,9 @@ button,
 input[type="button"] {
   @include button;
 }
+
+input[type="submit"] {
+  @include button;
+  @include button-filled;
+  border-radius: 5px;
+}

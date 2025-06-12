@@ -1,4 +1,4 @@
-.catalog-head {
+.catalog-info {
   &_count {
     font-size: 18px;
     font-weight: 400;
@@ -14,6 +14,10 @@
     @include tablet {
       flex-direction: row;
       gap: 40px;
+    }
+    @include desktop {
+      flex-direction: row;
+      gap: 70px;
     }
 
     p {

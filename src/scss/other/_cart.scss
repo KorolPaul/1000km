@@ -1,0 +1,96 @@
+.cart {
+  flex-grow: 1;
+
+  &_item-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  &_item-brand {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &_item-sku {
+    display: block;
+    color: $cGray;
+  }
+
+  &_item-price {
+    font-size: 14px;
+    color: $cGray;
+
+    strong {
+      font-size: 16px;
+      color: $color;
+      font-weight: 700;
+    }
+  }
+
+  &_item-stock {
+    font-size: 13px;
+
+    &__available {
+      color: $cGreen;
+    }
+  }
+
+  &_item-delete {
+    @include button-reset;
+    height: 17px;
+    width: 16px;
+    background: url(#{$img}/trash.svg) no-repeat center;
+    filter: grayscale(1);
+    opacity: 0.3;
+    transition: .2s $easing opacity,
+                .2s $easing filter;
+
+    &:hover {
+      filter: grayscale(0);
+      opacity: .7;
+    }
+
+    &:active {
+      filter: grayscale(0);
+      opacity: .5;
+    }
+  }
+
+  td,
+  th {
+    padding: 11px;
+    text-align: center;
+
+    &:first-child {
+      padding-left: 11px;
+      padding-right: 11px;
+    }
+
+    &:last-child {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &:nth-child(2) {
+      text-align: left;
+      padding-left: 0;
+    }
+  }
+
+  th {
+    background-color: $cBlue;
+  }
+
+  td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    vertical-align: middle;
+  }
+
+  .number-input {
+    width: 100px;
+    margin: auto;
+  }
+}

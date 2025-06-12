@@ -102,3 +102,32 @@ async function loadPrice(e) {
 }
 
 updatePriceButtons.forEach((el) => el.addEventListener('click', loadPrice));
+
+/* Car finder */
+const carFinderOptions = document.querySelectorAll('.car-finder_filters-item .fake-select_value');
+
+async function handleSelectCarFinderOption(e) {
+  e.preventDefault();
+
+  e.target.parentElement.classList.remove('opened');
+
+  // ЗДЕСЬ ГРУЗИМ ДАННЫЕ ДЛЯ СЛЕД ФИЛЬТРА
+
+  // const responce = await fetch('/service-request/get-price/', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json;charset=utf-8',
+  //   },
+  //   body: JSON.stringify({
+  //     art,
+  //     brand,
+  //     artbrand,
+  //   }),
+  // });
+
+  const nextFilter = e.target.parentElement.parentElement.parentElement.nextElementSibling;
+  nextFilter?.classList.add('active');
+  nextFilter?.querySelector('.fake-select_popup').classList.add('opened');
+}
+
+carFinderOptions.forEach((el) => el.addEventListener('click', handleSelectCarFinderOption));

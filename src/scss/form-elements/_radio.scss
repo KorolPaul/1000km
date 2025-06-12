@@ -1,0 +1,90 @@
+input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+  z-index: -1;
+
+  &+label:not([class]) {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0 0 26px;
+    min-height: 20px;
+    font-size: 12px;
+    position: relative;
+    margin: 0;
+    transition: .2s $easing color;
+
+    @include desktop {
+      font-size: 13px;
+    }
+
+    &::before {
+      content: '';
+      box-sizing: border-box;
+      background-color: $cBackbround;
+      border: 1px solid $cGray;
+      border-radius: 50%;
+      height: 19px;
+      width: 19px;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      transition: .1s ease-in-out border-color, .1s ease-in-out background-color;
+    }
+
+    &::after {
+      content: '';
+      box-sizing: border-box;
+      background: $cBright;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      opacity: 0;
+      transform: scale(0);
+      transition: .1s $easing opacity, .2s $easing transform;
+    }
+
+    a {
+      color: $color;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &:hover+label {
+    &::before {
+      border-color: $color;
+    }
+  }
+
+  &:checked+label {
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &:hover::before {
+      opacity: .9;
+    }
+  }
+
+  &:disabled+label {
+    opacity: .6;
+    cursor: default;
+
+    &::before {
+      opacity: .6;
+      filter: grayscale(1);
+      pointer-events: none;
+    }
+  }
+
+  .error &+label:not([class])::before {
+    border-color: #ff0000;
+  }
+}

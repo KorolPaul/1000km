@@ -1,0 +1,42 @@
+.categories-carousel {
+  @include layout;
+  margin-top: 50px;
+  margin-bottom: 80px;
+
+  &_title {
+    font-size: 22px;
+  }
+
+  &_item {
+    background-color: $cLight;
+    border-radius: 5px;
+    padding: 12px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @include tablet {
+      padding: 14px 10px 12px;
+    }
+  }
+
+  &_item-image-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 98px;
+  }
+
+  &_item-title {
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    min-height: 26px;
+  }
+
+  .swiper {
+    padding: 0 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
