@@ -22,6 +22,11 @@
     @include tablet {
       height: 187px;
     }
+
+    .products-carousel__small & {
+      height: 144px;
+      width: 140px;
+    }
   }
 
   &_item-brand {

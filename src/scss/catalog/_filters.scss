@@ -16,7 +16,8 @@
     gap: 8px;
 
     & > *,
-    & > *[type="text"] {
+    & > *[type="text"],
+    & > *[type="checkbox"] {
       box-sizing: border-box;
       width: calc(50% - 8px);
     }
