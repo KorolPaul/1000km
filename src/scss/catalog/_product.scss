@@ -1,0 +1,369 @@
+.product {
+  @include layout;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  @include tablet {
+    flex-direction: row;
+    gap: 70px;
+  }
+
+  &_content {
+    flex-grow: 1;
+  }
+
+  &_top {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin: 0 0 20px;
+    @include tablet {
+      flex-direction: row;
+      gap: 72px;
+    }
+  }
+
+  &_disclaimer {
+    margin-bottom: 40px;
+  }
+
+  &_gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+  }
+
+  &_gallery-active-image-wrapper {
+    height: 374px;
+    border-radius: 5px;
+    background-color: $cLight;
+    position: relative;
+    padding: 0 0 30%;
+    box-shadow: 0px 4px 20px 0px #EEF3FD;
+    @include tablet {
+      height: 420px;
+      width: 420px;
+      padding: 0;
+    }
+  }
+
+  &_gallery-active-image {
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    object-fit: contain;
+  }
+
+  &_gallery-thumbnails {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include tablet {
+      flex-direction: column;
+      position: absolute;
+      left: 6px;
+      top: 6px;
+    }
+  }
+
+  &_gallery-thumbnail {
+    border-radius: 5px;
+    background-color: $cLight;
+    border: 1px solid $cGrayLighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(33.33% - 10px);
+    box-sizing: border-box;
+    padding: 0 0 30%;
+    position: relative;
+    box-shadow: 0px 4px 20px 0px #EEF3FD;
+    @include tablet {
+      height: 60px;
+      width: 60px;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+
+  &_gallery-thumbnail-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+
+
+  &_old-price {
+    text-decoration: line-through;
+    color: $cGrayLight;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  &_price {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+  }
+
+  &_price-value {
+    font-size: 22px;
+  }
+
+  &_discount {
+    font-size: 13px;
+    font-weight: 700;
+    color: $cLight;
+    background-color: #EF344F;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin: 0 0 0 5px;
+    vertical-align: 1px;
+  }
+
+  &_action {
+    font-size: 12px;
+    color: $cBright;
+  }
+
+  &_avalability {
+    font-size: 14px;
+    display: block;
+    color: $cGray;
+    margin-top: 10px;
+  }
+
+  &_avalability-value {
+    font-weight: 700;
+
+    &__in-stock {
+      color: #75A84C;
+    }
+  }
+
+  &_buttons {
+    margin-top: 16px;
+    display: flex;
+    width: 244px;
+    gap: 6px;
+  }
+
+  &_button {
+    @include button-filled;
+    padding: 9px 12px;
+    border-radius: 5px;
+    font-size: 15px;
+    min-width: 0;
+    @include tablet {
+      flex-shrink: 0;
+      gap: 4px;
+    }
+
+    img {
+      width: 16px;
+    }
+  }
+
+  &_sidebar {
+    @include tablet {
+      width: 325px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &_characteristics {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    margin: 0 0 50px;
+    @include tablet {
+      flex-direction: row;
+      gap: 70px;
+    }
+  }
+
+  &_characteristics-item {
+    @include tablet {
+      flex-grow: 1;
+      width: calc(50% - 70px);
+    }
+  }
+
+  &_characteristics-title,
+  &_variations-title {
+    font-size: 18px;
+    margin: 0 0 6px;
+    @include tablet {
+      margin-bottom: 12px;
+    }
+  }
+
+  &_characteristics-table {
+    td {
+      padding: 6px 0;
+      text-align: right;
+      font-size: 16px;
+      border-top: 1px solid $cGrayLighter;
+      @include tablet {
+        padding: 8px 0;
+      }
+
+      &:first-child {
+        text-align: left;
+        color: $cGray;
+      }
+
+      span {
+        display: block;
+      }
+    }
+
+    tr:first-child td {
+      border-top: none;
+    }
+  }
+
+  &_characteristics-table-value {
+    display: block;
+    margin-top: 8px;
+    color: $color;
+  }
+
+  &_variations {
+    margin-bottom: 50px;
+  }
+
+  &_variations-table {
+    th,
+    td {
+      padding: 20px;
+      text-align: center;
+      font-size: 16px;
+      border-bottom: 1px solid $cGrayLighter;
+      font-weight: 400;
+    }
+
+    th {
+      background: $cBlue;
+      font-size: 14px;
+      border: none;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      &:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+      &:last-child {
+        border-radius: 0 4px 4px 0;
+      }
+    }
+
+    div:not([class]) {
+      margin: 3px 0;
+    }
+
+    &__big {
+      td:nth-child(1) {
+        @include tablet {
+          width: 22%;
+        }
+      }
+      td:nth-child(2) {
+        @include tablet {
+          width: 22%;
+        }
+      }
+      td:nth-child(3) {
+        @include tablet {
+          width: 20%;
+        }
+      }
+      td:nth-child(4) {
+        @include tablet {
+          width: 20%;
+        }
+      }
+      td:nth-child(5) {
+        @include tablet {
+          width: 14%;
+        }
+      }
+    }
+  }
+
+  &_variations-status {
+    &__available {
+      color: $cGreen;
+    }
+  }
+
+  &_variations-status-time {
+    display: block;
+    color: $cGray;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  &_variations-price {
+    color: $cGray;
+    font-size: 14px;
+    white-space: nowrap;
+
+    strong {
+      font-size: 16px;
+      font-weight: 600;
+      color: $color;
+    }
+  }
+
+  &_variations-price-old {
+    display: block;
+    color: $cGray;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-top: 2px;
+  }
+
+  &_variations-price-discount {
+    font-size: 13px;
+    font-weight: 700;
+    color: $cLight;
+    background-color: #EF344F;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+
+  &_reviews {
+    margin-bottom: 60px;
+  }
+
+  &_sticky-panel {
+    display: none;
+    @include desktop {
+      display: block;
+      position: sticky;
+      top: 20px;
+      background-color: $cLight;
+      border-radius: 5px;
+      padding: 32px 40px;
+    }
+  }
+}

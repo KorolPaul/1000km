@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>1000km</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css?v=4">
+
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta content="telephone=no" name="format-detection">
+  <meta name="HandheldFriendly" content="true">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_holder">
+      <div class="header_top">
+        <button class="menu-toggle">
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_dioganal-line"></div>
+          <div class="menu-toggle_dioganal-line"></div>
+        </button>
+
+        <div class="location">
+          <img class="location_icon" src="src/img/marker.svg" alt="">
+          <span class="location_text">Минск</span>
+        </div>
+
+        <div class="main-menu">
+          <button class="main-menu_close"></button>
+
+          <ul class="main-menu_list">
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">Контакты</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="tel:+375448918173" class="main-menu_link">+375 (29) 891-81-73</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="tel:+375447918173" class="main-menu_link">+375 (29) 791-81-73</a>
+            </li>
+            <li class="main-menu_item">
+              <button class="main-menu_button">Заказать звонок</button>
+            </li>
+            <li class="main-menu_item">
+              <a class="main-menu_link" href="mailto:Info@1000km.by">Info@1000km.by</a>
+            </li>
+            <li class="main-menu_item">
+              <p class="main-menu_text">
+                пн-пт: 9:00 - 19:00
+                <br>
+                сб, вс: выходной
+              </p>
+            </li>
+
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">ИНФОРМАЦИЯ</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">О компании</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Гарантия и возвраты</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Оплата и доставка</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Контакты</a>
+            </li>
+
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">ЛИЧНЫЙ КАБИНЕТ</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Персональные данные</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">История операций</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Заказы</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Избранное</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Мое авто</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Запросы по VIN</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Войти</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Регистрация</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="header_user">
+          <button class="header_user-link js-search-toggle">
+            <img class="location_user-icon" src="src/img/loop-gray.svg" alt="">
+          </button>
+          <a href="#" class="header_user-link header_user-link__desktop">
+            <img class="location_user-icon" src="src/img/car.svg" alt="">
+          </a>
+          <a href="#" class="header_user-link header_user-link__desktop">
+            <img class="location_user-icon" src="src/img/user.svg" alt="">
+            Личный кабинет
+          </a>
+        </div>
+      </div>
+
+      <div class="header_bottom">
+        <div class="header_logo">
+          <a href="/" class="logo">
+            <img src="src/img/logo.svg" alt="" class="logo_icon">
+            Интернет-магазин автозапчастей
+          </a>
+        </div>
+
+        <div class="header_bottom-center">
+          <div class="catalog-menu">
+            <button class="catalog-menu_button js-toggle-catalog-menu">
+              <img src="src/img/catalog-menu-button.svg" alt="" class="catalog-menu_button-icon">
+              Каталог запчастей
+            </button>
+
+            <div class="catalog-menu_popup">
+              <button class="catalog-menu_close js-toggle-catalog-menu"></button>
+              <div class="catalog-menu_popup-content">
+                <ul class="catalog-menu_categories">
+                  <li class="catalog-menu_category-item" data-catalog-menu="1">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-1.png" alt="">
+                    <a class="catalog-menu_category-link" href="/to-and-filters/">Подвеска</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="2">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-2.png" alt="">
+                    <a class="catalog-menu_category-link" href="/tormoznaya-sistema/">Тормозная система</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="3">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-3.png" alt="">
+                    <a class="catalog-menu_category-link" href="/dvigatel-sistems-vyhlopa/">Датчики</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="4">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-4.png" alt="">
+                    <a class="catalog-menu_category-link" href="/podveska-i-rulevoe/">Ременной привод</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="5">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-5.png" alt="">
+                    <a class="catalog-menu_category-link" href="/korobka-peredach/">Трансмиссия</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="6">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-6.png" alt="">
+                    <a class="catalog-menu_category-link" href="/ohlajdenie-i-otoplenie/">Фильтры</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="7">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-7.png" alt="">
+                    <a class="catalog-menu_category-link" href="/elektrika-i-osveschenie/">Технические жидкости</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="8">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-8.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Насосы и помпы</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="9">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-9.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Электрика</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="10">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-10.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Охлаждение</a>
+                  </li>
+                </ul>
+
+                <div class="catalog-menu_subcategories">
+                  <div class="catalog-menu_subcategory" data-catalog-menu="1">
+                    <a class="catalog-menu_subcategory-title" href="#">Подвеска</a>
+                    <ul class="catalog-menu_subcategory-list">
+                      <li>
+                        <a class="catalog-menu_category-link" href="/tires/">Шины</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-motornyie/">Моторное масло в двигатель</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-transmissionnyie/">Масла трансмиссионные</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-ohlajdayuschie/">Антифризы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-tormoznyie/">Тормозные жидкости</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/jidkosti-gidravlicheskie/">Жидкости гидравлические</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-dlya-omyivatelya-stekla/">Жидкость стеклоомывающая</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/lampyi-chifyir-chifyir/">Автолампы (галоген, ксенон, светодиод), блоки розжига</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/akkumulyatoryi-2020/">Аккумуляторы (АКБ)</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/schetki-dvirniki/">Дворники</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/lamp/">Автомобильные лампы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-reduktornyie/">Масла редукторные</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/akkumulyatoryi-new/">Аккумуляторы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/germetiki/">Герметики</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/">Лакокрасочные материалы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/prisadki/">Присадки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/avtohimiya/">Промывки и очистители</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/smazki/">Смазки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/kuzovnyie-detali/12157/">Кузовные детали</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="catalog-menu_subcategory" data-catalog-menu="2">
+                    <a class="catalog-menu_subcategory-title" href="#">Тормозная система</a>
+                    <ul class="catalog-menu_subcategory-list">
+                      <li>
+                        <a class="catalog-menu_category-link" href="/tires/">Шины</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-motornyie/">Моторное масло в двигатель</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/schetki-dvirniki/">Дворники</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/">Лакокрасочные материалы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/prisadki/">Присадки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/avtohimiya/">Промывки и очистители</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/smazki/">Смазки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/kuzovnyie-detali/12157/">Кузовные детали</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header_search">
+            <div class="search">
+              <input type="text" class="search_input" placeholder="Поиск по артикулу, запчасти или VIN">
+              <button class="search_button">
+                <img src="src/img/loop.svg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="header_bottom-right">
+          <div class="header_contacts">
+            <div class="header_contacts-item">
+              <img class="header_contacts-item-icon" src="src/img/mts.png" alt="">
+              <a href="tel:+375 (29) 891-81-73" class="header_contacts-item-value">+375 (29) 891-81-73</a>
+            </div>
+            <div class="header_contacts-item">
+              <img class="header_contacts-item-icon" src="src/img/a1.png" alt="">
+              <a href="tel:+375 (29) 891-81-73" class="header_contacts-item-value">+375 (44) 791-81-73</a>
+              <img class="header_contacts-item-icon header_contacts-item-icon__additional" src="src/img/viber.svg" alt="">
+            </div>
+          </div>
+
+          <a href="#" class="header_cart-button">
+            <img src="src/img/cart.svg" alt="">
+            Корзина
+            <sup class="header_cart-button-count">2</sup>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="breadcrumbs">
+        <a class="breadcrumbs_link" href="/">Главная</a>
+        <span>/</span>
+        <a class="breadcrumbs_link" href="/">Каталог товаров</a>
+        <span>/</span>
+        <a class="breadcrumbs_link" href="/">Масла моторные</a>
+      </div>
+
+      <h1>
+        Свеча зажигания DENSO - Q14R-U11
+      </h1>
+    </section>
+
+    <section class="product">
+      <div class="product_content">
+        <div class="product_top">
+          <div class="product_gallery">
+            <a href="src/img/temp/product-gallery.png" class="product_gallery-active-image-wrapper">
+              <img src="src/img/temp/product-gallery.png" alt="" class="product_gallery-active-image">
+            </a>
+            <div class="product_gallery-thumbnails">
+              <a href="src/img/temp/product-gallery.png" class="product_gallery-thumbnail">
+                <img src="src/img/temp/product-gallery.png" alt="" class="product_gallery-thumbnail-image">
+              </a>
+              <a href="src/img/temp/product-card-1.png" class="product_gallery-thumbnail">
+                <img src="src/img/temp/product-card-1.png" alt="" class="product_gallery-thumbnail-image">
+              </a>
+              <a href="src/img/temp/product-card-2.png" class="product_gallery-thumbnail">
+                <img src="src/img/temp/product-card-2.png" alt="" class="product_gallery-thumbnail-image">
+              </a>
+            </div>
+          </div>
+
+          <div class="product_buy">
+            <div class="product_prices">
+              <span class="product_old-price">163,92 руб</span>
+              <span class="product_price">
+                <span class="product_price-value">142,62</span> руб
+                <span class="product_discount">-20%</span>
+              </span>
+              <span class="product_action">Акция до 12.05.2022</span>
+              <span class="product_avalability">
+                <span class="product_avalability-value product_avalability-value__in-stock">В наличии</span>
+              </span>
+            </div>
+
+            <div class="product_buttons">
+              <div class="number-input">
+                <button class="number-input_button number-input_button__minus"></button>
+                <input type="text" class="number-input_input" value="1">
+                <button class="number-input_button number-input_button__plus"></button>
+              </div>
+
+              <button class="product_button">
+                <img src="src/img/cart-white.svg" alt="">
+                В корзину
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product_disclaimer">
+          <div class="disclaimer">
+            <span class="disclaimer_title">
+              Товар может отличаться от фото на сайте.
+              <button class="disclaimer_button">Подробнее</button>
+            </span>
+            <div class="disclaimer_content">
+              Вся информация (фото, характеристики, комплектация, страна производства и т.д.) о товаре предоставлена на сайте для ознакомления и не является публичной офертой. Производители могут изменить любую информацию о товаре, предварительно не уведомляя продавца и потребителя. Заранее приносим свои извинения за возможные неточности в фотографиях и описании товара. Так же будем Вам благодарны за помощь в нахождении неточностей в нашем каталоге. Просим вас относиться с пониманием к данному факту и сообщать об ошибках через форму - <a href="#">сообщить об ошибке</a>.
+            </div>
+          </div>
+        </div>
+
+        <div class="product_characteristics">
+          <div class="product_characteristics-item">
+            <h3 class="product_characteristics-title">Описание:</h3>
+            <table class="product_characteristics-table">
+              <tbody>
+                <tr>
+                  <td>Артикул:</td>
+                  <td>Q14R-U11</td>
+                </tr>
+                <tr>
+                  <td>Производитель:</td>
+                  <td>DENSO</td>
+                </tr>
+                <tr>
+                  <td>Страна:</td>
+                  <td>Япония</td>
+                </tr>
+                <tr>
+                  <td>Качество бренда:</td>
+                  <td>Премиум</td>
+                </tr>
+                <tr>
+                  <td>Гарантия:</td>
+                  <td>12 месяцев</td>
+                </tr>
+                <tr>
+                  <td>Статус изделия:</td>
+                  <td>Новый</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    Дополнительно:
+                    <span  class="product_characteristics-table-value">
+                      Cвечи могут иметь встроенный резистор между контактным выводом и центральным электродом. Детали свечи зажигания. Контактный вывод. Контактный вывод, расположенный в верхней части свечи, предназначен для подключения свечи к высоковольтным проводам системы зажигания или непосредственно к индивидуальной высоковольтной катушке зажигания.
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="product_characteristics-item">
+            <h3 class="product_characteristics-title">Характеристики:</h3>
+            <table class="product_characteristics-table">
+              <tbody>
+                <tr>
+                  <td>Диаметр (мм):</td>
+                  <td>14</td>
+                </tr>
+                <tr>
+                  <td>Ширина зева гаечного ключа</td>
+                  <td>16</td>
+                </tr>
+                <tr>
+                  <td>Момент затяжки (Нм)</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>Вес (г)</td>
+                  <td>43</td>
+                </tr>
+                <tr>
+                  <td>Свеча зажигания:</td>
+                  <td>1 электрод массы</td>
+                </tr>
+                <tr>
+                  <td>Размер резьбы 1:</td>
+                  <td>19</td>
+                </tr>
+                <tr>
+                  <td>Дополнительно:</td>
+                  <td>Свеча зажигания</td>
+                </tr>
+                <tr>
+                  <td>Импортеры: </td>
+                  <td>
+                    <span>ООО “Еврозапчасть”</span>
+                    <span>ООО “Мототехавтозапчасти”</span>
+                    <span>ЧП “Шате-М плюс”</span>
+                    <span>ООО “Л-авто”</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="product_variations">
+          <h3 class="product_variations-title">Оригинальные артикулы:</h3>
+          <table class="product_variations-table product_variations-table__big">
+            <thead>
+              <tr>
+                <th>Бренд</th>
+                <th>Артикул</th>
+                <th>Срок</th>
+                <th>Наличие</th>
+                <th>Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RENAULT</td>
+                <td>8200371661</td>
+                <td>
+                  <span class="product_variations-status">
+                    Завтра
+                    <span class="product_variations-status-time">с 11:30</span>
+                  </span>
+                </td>
+                <td>15 шт</td>
+                <td>
+                  <span class="product_variations-price">
+                    <strong>12.40</strong> руб
+                    <span class="product_variations-price-old">13 руб <span class="product_variations-price-discount">-20%</span></span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>RENAULT</td>
+                <td>8671014116</td>
+                <td>
+                  <span class="product_variations-status product_variations-status__available">
+                    Сегодня
+                  </span>
+                </td>
+                <td>3 шт</td>
+                <td>
+                  <strong>34.10</strong> руб
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="product_variations">
+          <h3 class="product_variations-title">Аналоги:</h3>
+          <table class="product_variations-table product_variations-table__big">
+            <thead>
+              <tr>
+                <th>Бренд</th>
+                <th>Артикул</th>
+                <th>Срок</th>
+                <th>Наличие</th>
+                <th>Цена</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NGK</td>
+                <td>11-14 860 0001</td>
+                <td>
+                  <span class="product_variations-status">
+                    2 дня
+                  </span>
+                </td>
+                <td>23 шт</td>
+                <td>
+                  <span class="product_variations-price">
+                    <strong>42.40</strong> руб
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>BOSH</td>
+                <td>0 250 204 001</td>
+                <td>
+                  <span class="product_variations-status">
+                    Завтра
+                  </span>
+                </td>
+                <td>314 шт</td>
+                <td>
+                  <span class="product_variations-price">
+                    <strong>34.40</strong> руб
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>FEBI BILSTEIN</td>
+                <td>11-14 860 0001</td>
+                <td>
+                  <span class="product_variations-status">
+                    Завтра
+                  </span>
+                </td>
+                <td>15 шт</td>
+                <td>
+                  <span class="product_variations-price">
+                    <strong>12.40</strong> руб
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>BOSH</td>
+                <td>0 250 204 001</td>
+                <td>
+                  <span class="product_variations-status">
+                    Завтра
+                  </span>
+                </td>
+                <td>15 шт</td>
+                <td>
+                  <span class="product_variations-price">
+                    <strong>12.40</strong> руб
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="product_variations">
+          <h3 class="product_variations-title">Подходит к автомобилям:</h3>
+          <table class="product_variations-table">
+            <thead>
+              <tr>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Двигатель</th>
+                <th>Года производства</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>FORD</td>
+                <td>
+                  <div>FOCUS ll Turnier (DA_)</div>
+                  <div>FOCUS ll (DA_)</div>
+                  <div>FIESTA V (JH_, JD_)</div>
+                </td>
+                <td>
+                  <div>1.6 TDCi</div>
+                  <div>1.6 TDCi</div>
+                  <div>1.4 TDCi</div>
+                </td>
+                <td>
+                  <div>07.2004 - 09.2012</div>
+                  <div>07.2004 - 09.2012</div>
+                  <div>11.2001 - 06.2008</div>
+                </td>
+              </tr>
+              <tr>
+                <td>PEUGEOT</td>
+                <td>
+                  <div>206 Наклонная задняя часть (2А/С)</div>
+                  <div>307 (3A/C)</div>
+                  <div>206 SW (2E/K)</div>
+                </td>
+                <td>
+                  <div>1.4 HDi eco 70</div>
+                  <div>1.4 HDi</div>
+                  <div>1.4 HDi</div>
+                </td>
+                <td>
+                  <div>09.2001 -</div>
+                  <div>10.2001 -</div>
+                  <div>07.2002 -</div>
+                </td>
+              </tr>
+              <tr>
+                <td>MAZDA</td>
+                <td>
+                  <div>2 (DY)</div>
+                  <div>3 седан (ВК)</div>
+                </td>
+                <td>
+                  <div>1.4 CD</div>
+                  <div>1.6 Di Turbo</div>
+                </td>
+                <td>
+                  <div>04.2003 - 06.2007</div>
+                  <div>06.2004 - 06.2009</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="product_reviews">
+          <div class="reviews reviews__big">
+            <h3 class="reviews_title">Отзывы:</h3>
+
+            <div class="reviews_items">
+              <div class="reviews_item">
+                <div class="reviews_item-meta">
+                  <div class="reviews_item-rating">
+                    <div class="rating">
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star"></div>
+                    </div>
+                  </div>
+                  <div class="reviews_item-head">
+                    <span class="reviews_item-name">Денис</span>
+                    <span class="reviews_item-date">06.05.2025</span>
+                  </div>
+                </div>
+                <div class="reviews_item-content">
+                  <h4 class="reviews_item-title">Хороший товар</h4>
+                  <p class="reviews_item-text">
+                    Очень нравится магазин. Всегда все вовремя, в наличии много товара!
+                  </p>
+                </div>
+              </div>
+              <div class="reviews_item">
+                <div class="reviews_item-meta">
+                  <div class="reviews_item-rating">
+                    <div class="rating">
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star rating_star__filled"></div>
+                      <div class="rating_star rating_star__filled"></div>
+                    </div>
+                  </div>
+                  <div class="reviews_item-head">
+                    <span class="reviews_item-name">Валерий</span>
+                    <span class="reviews_item-date">12.05.2025</span>
+                  </div>
+                </div>
+                <div class="reviews_item-content">
+                  <h4 class="reviews_item-title">Прекрасная свеча</h4>
+                  <p class="reviews_item-text">
+                    Хорошая свеча, подошла без проблем. Плюс приятный бонус из-за акции, обошлась намного дешевле рынка. Однозначно рекомендую для покупки, не пожалеете! Хорошая свеча, подошла без проблем. Плюс приятный бонус из-за акции, обошлась намного дешевле рынка. Однозначно рекомендую для покупки, не пожалеете!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="reviews_button">Оставить отзыв</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="product_sidebar">
+        <div class="product-advantages">
+          <div class="product-advantages_item">
+            <div class="product-advantages_item-top">
+              <img src="src/img/guarantee.svg" alt="" class="product-advantages_item-icon">
+              <span>Гарантия</span>
+            </div>
+            <span class="product-advantages_item-description">
+              Официальная гарантия на товары - до 12 месяцев
+            </span>
+          </div>
+          <div class="product-advantages_item">
+            <div class="product-advantages_item-top">
+              <img src="src/img/replacement.svg" alt="" class="product-advantages_item-icon">
+              <span>Если не подойдет?</span>
+            </div>
+            <span class="product-advantages_item-description">
+              Можно обменять или вернуть в течение 14 дней
+            </span>
+          </div>
+          <div class="product-advantages_item">
+            <div class="product-advantages_item-top">
+              <img src="src/img/pick-up.svg" alt="" class="product-advantages_item-icon">
+              <span>Как забрать?</span>
+            </div>
+            <ul class="product-advantages_item-description">
+              <li>офис в центре Минска</li>
+              <li>доставка по Минску</li>
+              <li>доставка по РБ от 5 руб</li>
+            </ul>
+          </div>
+          <div class="product-advantages_item">
+            <div class="product-advantages_item-top">
+              <img src="src/img/payment.svg" alt="" class="product-advantages_item-icon">
+              <span>Оплата и чек</span>
+            </div>
+            <span class="product-advantages_item-description">
+              Оплата при получении. Обязательно выдаем чек
+            </span>
+          </div>
+
+          <div class="product-advantages_item product-advantages_item__contacts">
+            <span class="product-advantages_item-top">Остались вопросы? <br> Звоните!</span>
+            <a class="product-advantages_contact-item" href="tel:375298918173">
+              <img class="product-advantages_contact-item-icon" src="src/img/mts.png" alt="">
+              +375 (29) 891-81-73
+            </a>
+            <a class="product-advantages_contact-item" href="tel:375447918173">
+              <img class="product-advantages_contact-item-icon" src="src/img/a1.png" alt="">
+              +375 (44) 791-81-73
+            </a>
+          </div>
+        </div>
+
+        <div class="product_sticky-panel">
+          <div class="product_buy">
+            <div class="product_prices">
+              <span class="product_old-price">163,92 руб</span>
+              <span class="product_price">
+                <span class="product_price-value">142,62</span> руб
+                <span class="product_discount">-20%</span>
+              </span>
+              <span class="product_action">Акция до 12.05.2022</span>
+              <span class="product_avalability">
+                <span class="product_avalability-value product_avalability-value__in-stock">В наличии</span>
+              </span>
+            </div>
+
+            <div class="product_buttons">
+              <div class="number-input">
+                <button class="number-input_button number-input_button__minus"></button>
+                <input type="text" class="number-input_input" value="1">
+                <button class="number-input_button number-input_button__plus"></button>
+              </div>
+
+              <button class="product_button">
+                <img src="src/img/cart-white.svg" alt="">
+                В корзину
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+
+    <section class="catalog-bottom">
+
+      <div class="catalog-info">
+        <div class="catalog-info_content">
+          <div class="catalog-info_text">
+            <p>
+              Продаем моторные масла для дизельных и бензиновых двигателей. Синтетика, полусинтетика и минералка. 5w30, 5w40, 10w30 и других вязкостей. Вы можете купить моторное масло в канистрах по 4л, 5л, 1л. Бесплатно доставим по Минску, если сумма заказа будет больше 150 рублей. Также у нас есть самовывоз в городе и курьерская доставка по всей Беларуси: доставим моторное масло в Гродно, Могилев, Брест, Гомель, Витебск и другие города.
+            </p>
+          </div>
+          <p class="catalog-info_contacts">
+            Чтобы подобрать или заказать масло, звоните:
+            <a href="tel:+375 (44) 791-81-73">+375 (44) 791-81-73 (А1) </a>
+            <a href="tel:+375 (44) 791-81-73">+375 (29) 891-81-73 (мтс)</a>
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <h2 class="section_title">С этим товаром покупают:</h2>
+
+      <div class="products-carousel js-carousel-1">
+        <div class="products-carousel_holder">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Total</span>
+                    <h3 class="products-carousel_item-title">Герметик силиконовый черный RTV-Gasket Maker</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Champion</span>
+                    <h3 class="products-carousel_item-title">Champion Active Defence 10W40 В4 Diesel, 1 л</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">28</span> руб
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Evolution </span>
+                    <h3 class="products-carousel_item-title">Масло моторное синтетическое Evolution</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Total</span>
+                    <h3 class="products-carousel_item-title">Герметик силиконовый черный RTV-Gasket Maker</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Champion</span>
+                    <h3 class="products-carousel_item-title">Champion Active Defence 10W40 В4 Diesel, 1 л</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">28</span> руб
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Evolution </span>
+                    <h3 class="products-carousel_item-title">Масло моторное синтетическое Evolution</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section_title">Вы смотрели:</h2>
+
+      <div class="products-carousel js-carousel-2">
+        <div class="products-carousel_holder">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Total</span>
+                    <h3 class="products-carousel_item-title">Герметик силиконовый черный RTV-Gasket Maker</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Champion</span>
+                    <h3 class="products-carousel_item-title">Champion Active Defence 10W40 В4 Diesel, 1 л</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">28</span> руб
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Evolution </span>
+                    <h3 class="products-carousel_item-title">Масло моторное синтетическое Evolution</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Total</span>
+                    <h3 class="products-carousel_item-title">Герметик силиконовый черный RTV-Gasket Maker</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Champion</span>
+                    <h3 class="products-carousel_item-title">Champion Active Defence 10W40 В4 Diesel, 1 л</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">28</span> руб
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="products-carousel_item">
+                  <div class="products-carousel_item-image-wrapper">
+                    <img src="src/img/temp/main-slider-1.png" alt="" class="products-carousel_item-image">
+                  </div>
+                  <div class="products-carousel_item-content">
+                    <span class="products-carousel_item-brand">Evolution </span>
+                    <h3 class="products-carousel_item-title">Масло моторное синтетическое Evolution</h3>
+
+                    <div class="products-carousel_item-price-wrapper">
+                      <span class="products-carousel_item-old-price">1400 руб</span>
+                      <span class="products-carousel_item-price">
+                        <span class="products-carousel_item-price-value">1300</span> руб
+                        <span class="products-carousel_item-discount">20%</span>
+                      </span>
+                    </div>
+
+                  </div>
+                  <div class="products-carousel_item-bottom">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="products-carousel_item-button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+
+        <script src="./src/js/swiper.js"></script>
+
+        <script>
+          new Swiper('.js-carousel-1 .swiper', {
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 2,
+            spaceBetween: 10,
+            breakpoints: {
+              640: {
+                slidesPerView: 4,
+                spaceBetween: 16
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 16
+              }
+            }
+          });
+
+          new Swiper('.js-carousel-2 .swiper', {
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 2,
+            spaceBetween: 10,
+            breakpoints: {
+              640: {
+                slidesPerView: 4,
+                spaceBetween: 16
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 16
+              }
+            }
+          });
+        </script>
+      </div>
+    </section>
+
+
+    <section class="benefits">
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-1.svg" alt="Медаль" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Работаем более 7 лет. Менеджеры с опытом работы от 12 лет</span>
+      </div>
+
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-2.svg" alt="Склад" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Более 21 000 000 запчастей на складах с доставкой по всей Беларуси</span>
+      </div>
+
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-3.svg" alt="Копилка" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">У нас выгодные и приятные цены, которые вас удивят</span>
+      </div>
+
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-4.svg" alt="Доставка" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Самая быстрая и удобная доставка в любую точку Беларуси</span>
+      </div>
+
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-5.svg" alt="Таймер" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Доставка в течение дня по Минску (при условии заказа до 15:00)</span>
+      </div>
+
+      <div class="benefits_card">
+        <div class="benefits_card-icon-wrapper">
+          <img src="./src/img/advantages/advantage-6.svg" alt="Возврат" class="benefits_card-icon">
+        </div>
+        <span class="benefits_card-title">Возврат без проблем в течение 14 дней</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer_top">
+      <div class="footer_disclaimer">
+        <span>Информация о товаре предоставлена для ознакомления и не является публичной офертой. Производители оставляют за собой право изменять внешний вид, характеристики и комплектацию товара, предварительно не уведомляя продавцов и потребителей. Просим вас отнестись с пониманием к данному факту и заранее приносим извинения за возможные неточности в описании и фотографиях товара. Будем благодарны вам за сообщение об ошибках — это поможет сделать наш каталог еще точнее!</span>
+      </div>
+    </div>
+    <div class="footer_content">
+      <div class="footer_section">
+        <a href="/" class="logo">
+          <img src="src/img/logo.svg" alt="" class="logo_icon">
+          Интернет-магазин автозапчастей
+        </a>
+        <div class="footer_rating">
+          <span class="footer_rating-title">Рейтинг магазина:</span>
+          <div class="rating">
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+          </div>
+          <span class="footer_rating-value">
+            <strong>4.7</strong> баллов (8203 отзыва)
+          </span>
+          <a href="" class="footer_rating-link">Смотреть отзывы</a>
+        </div>
+      </div>
+
+      <div class="footer_section">
+        <a class="footer_section-title" class="#" href="https://1000km.by/about/">Покупателям</a>
+        <div class="footer_menu">
+          <a class="footer_menu-link" class="#" href="/use-zapchasty/">Каталог запчастей</a>
+          <a class="footer_menu-link" class="#" href="/about-us/">О магазине</a>
+          <a class="footer_menu-link" class="#" href="/shipping-and-payment/">Оплата и доставка</a>
+          <a class="footer_menu-link" class="#" href="/warranty/">Гарантия и возврат</a>
+          <a class="footer_menu-link" class="#" href="/contacts/">Контакты</a>
+        </div>
+      </div>
+
+      <div class="footer_section">
+        <a class="footer_section-title" class="#" href="https://1000km.by/about/">Профиль</a>
+        <div class="footer_menu">
+          <a class="footer_menu-link" class="#" href="/use-zapchasty/">Вход</a>
+          <a class="footer_menu-link" class="#" href="/about-us/">Регистрация</a>
+          <a class="footer_menu-link" class="#" href="/shipping-and-payment/">Оплата и доставка</a>
+          <a class="footer_menu-link" class="#" href="/warranty/">Гарантия и возврат</a>
+          <a class="footer_menu-link" class="#" href="/contacts/">Контакты</a>
+        </div>
+      </div>
+
+      <div class="footer_section">
+        <a class="footer_section-title" class="#" href="https://1000km.by/about/">Контакты</a>
+        <div class="footer_menu">
+          <a class="footer_menu-link" href="tel:+375298918173">+375 (29) 891-81-73</a>
+          <a class="footer_menu-link" href="tel:+375447918173">+375 (44) 791-81-73</a>
+          <button class="footer_menu-button">Заказать звонок</button>
+          <a class="footer_menu-link" href="mailto:Info@1000km.by">Info@1000km.by</a>
+        </div>
+
+        <p class="footer_text">
+          пн-пт: 9:00 - 19:00
+          <br>
+          сб, вс: выходной
+        </p>
+      </div>
+
+      <div class="footer_section">
+        <span class="footer_section-title">Доставка</span>
+        <p class="footer_text">
+          Минск, Бобруйск, Гомель, Борисов, Витебск, Могилев, Гродно, Брест, Барановичи, Борисов, Пинск, Орша, Мозырь, Солигорск, Новополоцк,
+          Лида и другие населенные пункты Беларуси.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <p class="footer_copyright">
+        © 2013-2022. Магазин автозапчастей 1000km.by. Общество с ограниченной ответственностью "1000км бай".
+        <br>
+        УНП 193575397, 2201144 г. Минск ул. Максима Танка, 30, пом. 1Н-8 р/c BY28MTBK30120001093300103454 в ЗАО МТБанк
+      </p>
+
+      <div class="footer_payment-methods">
+        <img src="src/img/payments/visa.png" alt="">
+        <img src="src/img/payments/verified-visa.png" alt="">
+        <img src="src/img/payments/mastercard.png" alt="">
+        <img src="src/img/payments/mastercard-secure.png" alt="">
+        <img src="src/img/payments/belcard.png" alt="">
+        <img src="src/img/payments/be-paid.png" alt="">
+      </div>
+    </div>
+  </footer>
+
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>

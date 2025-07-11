@@ -14,6 +14,18 @@
     border-radius: 20px;
     border: 1px solid $cGray;
     padding: 26px 24px;
+
+    .reviews__big & {
+      background-color: transparent;
+      padding: 16px;
+      border-color: $cGrayLight;
+      @include tablet {
+        display: flex;
+        border-radius: 0;
+        padding: 0;
+        border: none;
+      }
+    }
   }
 
   &_item-head {
@@ -22,6 +34,20 @@
     align-items: center;
     gap: 12px;
     margin: 0 0 8px;
+
+    .reviews__big & {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 200px;
+    }
+  }
+
+  &_item-title {
+    margin: 0 0 6px;
+    @include tablet {
+      font-size: 16px;
+      font-weight: 700;
+    }
   }
 
   &_item-name {
@@ -40,6 +66,7 @@
 
   &_item-text {
     font-size: 16px;
+    line-height: 20px;
   }
 
   &_more {
@@ -48,5 +75,43 @@
     display: block;
     margin-top: 16px;
     text-align: right;
+  }
+
+  &_meta {
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  &_item-content {
+    @include tablet {
+      border: 1px solid $cGrayLight;
+      border-radius: 10px;
+      padding: 24px 24px 8px;
+      flex-grow: 1;
+      position: relative;
+    }
+
+    &::before {
+      content: '';
+      @include tablet {
+        position: absolute;
+        border-left: 1px solid $cGrayLight;
+        border-bottom: 1px solid $cGrayLight;
+        height: 20px;
+        width: 20px;
+        left: -11px;
+        top: 29px;
+        background-color: $cBackbround;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &_button {
+    color: $cBright;
+    border-radius: 5px;
+    width: auto;
+    margin-top: 16px;
   }
 }

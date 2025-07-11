@@ -1,0 +1,46 @@
+.product-advantages {
+  background-color: $cLight;
+  box-shadow: 0px 4px 20px 0px #EEF3FD;
+  border-radius: 5px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  font-size: 16px;
+  @include tablet {
+    padding: 30px 55px;
+  }
+
+  &_item {
+    &__contacts {
+      text-align: center;
+    }
+  }
+
+  &_item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    margin-bottom: 6px;
+
+    .product-advantages_item__contacts & {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  &_item-description {
+    color: $cGray;
+    margin: 0;
+  }
+
+  &_contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 4px;
+    margin: 3px 0;
+  }
+}
