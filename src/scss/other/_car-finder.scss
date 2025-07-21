@@ -56,4 +56,24 @@
       pointer-events: all;
     }
   }
+
+  &_result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  &_result-image {
+    height: 100px;
+  }
+
+  &_result-title {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  &_result-test {
+    color: $cGray;
+  }
 }
