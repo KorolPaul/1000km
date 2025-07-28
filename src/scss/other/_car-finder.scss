@@ -57,11 +57,83 @@
     }
   }
 
-  &_result {
+  &_result,
+  &_selected-car {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    position: relative;
+  }
+
+  &_selected-car {
+    padding: 16px;
+  }
+
+  &_result-car {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
+
+    .car-finder_my-cars-popup & {
+      position: relative;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .car-finder_my-cars-popup &:hover {
+      background-color: rgba($cBrightLight, .5);
+    }
+  }
+
+  &_result-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &_my-cars {
+  }
+
+  &_my-cars-button {
+    @include button-filled;
+  }
+
+  &_my-cars-popup {
+    box-sizing: border-box;
+    background-color: $cLight;
+    padding: 10px;
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+    width: 100vw;
+    z-index: 3;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+     &.opened {
+      display: flex;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      right: 20px;
+      height: 40px;
+      width: 40px;
+      background-color: $cLight;
+      border-radius: 8px;
+      transform: rotate(45deg) translate(32px, 6px);
+      @include desktop {
+        right: calc(50% - 330px);
+      }
+    }
   }
 
   &_result-image {

@@ -86,8 +86,6 @@ function toggleFakeSelect(e) {
   } else {
     if (e?.preventDefault) {
       fakeSelectClickOutsideEvent = handleClickOutside(e.target, () => fakeSelectPopups.forEach((el => {
-        console.trace(3);
-
         el.classList.remove('opened');
       })));
     }
@@ -304,3 +302,29 @@ function toggleDisclaimer(e) {
 }
 
 disclaimerButtons.forEach((el) => el.addEventListener('click', toggleDisclaimer));
+
+/* cars popup */
+const carsPopupButtons = document.querySelectorAll('.js-cars-select-button');
+
+function toggleCarsPopup(popup) {
+  popup.classList.toggle('opened');
+}
+
+carsPopupButtons.forEach((el) => el.addEventListener('click', (e) => {
+  e.preventDefault();
+  toggleCarsPopup(e.target.nextElementSibling);
+}));
+
+const carsInPopup = document.querySelectorAll('.car-finder_my-cars-popup .car-finder_result-car');
+
+function selectCarFromPopup(e) {
+  const { currentTarget } = e;
+
+  document.querySelector('.car-finder_selected-car').innerHTML = currentTarget.innerHTML;
+  toggleCarsPopup(currentTarget.parentElement);
+}
+
+carsInPopup.forEach((el) => el.addEventListener('click', selectCarFromPopup));
+
+const addCarButton = document.querySelectorAll('.js-cars-add-car');
+addCarButton.forEach((el) => el.addEventListener('click', () => document.querySelector('.car-finder.hidden')?.classList.remove('hidden')));
