@@ -66,31 +66,76 @@
     position: relative;
   }
 
-  &_selected-car {
-    padding: 16px;
+  &_result {
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
   }
 
-  &_result-car {
+  &_my-cars {
+    position: relative;
+  }
+
+  &_selected-car {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &_result-car,
+  &_result-car-content {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
+    flex-shrink: 0;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
 
     .car-finder_my-cars-popup & {
       position: relative;
       padding: 10px;
       cursor: pointer;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &_result-car {
+    flex-direction: row;
+
+    .car-finder_my-cars-popup & {
+      width: 90vw;
+      flex-direction: row;
+      @include tablet {
+        width: 610px;
+      }
     }
 
-    .car-finder_my-cars-popup &:hover {
-      background-color: rgba($cBrightLight, .5);
+    input + label:not([class]) {
+      margin: 0 0 0 -20px;
+      @include tablet {
+        margin: 0 -20px 0 0;
+      }
     }
+  }
+
+  &_result-car-content {
   }
 
   &_result-buttons {
     display: flex;
-    flex-direction: column;
     gap: 16px;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row
+    }
   }
 
   &_my-cars {
@@ -106,13 +151,12 @@
     padding: 10px;
     z-index: 3;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: 80px;
-    width: 100vw;
     z-index: 3;
     display: none;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
 
@@ -124,20 +168,17 @@
       content: '';
       position: absolute;
       bottom: 100%;
-      right: 20px;
+      left: 50%;
       height: 40px;
       width: 40px;
       background-color: $cLight;
       border-radius: 8px;
-      transform: rotate(45deg) translate(32px, 6px);
-      @include desktop {
-        right: calc(50% - 330px);
-      }
+      transform: rotate(45deg) translate(7px, 28px);
     }
   }
 
   &_result-image {
-    height: 100px;
+    height: 80px;
   }
 
   &_result-title {

@@ -320,7 +320,8 @@ const carsInPopup = document.querySelectorAll('.car-finder_my-cars-popup .car-fi
 function selectCarFromPopup(e) {
   const { currentTarget } = e;
 
-  document.querySelector('.car-finder_selected-car').innerHTML = currentTarget.innerHTML;
+  document.querySelector('.car-finder_result-car').innerHTML = currentTarget.querySelector('.car-finder_result-car-content').innerHTML;
+  currentTarget.querySelector('input').checked = true;
   toggleCarsPopup(currentTarget.parentElement);
 }
 
