@@ -150,31 +150,10 @@
     background-color: $cLight;
     padding: 10px;
     z-index: 3;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 80px;
-    z-index: 3;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-
-     &.opened {
-      display: flex;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      height: 40px;
-      width: 40px;
-      background-color: $cLight;
-      border-radius: 8px;
-      transform: rotate(45deg) translate(7px, 28px);
-    }
   }
 
   &_result-image {

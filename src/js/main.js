@@ -29,6 +29,15 @@ function toggleMenu(e) {
 menuToggleElement.addEventListener('click', toggleMenu);
 menuCloseElement.addEventListener('click', toggleMenu);
 
+/* popups */
+function closePopup() {
+  document.querySelectorAll('.popup.opened').forEach((el) => el.classList.remove('opened'));
+  document.body.classList.remove('popup-opened');
+}
+
+document.querySelectorAll('.fade').forEach((el) => el.addEventListener('click', closePopup));
+document.querySelectorAll('.popup_close').forEach((el) => el.addEventListener('click', closePopup));
+
 /* catalog menu */
 const catalogMenuCategoriesElements = document.querySelectorAll('.catalog-menu_category-item');
 const catalogSubcategories = document.querySelectorAll('.catalog-menu_subcategory');
@@ -308,11 +317,12 @@ const carsPopupButtons = document.querySelectorAll('.js-cars-select-button');
 
 function toggleCarsPopup(popup) {
   popup.classList.toggle('opened');
+  document.body.classList.toggle('popup-opened');
 }
 
 carsPopupButtons.forEach((el) => el.addEventListener('click', (e) => {
   e.preventDefault();
-  toggleCarsPopup(e.target.nextElementSibling);
+  toggleCarsPopup(document.querySelector('.js-my-cars-popup'));
 }));
 
 const carsInPopup = document.querySelectorAll('.car-finder_my-cars-popup .car-finder_result-car');
@@ -322,7 +332,7 @@ function selectCarFromPopup(e) {
 
   document.querySelector('.car-finder_result-car').innerHTML = currentTarget.querySelector('.car-finder_result-car-content').innerHTML;
   currentTarget.querySelector('input').checked = true;
-  toggleCarsPopup(currentTarget.parentElement);
+  closePopup();
 }
 
 carsInPopup.forEach((el) => el.addEventListener('click', selectCarFromPopup));
