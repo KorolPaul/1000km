@@ -39,8 +39,8 @@ document.querySelectorAll('.fade').forEach((el) => el.addEventListener('click', 
 document.querySelectorAll('.popup_close').forEach((el) => el.addEventListener('click', closePopup));
 
 /* catalog menu */
-const catalogMenuCategoriesElements = document.querySelectorAll('.catalog-menu_category-item');
-const catalogSubcategories = document.querySelectorAll('.catalog-menu_subcategory');
+const catalogMenuCategoriesElements = document.querySelectorAll('.catalog-menu_category-item, .categories_category-item');
+const catalogSubcategories = document.querySelectorAll('.catalog-menu_subcategory, .categories_subcategory');
 
 if (!isMobile) {
   catalogSubcategories[0]?.classList.add('opened');
@@ -58,6 +58,9 @@ function toggleCatalogMenu(e) {
 
 catalogMenuToggleElements.forEach((el) => el.addEventListener('click', toggleCatalogMenu));
 
+function closeSubcategores() {
+  catalogSubcategories.forEach((el) => el.classList.remove('opened'));
+}
 
 function selectCategory(e) {
   e.preventDefault();
@@ -65,18 +68,23 @@ function selectCategory(e) {
   catalogMenuCategoriesElements.forEach((el) => el.classList.remove('active'));
   e.currentTarget.classList.add('active');
 
-  const index = e.currentTarget.dataset.catalogMenu;
-
+  const index = e.currentTarget.dataset.catalogMenu || e.currentTarget.dataset.category;
 
   catalogMenuCategoriesElements.forEach((el) => el.classList.remove('active'));
-  catalogSubcategories.forEach((el) => el.classList.remove('opened'));
-
-  document.querySelector(`.catalog-menu_category-item[data-catalog-menu="${index}"]`)?.classList.add('active');
-  document.querySelector(`.catalog-menu_subcategory[data-catalog-menu="${index}"]`)?.classList.add('opened');
-
+  closeSubcategores();
+  document.querySelectorAll(`.catalog-menu_category-item[data-catalog-menu="${index}"], .categories_category-item[data-category="${index}"]`)
+    .forEach(el => el?.classList.add('active'));
+  document.querySelectorAll(`.catalog-menu_subcategory[data-catalog-menu="${index}"], .categories_subcategory[data-category="${index}"]`)
+    .forEach(el => el?.classList.add('opened'));
 }
 
 catalogMenuCategoriesElements.forEach((el) => el.addEventListener('click', selectCategory));
+
+document.querySelectorAll('.categories_subcategory-title').forEach(el => el.addEventListener('click', closeSubcategores));
+
+if (!isMobile) {
+  catalogMenuCategoriesElements?.[0]?.click();
+}
 
 /* fake select */
 const fakeSelects = document.querySelectorAll('.fake-select_button');
