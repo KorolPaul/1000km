@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>1000km</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css?v=4">
+
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta content="telephone=no" name="format-detection">
+  <meta name="HandheldFriendly" content="true">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_holder">
+      <div class="header_top">
+        <button class="menu-toggle">
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_line"></div>
+          <div class="menu-toggle_dioganal-line"></div>
+          <div class="menu-toggle_dioganal-line"></div>
+        </button>
+
+        <div class="location">
+          <img class="location_icon" src="src/img/marker.svg" alt="">
+          <span class="location_text">Минск</span>
+        </div>
+
+        <div class="main-menu">
+          <button class="main-menu_close"></button>
+
+          <ul class="main-menu_list">
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">Контакты</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="tel:+375448918173" class="main-menu_link">+375 (29) 891-81-73</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="tel:+375447918173" class="main-menu_link">+375 (29) 791-81-73</a>
+            </li>
+            <li class="main-menu_item">
+              <button class="main-menu_button">Заказать звонок</button>
+            </li>
+            <li class="main-menu_item">
+              <a class="main-menu_link" href="mailto:Info@1000km.by">Info@1000km.by</a>
+            </li>
+            <li class="main-menu_item">
+              <p class="main-menu_text">
+                пн-пт: 9:00 - 19:00
+                <br>
+                сб, вс: выходной
+              </p>
+            </li>
+
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">ИНФОРМАЦИЯ</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">О компании</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Гарантия и возвраты</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Оплата и доставка</a>
+            </li>
+            <li class="main-menu_item main-menu_item__desktop">
+              <a href="#" class="main-menu_link">Контакты</a>
+            </li>
+
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_title">ЛИЧНЫЙ КАБИНЕТ</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Персональные данные</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">История операций</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Заказы</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Избранное</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Мое авто</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Запросы по VIN</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Войти</a>
+            </li>
+            <li class="main-menu_item">
+              <a href="#" class="main-menu_link">Регистрация</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="header_user">
+          <button class="header_user-link js-search-toggle">
+            <img class="location_user-icon" src="src/img/loop-gray.svg" alt="">
+          </button>
+          <a href="#" class="header_user-link header_user-link__desktop">
+            <img class="location_user-icon" src="src/img/car.svg" alt="">
+          </a>
+          <a href="#" class="header_user-link header_user-link__desktop">
+            <img class="location_user-icon" src="src/img/user.svg" alt="">
+            Личный кабинет
+          </a>
+        </div>
+      </div>
+
+      <div class="header_bottom">
+        <div class="header_logo">
+          <a href="/" class="logo">
+            <img src="src/img/logo.svg" alt="" class="logo_icon">
+            Интернет-магазин автозапчастей
+          </a>
+        </div>
+
+        <div class="header_bottom-center">
+          <div class="catalog-menu">
+            <button class="catalog-menu_button js-toggle-catalog-menu">
+              <img src="src/img/catalog-menu-button.svg" alt="" class="catalog-menu_button-icon">
+              Каталог запчастей
+            </button>
+
+            <div class="catalog-menu_popup">
+              <button class="catalog-menu_close js-toggle-catalog-menu"></button>
+              <div class="catalog-menu_popup-content">
+                <ul class="catalog-menu_categories">
+                  <li class="catalog-menu_category-item" data-catalog-menu="1">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-1.png" alt="">
+                    <a class="catalog-menu_category-link" href="/to-and-filters/">Подвеска</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="2">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-2.png" alt="">
+                    <a class="catalog-menu_category-link" href="/tormoznaya-sistema/">Тормозная система</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="3">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-3.png" alt="">
+                    <a class="catalog-menu_category-link" href="/dvigatel-sistems-vyhlopa/">Датчики</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="4">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-4.png" alt="">
+                    <a class="catalog-menu_category-link" href="/podveska-i-rulevoe/">Ременной привод</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="5">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-5.png" alt="">
+                    <a class="catalog-menu_category-link" href="/korobka-peredach/">Трансмиссия</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="6">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-6.png" alt="">
+                    <a class="catalog-menu_category-link" href="/ohlajdenie-i-otoplenie/">Фильтры</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="7">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-7.png" alt="">
+                    <a class="catalog-menu_category-link" href="/elektrika-i-osveschenie/">Технические жидкости</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="8">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-8.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Насосы и помпы</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="9">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-9.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Электрика</a>
+                  </li>
+                  <li class="catalog-menu_category-item" data-catalog-menu="10">
+                    <img class="catalog-menu_category-icon" src="src/img/temp/category-10.png" alt="">
+                    <a class="catalog-menu_category-link" href="/den-jestianshika/">Охлаждение</a>
+                  </li>
+                </ul>
+
+                <div class="catalog-menu_subcategories">
+                  <div class="catalog-menu_subcategory" data-catalog-menu="1">
+                    <a class="catalog-menu_subcategory-title" href="#">Подвеска</a>
+                    <ul class="catalog-menu_subcategory-list">
+                      <li>
+                        <a class="catalog-menu_category-link" href="/tires/">Шины</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-motornyie/">Моторное масло в двигатель</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-transmissionnyie/">Масла трансмиссионные</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-ohlajdayuschie/">Антифризы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-tormoznyie/">Тормозные жидкости</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/jidkosti-gidravlicheskie/">Жидкости гидравлические</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/jidkosti-dlya-omyivatelya-stekla/">Жидкость стеклоомывающая</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/lampyi-chifyir-chifyir/">Автолампы (галоген, ксенон, светодиод), блоки розжига</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/akkumulyatoryi-2020/">Аккумуляторы (АКБ)</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/schetki-dvirniki/">Дворники</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/lamp/">Автомобильные лампы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-reduktornyie/">Масла редукторные</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/akkumulyatoryi-new/">Аккумуляторы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/germetiki/">Герметики</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/">Лакокрасочные материалы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/prisadki/">Присадки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/avtohimiya/">Промывки и очистители</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/smazki/">Смазки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/kuzovnyie-detali/12157/">Кузовные детали</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="catalog-menu_subcategory" data-catalog-menu="2">
+                    <a class="catalog-menu_subcategory-title" href="#">Тормозная система</a>
+                    <ul class="catalog-menu_subcategory-list">
+                      <li>
+                        <a class="catalog-menu_category-link" href="/tires/">Шины</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/masla-motornyie/">Моторное масло в двигатель</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/schetki-dvirniki/">Дворники</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/">Лакокрасочные материалы</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/prisadki/">Присадки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/avtohimiya/">Промывки и очистители</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/masla-i-avtohimiya/smazki/">Смазки</a>
+                      </li>
+                      <li>
+                        <a class="catalog-menu_category-link" href="/kuzovnyie-detali/12157/">Кузовные детали</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header_search">
+            <div class="search">
+              <input type="text" class="search_input" placeholder="Поиск по артикулу, запчасти или VIN">
+              <button class="search_button">
+                <img src="src/img/loop.svg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="header_bottom-right">
+          <div class="header_contacts">
+            <div class="header_contacts-item">
+              <img class="header_contacts-item-icon" src="src/img/mts.png" alt="">
+              <a href="tel:+375 (29) 891-81-73" class="header_contacts-item-value">+375 (29) 891-81-73</a>
+            </div>
+            <div class="header_contacts-item">
+              <img class="header_contacts-item-icon" src="src/img/a1.png" alt="">
+              <a href="tel:+375 (29) 891-81-73" class="header_contacts-item-value">+375 (44) 791-81-73</a>
+              <img class="header_contacts-item-icon header_contacts-item-icon__additional" src="src/img/viber.svg" alt="">
+            </div>
+          </div>
+
+          <a href="#" class="header_cart-button">
+            <img src="src/img/cart.svg" alt="">
+            Корзина
+            <sup class="header_cart-button-count">2</sup>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="breadcrumbs">
+        <a class="breadcrumbs_link" href="/">Главная</a>
+        <span>/</span>
+        <span>Личный кабинет</span>
+      </div>
+    </section>
+
+    <div class="profile">
+      <aside class="profile_navigation">
+        <h1 class="profile_title">Личный кабинет</h1>
+
+        <div class="profile_navigation-links">
+          <a href="#main" class="profile_navigation-link">Персональные данные</a>
+          <a href="#orders" class="profile_navigation-link">
+            Заказы
+            <span class="profile_navigation-link-count">4</span>
+          </a>
+          <a href="#cars" class="profile_navigation-link">Мои авто</a>
+          <a href="#messages" class="profile_navigation-link">Сообщения</a>
+        </div>
+      </aside>
+
+      <div class="profile_content">
+        <h2 class="profile_user-name">Добрый день, Фамилия Имя</h2>
+        <span class="profile_user-code">Код клиента: 174920</span>
+
+        <div class="profile_content-tab active" data-tab="main">
+          <form class="form js-personal-data-form">
+            <fieldset>
+              <div class="form_row">
+                <label for="fio">ФИО</label>
+                <input type="text" name="" id="fio" placeholder="Фамилия Имя Отчество">
+              </div>
+              <div class="form_row">
+                <label for="phone">Телефон</label>
+                <input type="text" name="" id="phone" placeholder="+375 (29) 999-99-99">
+              </div>
+              <div class="form_row">
+                <label for="email">E-mail</label>
+                <input type="text" name="" id="email" placeholder="ivanivanov@gmail.com">
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="form_row">
+                <label for="city">Город/населенный пункт</label>
+                <input type="text" name="" id="city" placeholder="Минск">
+              </div>
+              <div class="form_row">
+                <label for="street">Улица</label>
+                <input type="text" name="" id="street" placeholder="Уличная">
+              </div>
+              <div class="form_row">
+                <label for="house">Дом</label>
+                <input type="text" name="" id="house" placeholder="3">
+              </div>
+              <div class="form_row">
+                <label for="corpus">Корпус</label>
+                <input type="text" name="" id="corpus" placeholder="-">
+              </div>
+              <div class="form_row">
+                <label for="apartment">Квартира/офис</label>
+                <input type="text" name="" id="apartment" placeholder="164">
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="form_row">
+                <label>Рассылка</label>
+                <input type="checkbox" id="newsletter">
+                <label for="newsletter"></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="form_row">
+                <label for=""></label>
+                <button class="button button__filled" id="personal-data-submit" disabled>Сохранить</button>
+              </div>
+            </fieldset>
+          </form>
+
+          <script>
+            const personalDataFormInputs = document.querySelectorAll('.js-personal-data-form input');
+            const personalDataFormSubmit = document.getElementById('personal-data-submit');
+
+            personalDataFormInputs.forEach(el => el.addEventListener('change', () => {
+              console.log(1);
+
+              personalDataFormSubmit.disabled = false;
+            }));
+          </script>
+        </div>
+
+        <div class="profile_content-tab" data-tab="orders">
+          Заказы
+        </div>
+        <div class="profile_content-tab" data-tab="cars">
+          Мои авто
+        </div>
+        <div class="profile_content-tab" data-tab="messages">
+          Сообщения
+        </div>
+      </div>
+
+      <script>
+        // navigation
+        const navigationLinks = document.querySelectorAll('.profile_navigation-link');
+        const navigationTabs = document.querySelectorAll('.profile_content-tab');
+        navigationLinks.forEach(el => el.addEventListener('click', changePage));
+
+        function changePage(e) {
+          const page = e.currentTarget.hash;
+
+          navigationTabs.forEach(el => {
+            if (el.dataset?.tab === page.substring(1)) {
+              el.classList.add('active');
+              return;
+            }
+
+            el.classList.remove('active');
+          });
+        }
+      </script>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer_top">
+      <div class="footer_disclaimer">
+        <span>Информация о товаре предоставлена для ознакомления и не является публичной офертой. Производители оставляют за собой право изменять внешний вид, характеристики и комплектацию товара, предварительно не уведомляя продавцов и потребителей. Просим вас отнестись с пониманием к данному факту и заранее приносим извинения за возможные неточности в описании и фотографиях товара. Будем благодарны вам за сообщение об ошибках — это поможет сделать наш каталог еще точнее!</span>
+      </div>
+    </div>
+    <div class="footer_content">
+      <div class="footer_section">
+        <a href="/" class="logo">
+          <img src="src/img/logo.svg" alt="" class="logo_icon">
+          Интернет-магазин автозапчастей
+        </a>
+        <div class="footer_rating">
+          <span class="footer_rating-title">Рейтинг магазина:</span>
+          <div class="rating">
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+            <div class="rating_star rating_star__filled"></div>
+          </div>
+          <span class="footer_rating-value">
+            <strong>4.7</strong> баллов (8203 отзыва)
+          </span>
+          <a href="" class="footer_rating-link">Смотреть отзывы</a>
+        </div>
+      </div>
+
+      <div class="footer_section">
+        <a class="footer_section-title" class="#" href="https://1000km.by/about/">Покупателям</a>
+        <div class="footer_menu">
+          <a class="footer_menu-link" class="#" href="/use-zapchasty/">Каталог запчастей</a>
+          <a class="footer_menu-link" class="#" href="/about-us/">О магазине</a>
+          <a class="footer_menu-link" class="#" href="/shipping-and-payment/">Оплата и доставка</a>
+          <a class="footer_menu-link" class="#" href="/warranty/">Гарантия и возврат</a>
+          <a class="footer_menu-link" class="#" href="/contacts/">Контакты</a>
+        </div>
+      </div>
+
+      <div class="footer_section">
+        <a class="footer_section-title" class="#" href="https://1000km.by/about/">Профиль</a>
+        <div class="footer_menu">
+          <a class="footer_menu-link" class="#" href="/use-zapchasty/">Вход</a>
+          <a class="footer_menu-link" class="#" href="/about-us/">Регистрация</a>
+          <a class="footer_menu-link" class="#" href="/shipping-and-payment/">Оплата и доставка</a>
+          <a class="footer_menu-link" class="#" href="/warranty/">Гарантия и возврат</a>
+          <a class="footer_menu-link" class="#" href="/contacts/">Контакты</a>
+        </div>
+      </div>
+
+      <div class="footer_section">
+        <a class="footer_section-title" class="#" href="https://1000km.by/about/">Контакты</a>
+        <div class="footer_menu">
+          <a class="footer_menu-link" href="tel:+375298918173">+375 (29) 891-81-73</a>
+          <a class="footer_menu-link" href="tel:+375447918173">+375 (44) 791-81-73</a>
+          <button class="footer_menu-button">Заказать звонок</button>
+          <a class="footer_menu-link" href="mailto:Info@1000km.by">Info@1000km.by</a>
+        </div>
+
+        <p class="footer_text">
+          пн-пт: 9:00 - 19:00
+          <br>
+          сб, вс: выходной
+        </p>
+      </div>
+
+      <div class="footer_section">
+        <span class="footer_section-title">Доставка</span>
+        <p class="footer_text">
+          Минск, Бобруйск, Гомель, Борисов, Витебск, Могилев, Гродно, Брест, Барановичи, Борисов, Пинск, Орша, Мозырь, Солигорск, Новополоцк,
+          Лида и другие населенные пункты Беларуси.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <p class="footer_copyright">
+        © 2013-2022. Магазин автозапчастей 1000km.by. Общество с ограниченной ответственностью "1000км бай".
+        <br>
+        УНП 193575397, 2201144 г. Минск ул. Максима Танка, 30, пом. 1Н-8 р/c BY28MTBK30120001093300103454 в ЗАО МТБанк
+      </p>
+
+      <div class="footer_payment-methods">
+        <img src="src/img/payments/visa.png" alt="">
+        <img src="src/img/payments/verified-visa.png" alt="">
+        <img src="src/img/payments/mastercard.png" alt="">
+        <img src="src/img/payments/mastercard-secure.png" alt="">
+        <img src="src/img/payments/belcard.png" alt="">
+        <img src="src/img/payments/be-paid.png" alt="">
+      </div>
+    </div>
+  </footer>
+
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>

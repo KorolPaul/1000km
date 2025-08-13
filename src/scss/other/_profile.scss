@@ -1,0 +1,72 @@
+.profile {
+  @include layout;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    gap: 150px;
+  }
+
+  &_navigation {
+    @include tablet {
+      width: 250px;
+    }
+  }
+
+  &_navigation-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &_navigation-link {
+    font-size: 16px;
+    position: relative;
+  }
+
+  &_navigation-link-count {
+    position: absolute;
+    background-color: $cBright;
+    color: $cLight;
+    padding: 3px 6px;
+    border-radius: 4px;
+    left: calc(100% + 4px);
+    top: 0px;
+    font-size: 12px;
+  }
+
+  &_title {
+    font-size: 22px;
+    margin: 0 0 32px;
+    @include tablet {
+      font-size: 26px;
+    }
+  }
+
+  &_user-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &_user-code {
+    font-size: 16px;
+    color: $cGray;
+    display: block;
+  }
+
+  &_content-tab {
+    display: none;
+    padding: 26px 0;
+
+    &.active {
+      display: block;
+    }
+  }
+}

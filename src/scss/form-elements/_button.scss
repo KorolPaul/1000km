@@ -61,6 +61,7 @@ input[type="button"] {
   @include button;
 }
 
+.button__filled,
 input[type="submit"] {
   @include button;
   @include button-filled;

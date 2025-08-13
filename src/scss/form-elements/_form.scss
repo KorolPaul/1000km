@@ -1,19 +1,32 @@
 .form {
-  padding: 23px 0 0;
-  margin: auto;
-
-  &_caption {
-    font-size: 20px;
-    max-width: 390px;
-
-    @include tablet {
-      margin-bottom: 20px;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  @include tablet {
+    gap: 8px;
   }
 
   &_row {
+    display: flex;
+    flex-direction: column;
     margin: 0 0 10px;
     position: relative;
+    gap: 6px;
+    @include tablet {
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    label:first-child {
+      font-size: 15px;
+      color: $cGray;
+      margin: 0;
+      @include tablet {
+        width: 216px;
+        flex-shrink: 0;
+      }
+    }
   }
 
   &_error {
@@ -28,51 +41,5 @@
     .error & {
       display: block;
     }
-  }
-
-  &_success-text,
-  &_unfilled-text {
-    display: none;
-    font-size: 20px;
-    line-height: 24px;
-    padding: 16px 0 10px;
-
-    @include tablet {
-      font-size: 58px;
-      line-height: 59px;
-    }
-
-
-  }
-
-  &_success-text {
-    position: relative;
-
-    .success & {
-      display: block;
-    }
-  }
-
-  &_success-arrow {
-    position: absolute;
-    left: 255px;
-    top: 0;
-  }
-
-  &_unfilled-text {
-    .unfilled & {
-      display: block;
-    }
-  }
-
-  &.success input[type="submit"],
-  &.unfilled input[type="submit"] {
-    display: none;
-  }
-
-  &.filled input[type="text"]:placeholder-shown,
-  &.filled input[type="email"]:placeholder-shown .error input[type="email"] {
-    @include placeholder-color($cBright);
-    border-bottom-color: $cBright;
   }
 }
