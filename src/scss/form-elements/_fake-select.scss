@@ -5,6 +5,7 @@
     padding-left: 23px;
     background: $cLight url(#{$img}/arrow-down.svg) no-repeat right 14px center;
     border-color: $cLight;
+    width: 100%;
 
     &:hover,
     &.active {
