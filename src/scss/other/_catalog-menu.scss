@@ -40,6 +40,12 @@
         left: calc(50% - 380px);
       }
     }
+
+    .fixed-menu & {
+      @include tablet {
+        top: 80px;
+      }
+    }
   }
 
   &_close {

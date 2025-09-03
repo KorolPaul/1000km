@@ -57,6 +57,11 @@
 
   &_card-icon {
     max-width: 100%;
+    filter: grayscale(1) brightness(1.75);
+
+    .benefits__small & {
+      filter: none;
+    }
   }
 
   &_card-title {

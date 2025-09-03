@@ -29,6 +29,25 @@ function toggleMenu(e) {
 menuToggleElement.addEventListener('click', toggleMenu);
 menuCloseElement.addEventListener('click', toggleMenu);
 
+/* sticky header */
+document.addEventListener('DOMContentLoaded', () => {
+  const onScroll = () => {
+    if (window.scrollY >= 130) {
+      if (!document.body.classList.contains('fixed-menu')) {
+        document.body.classList.add('fixed-menu');
+        document.body.style.paddingTop = '189px';
+      }
+    } else {
+      document.body.classList.remove('fixed-menu');
+      document.body.style.paddingTop = '0';
+    }
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+});
+
 /* popups */
 function closePopup() {
   document.querySelectorAll('.popup.opened').forEach((el) => el.classList.remove('opened'));

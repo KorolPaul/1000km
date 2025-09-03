@@ -10,6 +10,12 @@
     gap: 20px;
   }
 
+  &_content {
+    @include tablet {
+      flex-grow: 1;
+    }
+  }
+
   &_sidebar {
     width: 336px;
     flex-shrink: 0;

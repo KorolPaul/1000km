@@ -1,9 +1,19 @@
 .header {
-  padding: 22px 0 5px;
+  padding: 22px 0 15px;
   z-index: 11;
   background-color: $cBlue;
   @include tablet {
-    padding: 43px 0 5px;
+    padding: 43px 0 15px;
+  }
+
+  .fixed-menu & {
+    @include tablet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 15px
+    }
   }
 
   &_holder {
@@ -28,6 +38,12 @@
     padding-right: 38px;
     @include desktop {
       padding-right: 0;
+    }
+
+    .fixed-menu & {
+      @include tablet {
+        display: none;
+      }
     }
   }
 

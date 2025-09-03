@@ -19,6 +19,19 @@
         padding: 30px 40px;
       }
     }
+
+    .car-brands__images & {
+      columns: initial;
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+      @include tablet {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include desktop {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
   }
 
   &_letter {
@@ -59,5 +72,11 @@
   &_item-value {
     font-size: 16px;
     position: relative;
+  }
+
+  &_item-image {
+    height: 68px;
+    width: 100%;
+    object-fit: contain;
   }
 }
