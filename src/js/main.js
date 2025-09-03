@@ -342,14 +342,14 @@ disclaimerButtons.forEach((el) => el.addEventListener('click', toggleDisclaimer)
 /* cars popup */
 const carsPopupButtons = document.querySelectorAll('.js-cars-select-button');
 
-function toggleCarsPopup(popup) {
+function togglePopup(popup) {
   popup.classList.toggle('opened');
   document.body.classList.toggle('popup-opened');
 }
 
 carsPopupButtons.forEach((el) => el.addEventListener('click', (e) => {
   e.preventDefault();
-  toggleCarsPopup(document.querySelector('.js-my-cars-popup'));
+  togglePopup(document.querySelector('.js-my-cars-popup'));
 }));
 
 const carsInPopup = document.querySelectorAll('.car-finder_my-cars-popup .car-finder_result-car');
@@ -366,3 +366,9 @@ carsInPopup.forEach((el) => el.addEventListener('click', selectCarFromPopup));
 
 const addCarButton = document.querySelectorAll('.js-cars-add-car');
 addCarButton.forEach((el) => el.addEventListener('click', () => document.querySelector('.car-finder.hidden')?.classList.remove('hidden')));
+
+/* map popup */
+const locationButton = document.querySelector('.location');
+locationButton.addEventListener('click', () => {
+  togglePopup(document.querySelector('.js-map-popup'));
+});

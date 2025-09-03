@@ -1528,6 +1528,41 @@
 
   </main>
 
+  <script>
+    setTimeout(function () {
+        var elem = document.createElement('script');
+        elem.type = 'text/javascript';
+        elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=fba08250-e5cb-4a5c-9f29-8bea30eefbfd&onload=getYaMap';
+        document.getElementsByTagName('body')[0].appendChild(elem);
+    }, 2000);
+
+    function getYaMap() {
+        ymaps.ready(init);
+          function init() {
+              var myMap = new ymaps.Map("map", {
+                  center: [53.902284, 27.561831],
+                  zoom: 7
+              }, {
+                  searchControlProvider: 'yandex#search'
+              });
+
+              myMap.geoObjects.add(new ymaps.Placemark([53.907965, 27.534055], {
+                  balloonContent: '<strong>1000km.by</strong>'
+              }, {
+                  preset: 'islands#redShoppingIcon'
+              }));
+        }
+      }
+    </script>
+    <div id="yandex_library"></div>
+    <div class="popup js-map-popup">
+        <div class="fade"></div>
+        <button class="popup_close"></button>
+        <div class="popup_content">
+            <div id="map" style="height: 400px; width: 500px"></div>
+        </div>
+    </div>
+
 
   <script src="./src/js/main.js"></script>
 </body>

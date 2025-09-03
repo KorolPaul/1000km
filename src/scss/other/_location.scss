@@ -4,13 +4,27 @@
   display: none;
   align-items: flex-end;
   gap: 6px;
+  cursor: pointer;
   @include tablet {
     display: flex;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    opacity: .6;
+  }
+  &:active {
+    opacity: .8;
   }
 
   &_icon {
     display: block;
     position: relative;
     bottom: 2px;
+  }
+
+  sup {
+    font-size: 13px;
+    top: -13px;
   }
 }
