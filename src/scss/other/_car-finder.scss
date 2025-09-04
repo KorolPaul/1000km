@@ -104,6 +104,8 @@
       cursor: pointer;
       padding-left: 0;
       padding-right: 0;
+      flex-grow: 1;
+      justify-content: space-between;
     }
   }
 
@@ -114,7 +116,8 @@
       width: 90vw;
       flex-direction: row;
       @include tablet {
-        width: 670px;
+        width: 690px;
+        justify-content: space-between;
       }
     }
 
@@ -127,6 +130,9 @@
   }
 
   &_result-car-content {
+    .car-finder_my-cars-popup & a + div {
+      flex-grow: 1;
+    }
   }
 
   &_result-buttons {
@@ -154,6 +160,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+
+
   }
 
   &_result-image {

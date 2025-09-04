@@ -160,8 +160,8 @@
 
   &_controls {
     order: 2;
-    position: relative;
     @include tablet {
+      position: relative;
       flex-grow: 0;
       order: initial;
       width: 268px;
@@ -169,9 +169,8 @@
       padding: 26px;
       display: flex;
       flex-direction: column;
-      @include tablet {
-        justify-content: center;
-      }
+      min-height: 186px;
+      justify-content: center;
     }
 
     &.loading {
@@ -233,6 +232,7 @@
 
   &_price-value {
     font-size: 22px;
+    font-weight: 700;
   }
 
   &_discount {
@@ -252,10 +252,10 @@
   }
 
   &_avalability {
-    font-size: 14px;
+    font-size: 13px;
     display: block;
     color: $cGray;
-    margin-top: 10px;
+    margin-top: 7px;
   }
 
   &_avalability-value {
