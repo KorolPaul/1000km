@@ -372,3 +372,59 @@ const locationButton = document.querySelector('.location');
 locationButton.addEventListener('click', () => {
   togglePopup(document.querySelector('.js-map-popup'));
 });
+
+
+/* search in header */
+const toggleMobileSearchButton = document.querySelector('.js-search-toggle');
+
+if (toggleMobileSearchButton) {
+  toggleMobileSearchButton.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    document.querySelector('.header_search')?.classList.toggle('active');
+  });
+};
+
+const searchInput = document.querySelector('.search_input');
+const searchDropdown = document.querySelector('.search_dropdown');
+
+searchInput.addEventListener('focus', () => searchDropdown.classList.add('active'));
+searchInput.addEventListener('blur', () => searchDropdown.classList.remove('active'));
+
+function debounce(func, delay) {
+  let debounceTimer;
+
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+  };
+}
+
+const debouncedSearchCallback = debounce(async () => {
+  searchDropdown.classList.add('loading');
+
+  await setTimeout(() => {
+    console.log('data loaded');
+
+    searchDropdown.classList.remove('loading');
+
+  }, 1000);
+
+  // тут, офицер, вместо таймаута будет загрузка нужных данных, такого плана:
+
+  // await fetch('/car-ajax/get-body-by-year-mark-models/', {
+  //   method: 'POST',
+  //   headers: {
+  //     'X-Requested-With': 'XMLHttpRequest'
+  //   },
+  //   body: formData,
+  // });
+  // data = await bodyResponce.json();
+
+  // и генерация нового хтмл-а с данными
+
+}, 500);
+
+searchInput.addEventListener('input', debouncedSearchCallback);

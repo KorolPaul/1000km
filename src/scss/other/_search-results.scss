@@ -1,6 +1,10 @@
 .search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
   &_item {
-    border-top: 1px solid $cGray;
+    border-top: 1px solid #7f848b30;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,14 +15,56 @@
     }
   }
 
+  &_item-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
   &_item-key {
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+
+  &_item-image {
+    font-size: 0;
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
   }
 
   &_item-name {
     font-size: 18px;
-    margin-left: 20px;
+  }
+
+  &_item-count {
+    color: $cGray;
+  }
+
+  &_section {
+
+    td {
+      padding: 12px;
+      text-align: left;
+
+      &:first-child {
+        width: 120px;
+        padding-left: 0;
+      }
+
+      &:nth-child(2) {
+        width: 50px;
+      }
+
+      &:last-child {
+        text-align: right;
+        max-width: 185px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
   }
 }

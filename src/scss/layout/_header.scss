@@ -202,8 +202,17 @@
 
   &_search {
     display: none;
+    position: absolute;
+    left: 19px;
+    right: 19px;
+    top: 109px;
     flex-grow: 1;
     @include desktop {
+      display: block;
+      position: static;
+    }
+
+    &.active {
       display: block;
     }
   }

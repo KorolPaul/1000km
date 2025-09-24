@@ -1,6 +1,7 @@
 .sidebar-menu {
   @include tablet {
     width: 250px;
+    flex-shrink: 0;
   }
 
   &_link {

@@ -6,7 +6,7 @@
   &_disclaimer {
     @include layout;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 20px;
     color: $cBlackLight;
     padding-top: 20px;
     padding-bottom: 24px;
@@ -45,7 +45,7 @@
   }
 
   &_copyright {
-    line-height: 17px;
+    line-height: 22px;
     color: $cGray;
     margin: 0;
   }
