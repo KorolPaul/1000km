@@ -389,7 +389,11 @@ const searchInput = document.querySelector('.search_input');
 const searchDropdown = document.querySelector('.search_dropdown');
 
 searchInput.addEventListener('focus', () => searchDropdown.classList.add('active'));
-searchInput.addEventListener('blur', () => searchDropdown.classList.remove('active'));
+handleClickOutside(document.querySelector('.search'), () => {
+  if (searchDropdown.classList.contains('active')) {
+    searchDropdown.classList.remove('active');
+  }
+});
 
 function debounce(func, delay) {
   let debounceTimer;

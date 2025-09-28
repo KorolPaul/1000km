@@ -52,5 +52,12 @@
     &:active {
       background-color: $cBrightLight;
     }
+
+    div {
+      color: $cGray;
+      font-size: 13px;
+      pointer-events: none;
+      margin-top: 5px;
+    }
   }
 }
