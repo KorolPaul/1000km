@@ -482,3 +482,14 @@ filtersMoreButtons.forEach((el) => {
     el.remove();
   });
 });
+
+const mobileFiltersToggles = document.querySelectorAll('.js-filters-toggle, .filters_submit');
+
+function toggleMobileMenu(e) {
+  e.preventDefault();
+
+  document.body.classList.toggle('filters-opened');
+}
+
+mobileFiltersToggles.forEach(el => el.addEventListener('click', toggleMobileMenu))
+

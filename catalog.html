@@ -799,705 +799,716 @@
     </section>
 
     <section class="catalog">
-      <div class="catalog_filters">
-        <form class="filters" >
-          <div class="compare-counter">
-            <a href="/compare/"><span class="compare-counter_title">Сравнение товаров</span></a>
-            <span class="compare-counter_count">0</span>
-            <button class="compare-counter_clear"></button>
-          </div>
-
-          <div class="filters_header">
-            <span class="filters_title">Фильтр</span>
-            <button class="filters_clear">Очистить</button>
-          </div>
-
-          <div class="filters_section">
-            <span class="filters_section-title">Стоимость (руб)</span>
-            <div class="filters_section-content">
-              <input type="text" placeholder="От">
-              <input type="text" placeholder="До">
-            </div>
-          </div>
-
-          <div class="filters_section">
-            <span class="filters_section-title">Производитель</span>
-            <div class="filters_section-content">
-              <input type="checkbox" name="manufacturer" id="manufacturer-1">
-              <label for="manufacturer-1">Addinol</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-2">
-              <label for="manufacturer-2">Aral</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-3">
-              <label for="manufacturer-3">Arctic</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-4">
-              <label for="manufacturer-4">Bizol</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-5">
-              <label for="manufacturer-5">BMW</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-6">
-              <label for="manufacturer-6">Bombardier</label>
-
-              <button class="filters_more">
-                Все варианты
-                <span class="filters_more-icon"></span>
-              </button>
-
-              <input type="checkbox" name="manufacturer" id="manufacturer-7">
-              <label for="manufacturer-7">Bizol</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-8">
-              <label for="manufacturer-8">BMW</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-9">
-              <label for="manufacturer-9">Bombardier</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-10">
-              <label for="manufacturer-10">Addinol</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-11">
-              <label for="manufacturer-11">Aral</label>
-              <input type="checkbox" name="manufacturer" id="manufacturer-12">
-              <label for="manufacturer-12">Arctic</label>
-            </div>
-          </div>
-
-          <div class="filters_section">
-            <span class="filters_section-title">Состав</span>
-            <div class="filters_section-content filters_section-content__wide">
-              <input type="checkbox" name="manufacturer" id="sostav-1">
-              <label for="sostav-1">Минеральное</label>
-              <input type="checkbox" name="manufacturer" id="sostav-2">
-              <label for="sostav-2">Полусинтетическое</label>
-              <input type="checkbox" name="manufacturer" id="sostav-3">
-              <label for="sostav-3">Синтетическое</label>
-            </div>
-          </div>
-
-          <div class="filters_section">
-            <span class="filters_section-title">Спецификация</span>
-            <div class="filters_section-content filters_section-content__wide">
-              <select name="" id="">
-                <option value="">OEM</option>
-                <option value="">ACEA</option>
-                <option value="">API</option>
-              </select>
-            </div>
-          </div>
-
-          <button class="filters_submit">Подобрать</button>
-        </form>
+      <div class="catalog_header">
+        <button class="catalog_header-button js-filters-toggle">Фильтры</button>
+        <select>
+          <option value="">Сначала дешевые</option>
+          <option value="">Сначала дорогие</option>
+        </select>
       </div>
 
-      <div class="catalog_content">
+      <div class="catalog_holder">
+        <div class="catalog_filters">
+          <form class="filters" >
+            <div class="compare-counter">
+              <a href="/compare/"><span class="compare-counter_title">Сравнение товаров</span></a>
+              <span class="compare-counter_count">0</span>
+              <button class="compare-counter_clear"></button>
+            </div>
 
-        <!--
-        <div class="tags">
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/aral/">Aral</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/bmw/">BMW</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/castrol/">Castrol (Кастрол)</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/comma/">Comma</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/falcon/">Falcon</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/febi/">Febi (Феби)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/felix/">Felix (Феликс)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/fuchs/">Fuchs</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/greencool/">GreenCool (Грин Кул)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/hepu/">Hepu (Хепу)</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/hyundai-kia/">Hyundai/Kia</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/kroon-oil/">Kroon-Oil</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/liquimoly/">LiquiMoly (Ликви Моли)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/lukoil/">Lukoil (Лукоил)</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/mannol/">Mannol</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/mercedes/">Mercedes (Мерседес)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/mitasu/">Mitasu</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/motul/">Motul (Мотюль)</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/nissan/">Nissan (Ниссан)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/patron/">Patron</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/polaris/">Polaris</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/ravenol/">Ravenol (Равенол)</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/shell/">Shell (Шелл)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/sibiria/">Sibiria (Сибириа)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/sintec/">Sintec (Синтек)</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/swag/">Swag</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/total/">Total (Тотал)</a>
-          <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/toyota/">Toyota (Тойота)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/wolf/">Wolf (Вольф)</a>
-          <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/x-freeze/">X-freeze (Икс-Фриз)</a>
+            <div class="filters_header">
+              <span class="filters_title">Фильтр</span>
+              <button class="filters_clear">Очистить</button>
+            </div>
+
+            <div class="filters_section">
+              <span class="filters_section-title">Стоимость (руб)</span>
+              <div class="filters_section-content">
+                <input type="text" placeholder="От">
+                <input type="text" placeholder="До">
+              </div>
+            </div>
+
+            <div class="filters_section">
+              <span class="filters_section-title">Производитель</span>
+              <div class="filters_section-content">
+                <input type="checkbox" name="manufacturer" id="manufacturer-1">
+                <label for="manufacturer-1">Addinol</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-2">
+                <label for="manufacturer-2">Aral</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-3">
+                <label for="manufacturer-3">Arctic</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-4">
+                <label for="manufacturer-4">Bizol</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-5">
+                <label for="manufacturer-5">BMW</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-6">
+                <label for="manufacturer-6">Bombardier</label>
+
+                <button class="filters_more">
+                  Все варианты
+                  <span class="filters_more-icon"></span>
+                </button>
+
+                <input type="checkbox" name="manufacturer" id="manufacturer-7">
+                <label for="manufacturer-7">Bizol</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-8">
+                <label for="manufacturer-8">BMW</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-9">
+                <label for="manufacturer-9">Bombardier</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-10">
+                <label for="manufacturer-10">Addinol</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-11">
+                <label for="manufacturer-11">Aral</label>
+                <input type="checkbox" name="manufacturer" id="manufacturer-12">
+                <label for="manufacturer-12">Arctic</label>
+              </div>
+            </div>
+
+            <div class="filters_section">
+              <span class="filters_section-title">Состав</span>
+              <div class="filters_section-content filters_section-content__wide">
+                <input type="checkbox" name="manufacturer" id="sostav-1">
+                <label for="sostav-1">Минеральное</label>
+                <input type="checkbox" name="manufacturer" id="sostav-2">
+                <label for="sostav-2">Полусинтетическое</label>
+                <input type="checkbox" name="manufacturer" id="sostav-3">
+                <label for="sostav-3">Синтетическое</label>
+              </div>
+            </div>
+
+            <div class="filters_section">
+              <span class="filters_section-title">Спецификация</span>
+              <div class="filters_section-content filters_section-content__wide">
+                <select name="" id="">
+                  <option value="">OEM</option>
+                  <option value="">ACEA</option>
+                  <option value="">API</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="filters_submit">Подобрать</button>
+          </form>
         </div>
-        -->
 
-        <div class="catalog_items">
-          <div class="product-card">
-            <span class="product-card_label">Новинка</span>
+        <div class="catalog_content">
 
-            <div class="product-card_content">
-              <div class="product-card_image-wrapper">
-                <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
-                <div class="product-card_compare">
-                  <input type="checkbox" name="compare" id="compare-1">
-                  <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
-                </div>
-              </div>
-              <div class="product-card_data">
-                <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
-
-                <div class="product-card_params">
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вязкость:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">10W-40</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Производитель:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Total</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Состав:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Полусинтетическое</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Объем, л:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">1</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вид топлива:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Бензин</span>
-                        <span class="product-card_param-value">Дизель</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация API:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">SN</span>
-                        <span class="product-card_param-value">CF</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация OEM:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">МВ 229.1</span>
-                        <span class="product-card_param-value">PSA B71 2300</span>
-                        <span class="product-card_param-value">PSA B71 2294</span>
-                        <span class="product-card_param-value">RENAULT RN 0700</span>
-                        <span class="product-card_param-value">VW 501.01</span>
-                        <span class="product-card_param-value">VW 505.00</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация ACEA:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">A3</span>
-                        <span class="product-card_param-value">B4</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="product-card_additional-info">
-                  <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="product-card_controls">
-              <span class="product-card_sku">Артикул: 81724091874091</span>
-
-              <div>
-                <div class="product-card_prices">
-                  <span class="product-card_old-price">163,92 руб</span>
-                  <span class="product-card_price">
-                    <span class="product-card_price-value">142,62</span> руб
-                    <span class="product-card_discount">-20%</span>
-                  </span>
-                  <span class="product-card_action">Акция до 12.05.2022</span>
-                  <span class="product-card_avalability">
-                    Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
-                  </span>
-                </div>
-
-                <div class="product-card_buttons">
-                  <div class="number-input">
-                    <button class="number-input_button number-input_button__minus"></button>
-                    <input type="text" class="number-input_input" value="1">
-                    <button class="number-input_button number-input_button__plus"></button>
-                  </div>
-
-                  <button class="product-card_button">
-                    <img src="src/img/cart-white.svg" alt="">
-                    В корзину
-                  </button>
-                </div>
-              </div>
-            </div>
+          <!--
+          <div class="tags">
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/aral/">Aral</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/bmw/">BMW</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/castrol/">Castrol (Кастрол)</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/comma/">Comma</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/falcon/">Falcon</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/febi/">Febi (Феби)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/felix/">Felix (Феликс)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/fuchs/">Fuchs</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/greencool/">GreenCool (Грин Кул)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/hepu/">Hepu (Хепу)</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/hyundai-kia/">Hyundai/Kia</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/kroon-oil/">Kroon-Oil</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/liquimoly/">LiquiMoly (Ликви Моли)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/lukoil/">Lukoil (Лукоил)</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/mannol/">Mannol</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/mercedes/">Mercedes (Мерседес)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/mitasu/">Mitasu</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/motul/">Motul (Мотюль)</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/nissan/">Nissan (Ниссан)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/patron/">Patron</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/polaris/">Polaris</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/ravenol/">Ravenol (Равенол)</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/shell/">Shell (Шелл)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/sibiria/">Sibiria (Сибириа)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/sintec/">Sintec (Синтек)</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/swag/">Swag</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/total/">Total (Тотал)</a>
+            <a class="tag" href="https://1000km.by/masla-i-avtohimiya/jidkosti-ohlajdayuschie/toyota/">Toyota (Тойота)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/wolf/">Wolf (Вольф)</a>
+            <a class="tag" href="https://1000km.by/jidkosti-ohlajdayuschie/x-freeze/">X-freeze (Икс-Фриз)</a>
           </div>
+          -->
 
-          <div class="product-card">
-            <span class="product-card_label">Новинка</span>
+          <div class="catalog_items">
+            <div class="product-card">
+              <span class="product-card_label">Новинка</span>
 
-            <div class="product-card_content">
-              <div class="product-card_image-wrapper">
-                <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
-                <div class="product-card_compare">
-                  <input type="checkbox" name="compare" id="compare-1">
-                  <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
+              <div class="product-card_content">
+                <div class="product-card_image-wrapper">
+                  <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
+                  <div class="product-card_compare">
+                    <input type="checkbox" name="compare" id="compare-1">
+                    <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
+                  </div>
+                </div>
+                <div class="product-card_data">
+                  <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
+
+                  <div class="product-card_params">
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вязкость:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">10W-40</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Производитель:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Total</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Состав:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Полусинтетическое</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Объем, л:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">1</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вид топлива:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Бензин</span>
+                          <span class="product-card_param-value">Дизель</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация API:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">SN</span>
+                          <span class="product-card_param-value">CF</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация OEM:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">МВ 229.1</span>
+                          <span class="product-card_param-value">PSA B71 2300</span>
+                          <span class="product-card_param-value">PSA B71 2294</span>
+                          <span class="product-card_param-value">RENAULT RN 0700</span>
+                          <span class="product-card_param-value">VW 501.01</span>
+                          <span class="product-card_param-value">VW 505.00</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация ACEA:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">A3</span>
+                          <span class="product-card_param-value">B4</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card_additional-info">
+                    <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
+                  </div>
                 </div>
               </div>
-              <div class="product-card_data">
-                <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
 
-                <div class="product-card_params">
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вязкость:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">10W-40</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Производитель:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Total</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Состав:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Полусинтетическое</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Объем, л:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">1</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вид топлива:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Бензин</span>
-                        <span class="product-card_param-value">Дизель</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация API:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">SN</span>
-                        <span class="product-card_param-value">CF</span>
-                      </div>
-                    </div>
+              <div class="product-card_controls">
+                <span class="product-card_sku">Артикул: 81724091874091</span>
+
+                <div>
+                  <div class="product-card_prices">
+                    <span class="product-card_old-price">163,92 руб</span>
+                    <span class="product-card_price">
+                      <span class="product-card_price-value">142,62</span> руб
+                      <span class="product-card_discount">-20%</span>
+                    </span>
+                    <span class="product-card_action">Акция до 12.05.2022</span>
+                    <span class="product-card_avalability">
+                      Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
+                    </span>
                   </div>
 
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация OEM:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">МВ 229.1</span>
-                        <span class="product-card_param-value">PSA B71 2300</span>
-                        <span class="product-card_param-value">PSA B71 2294</span>
-                        <span class="product-card_param-value">RENAULT RN 0700</span>
-                        <span class="product-card_param-value">VW 501.01</span>
-                        <span class="product-card_param-value">VW 505.00</span>
-                      </div>
+                  <div class="product-card_buttons">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
                     </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация ACEA:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">A3</span>
-                        <span class="product-card_param-value">B4</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="product-card_additional-info">
-                  <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
+                    <button class="product-card_button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="product-card_controls">
-              <span class="product-card_sku">Артикул: 81724091874091</span>
+            <div class="product-card">
+              <span class="product-card_label">Новинка</span>
 
-              <div>
-                <div class="product-card_buttons">
-                  <button class="product-card_show-price js-update-price">
-                    Показать цену
-                  </button>
+              <div class="product-card_content">
+                <div class="product-card_image-wrapper">
+                  <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
+                  <div class="product-card_compare">
+                    <input type="checkbox" name="compare" id="compare-1">
+                    <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+                <div class="product-card_data">
+                  <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
 
-          <div class="product-card">
-            <span class="product-card_label">Новинка</span>
+                  <div class="product-card_params">
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вязкость:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">10W-40</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Производитель:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Total</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Состав:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Полусинтетическое</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Объем, л:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">1</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вид топлива:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Бензин</span>
+                          <span class="product-card_param-value">Дизель</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация API:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">SN</span>
+                          <span class="product-card_param-value">CF</span>
+                        </div>
+                      </div>
+                    </div>
 
-            <div class="product-card_content">
-              <div class="product-card_image-wrapper">
-                <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
-                <div class="product-card_compare">
-                  <input type="checkbox" name="compare" id="compare-1">
-                  <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
-                </div>
-              </div>
-              <div class="product-card_data">
-                <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
-
-                <div class="product-card_params">
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вязкость:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">10W-40</span>
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация OEM:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">МВ 229.1</span>
+                          <span class="product-card_param-value">PSA B71 2300</span>
+                          <span class="product-card_param-value">PSA B71 2294</span>
+                          <span class="product-card_param-value">RENAULT RN 0700</span>
+                          <span class="product-card_param-value">VW 501.01</span>
+                          <span class="product-card_param-value">VW 505.00</span>
+                        </div>
                       </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Производитель:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Total</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Состав:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Полусинтетическое</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Объем, л:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">1</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вид топлива:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Бензин</span>
-                        <span class="product-card_param-value">Дизель</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация API:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">SN</span>
-                        <span class="product-card_param-value">CF</span>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация ACEA:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">A3</span>
+                          <span class="product-card_param-value">B4</span>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация OEM:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">МВ 229.1</span>
-                        <span class="product-card_param-value">PSA B71 2300</span>
-                        <span class="product-card_param-value">PSA B71 2294</span>
-                        <span class="product-card_param-value">RENAULT RN 0700</span>
-                        <span class="product-card_param-value">VW 501.01</span>
-                        <span class="product-card_param-value">VW 505.00</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация ACEA:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">A3</span>
-                        <span class="product-card_param-value">B4</span>
-                      </div>
-                    </div>
+                  <div class="product-card_additional-info">
+                    <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
                   </div>
-                </div>
-
-                <div class="product-card_additional-info">
-                  <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
                 </div>
               </div>
-            </div>
 
-            <div class="product-card_controls">
-              <span class="product-card_sku">Артикул: 81724091874091</span>
+              <div class="product-card_controls">
+                <span class="product-card_sku">Артикул: 81724091874091</span>
 
-              <div>
-                <div class="product-card_prices">
-                  <span class="product-card_old-price">163,92 руб</span>
-                  <span class="product-card_price">
-                    <span class="product-card_price-value">142,62</span> руб
-                    <span class="product-card_discount">-20%</span>
-                  </span>
-                  <span class="product-card_action">Акция до 12.05.2022</span>
-                  <span class="product-card_avalability">
-                    Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
-                  </span>
-                </div>
-
-                <div class="product-card_buttons">
-                  <div class="number-input">
-                    <button class="number-input_button number-input_button__minus"></button>
-                    <input type="text" class="number-input_input" value="1">
-                    <button class="number-input_button number-input_button__plus"></button>
+                <div>
+                  <div class="product-card_buttons">
+                    <button class="product-card_show-price js-update-price">
+                      Показать цену
+                    </button>
                   </div>
-
-                  <button class="product-card_button">
-                    <img src="src/img/cart-white.svg" alt="">
-                    В корзину
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <span class="product-card_label">Новинка</span>
-
-            <div class="product-card_content">
-              <div class="product-card_image-wrapper">
-                <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
-                <div class="product-card_compare">
-                  <input type="checkbox" name="compare" id="compare-1">
-                  <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
-                </div>
-              </div>
-              <div class="product-card_data">
-                <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
-
-                <div class="product-card_params">
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вязкость:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">10W-40</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Производитель:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Total</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Состав:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Полусинтетическое</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Объем, л:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">1</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вид топлива:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Бензин</span>
-                        <span class="product-card_param-value">Дизель</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация API:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">SN</span>
-                        <span class="product-card_param-value">CF</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация OEM:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">МВ 229.1</span>
-                        <span class="product-card_param-value">PSA B71 2300</span>
-                        <span class="product-card_param-value">PSA B71 2294</span>
-                        <span class="product-card_param-value">RENAULT RN 0700</span>
-                        <span class="product-card_param-value">VW 501.01</span>
-                        <span class="product-card_param-value">VW 505.00</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация ACEA:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">A3</span>
-                        <span class="product-card_param-value">B4</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="product-card_additional-info">
-                  <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
                 </div>
               </div>
             </div>
 
-            <div class="product-card_controls">
-              <span class="product-card_sku">Артикул: 81724091874091</span>
+            <div class="product-card">
+              <span class="product-card_label">Новинка</span>
 
-              <div>
-                <div class="product-card_prices">
-                  <span class="product-card_old-price">163,92 руб</span>
-                  <span class="product-card_price">
-                    <span class="product-card_price-value">142,62</span> руб
-                    <span class="product-card_discount">-20%</span>
-                  </span>
-                  <span class="product-card_action">Акция до 12.05.2022</span>
-                  <span class="product-card_avalability">
-                    Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
-                  </span>
+              <div class="product-card_content">
+                <div class="product-card_image-wrapper">
+                  <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
+                  <div class="product-card_compare">
+                    <input type="checkbox" name="compare" id="compare-1">
+                    <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
+                  </div>
                 </div>
+                <div class="product-card_data">
+                  <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
 
-                <div class="product-card_buttons">
-                  <div class="number-input">
-                    <button class="number-input_button number-input_button__minus"></button>
-                    <input type="text" class="number-input_input" value="1">
-                    <button class="number-input_button number-input_button__plus"></button>
+                  <div class="product-card_params">
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вязкость:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">10W-40</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Производитель:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Total</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Состав:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Полусинтетическое</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Объем, л:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">1</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вид топлива:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Бензин</span>
+                          <span class="product-card_param-value">Дизель</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация API:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">SN</span>
+                          <span class="product-card_param-value">CF</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация OEM:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">МВ 229.1</span>
+                          <span class="product-card_param-value">PSA B71 2300</span>
+                          <span class="product-card_param-value">PSA B71 2294</span>
+                          <span class="product-card_param-value">RENAULT RN 0700</span>
+                          <span class="product-card_param-value">VW 501.01</span>
+                          <span class="product-card_param-value">VW 505.00</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация ACEA:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">A3</span>
+                          <span class="product-card_param-value">B4</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <button class="product-card_button">
-                    <img src="src/img/cart-white.svg" alt="">
-                    В корзину
-                  </button>
+                  <div class="product-card_additional-info">
+                    <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card_controls">
+                <span class="product-card_sku">Артикул: 81724091874091</span>
+
+                <div>
+                  <div class="product-card_prices">
+                    <span class="product-card_old-price">163,92 руб</span>
+                    <span class="product-card_price">
+                      <span class="product-card_price-value">142,62</span> руб
+                      <span class="product-card_discount">-20%</span>
+                    </span>
+                    <span class="product-card_action">Акция до 12.05.2022</span>
+                    <span class="product-card_avalability">
+                      Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
+                    </span>
+                  </div>
+
+                  <div class="product-card_buttons">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="product-card_button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="product-card">
-            <span class="product-card_label">Новинка</span>
+            <div class="product-card">
+              <span class="product-card_label">Новинка</span>
 
-            <div class="product-card_content">
-              <div class="product-card_image-wrapper">
-                <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
-                <div class="product-card_compare">
-                  <input type="checkbox" name="compare" id="compare-1">
-                  <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
+              <div class="product-card_content">
+                <div class="product-card_image-wrapper">
+                  <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
+                  <div class="product-card_compare">
+                    <input type="checkbox" name="compare" id="compare-1">
+                    <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
+                  </div>
+                </div>
+                <div class="product-card_data">
+                  <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
+
+                  <div class="product-card_params">
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вязкость:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">10W-40</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Производитель:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Total</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Состав:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Полусинтетическое</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Объем, л:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">1</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вид топлива:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Бензин</span>
+                          <span class="product-card_param-value">Дизель</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация API:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">SN</span>
+                          <span class="product-card_param-value">CF</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация OEM:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">МВ 229.1</span>
+                          <span class="product-card_param-value">PSA B71 2300</span>
+                          <span class="product-card_param-value">PSA B71 2294</span>
+                          <span class="product-card_param-value">RENAULT RN 0700</span>
+                          <span class="product-card_param-value">VW 501.01</span>
+                          <span class="product-card_param-value">VW 505.00</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация ACEA:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">A3</span>
+                          <span class="product-card_param-value">B4</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card_additional-info">
+                    <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
+                  </div>
                 </div>
               </div>
-              <div class="product-card_data">
-                <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
 
-                <div class="product-card_params">
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вязкость:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">10W-40</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Производитель:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Total</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Состав:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Полусинтетическое</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Объем, л:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">1</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Вид топлива:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">Бензин</span>
-                        <span class="product-card_param-value">Дизель</span>
-                      </div>
-                    </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация API:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">SN</span>
-                        <span class="product-card_param-value">CF</span>
-                      </div>
-                    </div>
+              <div class="product-card_controls">
+                <span class="product-card_sku">Артикул: 81724091874091</span>
+
+                <div>
+                  <div class="product-card_prices">
+                    <span class="product-card_old-price">163,92 руб</span>
+                    <span class="product-card_price">
+                      <span class="product-card_price-value">142,62</span> руб
+                      <span class="product-card_discount">-20%</span>
+                    </span>
+                    <span class="product-card_action">Акция до 12.05.2022</span>
+                    <span class="product-card_avalability">
+                      Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
+                    </span>
                   </div>
 
-                  <div class="product-card_params-column">
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация OEM:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">МВ 229.1</span>
-                        <span class="product-card_param-value">PSA B71 2300</span>
-                        <span class="product-card_param-value">PSA B71 2294</span>
-                        <span class="product-card_param-value">RENAULT RN 0700</span>
-                        <span class="product-card_param-value">VW 501.01</span>
-                        <span class="product-card_param-value">VW 505.00</span>
-                      </div>
+                  <div class="product-card_buttons">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
                     </div>
-                    <div class="product-card_param">
-                      <span class="product-card_param-title">Спецификация ACEA:</span>
-                      <div class="product-card_param-values">
-                        <span class="product-card_param-value">A3</span>
-                        <span class="product-card_param-value">B4</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="product-card_additional-info">
-                  <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
+                    <button class="product-card_button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="product-card_controls">
-              <span class="product-card_sku">Артикул: 81724091874091</span>
+            <div class="product-card">
+              <span class="product-card_label">Новинка</span>
 
-              <div>
-                <div class="product-card_prices">
-                  <span class="product-card_old-price">163,92 руб</span>
-                  <span class="product-card_price">
-                    <span class="product-card_price-value">142,62</span> руб
-                    <span class="product-card_discount">-20%</span>
-                  </span>
-                  <span class="product-card_action">Акция до 12.05.2022</span>
-                  <span class="product-card_avalability">
-                    Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
-                  </span>
+              <div class="product-card_content">
+                <div class="product-card_image-wrapper">
+                  <img class="product-card_image" src="src/img/temp/product-card-1.png" alt="">
+                  <div class="product-card_compare">
+                    <input type="checkbox" name="compare" id="compare-1">
+                    <label for="compare-1"><span class="product-card_compare-desktop">Добавить </span>к сравнению</label>
+                  </div>
                 </div>
+                <div class="product-card_data">
+                  <h3 class="product-card_title">Масло моторное QUARTZ 7000 ENERGY 10W-40, 1L</h3>
 
-                <div class="product-card_buttons">
-                  <div class="number-input">
-                    <button class="number-input_button number-input_button__minus"></button>
-                    <input type="text" class="number-input_input" value="1">
-                    <button class="number-input_button number-input_button__plus"></button>
+                  <div class="product-card_params">
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вязкость:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">10W-40</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Производитель:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Total</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Состав:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Полусинтетическое</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Объем, л:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">1</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Вид топлива:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">Бензин</span>
+                          <span class="product-card_param-value">Дизель</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация API:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">SN</span>
+                          <span class="product-card_param-value">CF</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="product-card_params-column">
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация OEM:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">МВ 229.1</span>
+                          <span class="product-card_param-value">PSA B71 2300</span>
+                          <span class="product-card_param-value">PSA B71 2294</span>
+                          <span class="product-card_param-value">RENAULT RN 0700</span>
+                          <span class="product-card_param-value">VW 501.01</span>
+                          <span class="product-card_param-value">VW 505.00</span>
+                        </div>
+                      </div>
+                      <div class="product-card_param">
+                        <span class="product-card_param-title">Спецификация ACEA:</span>
+                        <div class="product-card_param-values">
+                          <span class="product-card_param-value">A3</span>
+                          <span class="product-card_param-value">B4</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <button class="product-card_button">
-                    <img src="src/img/cart-white.svg" alt="">
-                    В корзину
-                  </button>
+                  <div class="product-card_additional-info">
+                    <span><strong>Дополнительно:</strong> моторное масло от производителя</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card_controls">
+                <span class="product-card_sku">Артикул: 81724091874091</span>
+
+                <div>
+                  <div class="product-card_prices">
+                    <span class="product-card_old-price">163,92 руб</span>
+                    <span class="product-card_price">
+                      <span class="product-card_price-value">142,62</span> руб
+                      <span class="product-card_discount">-20%</span>
+                    </span>
+                    <span class="product-card_action">Акция до 12.05.2022</span>
+                    <span class="product-card_avalability">
+                      Срок поставки: <span class="product-card_avalability-value product-card_avalability-value__in-stock">В наличии</span>
+                    </span>
+                  </div>
+
+                  <div class="product-card_buttons">
+                    <div class="number-input">
+                      <button class="number-input_button number-input_button__minus"></button>
+                      <input type="text" class="number-input_input" value="1">
+                      <button class="number-input_button number-input_button__plus"></button>
+                    </div>
+
+                    <button class="product-card_button">
+                      <img src="src/img/cart-white.svg" alt="">
+                      В корзину
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <button class="catalog_more">
-            Показать еще
-          </button>
+            <button class="catalog_more">
+              Показать еще
+            </button>
 
-          <div class="pagination">
-            <a href="#" class="pagination_link active">1</a>
-            <a href="#" class="pagination_link">2</a>
-            <a href="#" class="pagination_link">3</a>
-            <a href="#" class="pagination_link">4</a>
-            <a href="#" class="pagination_link">5</a>
-            <a href="#" class="pagination_link">6</a>
-            <span class="pagination_link">...</span>
-            <a href="#" class="pagination_link">34</a>
+            <div class="pagination">
+              <a href="#" class="pagination_link active">1</a>
+              <a href="#" class="pagination_link">2</a>
+              <a href="#" class="pagination_link">3</a>
+              <a href="#" class="pagination_link">4</a>
+              <a href="#" class="pagination_link">5</a>
+              <a href="#" class="pagination_link">6</a>
+              <span class="pagination_link">...</span>
+              <a href="#" class="pagination_link">34</a>
+            </div>
           </div>
         </div>
       </div>
+
     </section>
 
     <section class="catalog-bottom">
