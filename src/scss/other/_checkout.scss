@@ -59,4 +59,15 @@
       font-weight: 700;
     }
   }
+
+  &_loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    .spinner {
+      width: 25px;
+    }
+  }
 }

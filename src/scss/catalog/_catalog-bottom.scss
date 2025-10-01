@@ -1,3 +1,10 @@
 .catalog-bottom {
   @include layout;
+
+  .car-brands + & {
+    margin-top: 20px;
+    @include tablet {
+      margin-top: 40px;
+    }
+  }
 }

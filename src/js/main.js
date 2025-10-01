@@ -408,10 +408,10 @@ const addCarButton = document.querySelectorAll('.js-cars-add-car');
 addCarButton.forEach((el) => el.addEventListener('click', () => document.querySelector('.car-finder.hidden')?.classList.remove('hidden')));
 
 /* map popup */
-const locationButton = document.querySelector('.location');
-locationButton.addEventListener('click', () => {
+const locationButtons = document.querySelectorAll('.js-map-toggle');
+locationButtons.forEach(el => el.addEventListener('click', () => {
   togglePopup(document.querySelector('.js-map-popup'));
-});
+}));
 
 
 /* search in header */
