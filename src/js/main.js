@@ -132,6 +132,41 @@ function toggleFakeSelect(e) {
 
 fakeSelects.forEach((el => el.addEventListener('click', toggleFakeSelect)));
 
+/* add product to cart */
+
+async function addProductToCart(e) {
+  e.preventDefault();
+
+  const id = e.target.dataset['id'];
+  const formData = new FormData();
+  // formData.append('art', art);
+  // formData.append('brand', brand);
+  formData.append('id', id);
+
+  const responce = await fetch('/cart/add-to-cart/', {
+    method: 'POST',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    },
+    body: formData,
+  });
+// debugger;
+//   const data = await responce.json();
+  // if (data) {
+  //   document.querySelector('[data-artbrand=' + artbrand + ']').innerHTML = data.data.html;
+  // }
+
+}
+
+function addCartButtonEvents() {
+  const addCartButtons = document.querySelectorAll('.add-to-cart');
+  console.log(1, addCartButtons);
+
+  addCartButtons.forEach((el) => el.addEventListener('click', addProductToCart));
+}
+
+addCartButtonEvents();
+
 /* category page */
 const updatePriceButtons = document.querySelectorAll('.js-update-price');
 
@@ -142,6 +177,7 @@ async function loadPrice(e) {
   const art = e.target.dataset['art'];
   const brand = e.target.dataset['brand'];
   const artbrand = e.target.dataset['artbrand'];
+  const pdp = e.target.dataset.hasOwnProperty('pdp') ? e.target.dataset['pdp'] : 0;
 
   cardControls.classList.add('loading');
 
@@ -149,6 +185,7 @@ async function loadPrice(e) {
   formData.append('art', art);
   formData.append('brand', brand);
   formData.append('artbrand', artbrand);
+  formData.append('pdp', pdp);
 
   const responce = await fetch('/service-request/get-price/', {
     method: 'POST',
@@ -160,7 +197,8 @@ async function loadPrice(e) {
 // debugger;
   const data = await responce.json();
   if (data) {
-    document.querySelector('[data-artbrand=' + artbrand + ']').innerHTML = data.data.html;
+    document.querySelector('[data-artbrand="' + artbrand + '"]').innerHTML = data.data.html;
+    addCartButtonEvents();
   }
 
   cardControls.classList.remove('loading');
@@ -200,7 +238,9 @@ function generateOptions(target, data) {
 
   data.forEach((item) => nextPopup.appendChild(createItem(item)));
 
-  toggleFakeSelect({ target: nextPopup?.previousElementSibling });
+  setTimeout(() => {
+    toggleFakeSelect({ target: nextPopup?.previousElementSibling });
+  }, 100);
 }
 
 async function handleSelectCarFinderOption(e) {
@@ -319,7 +359,7 @@ async function handleSelectCarFinderOption(e) {
         },
         body: formData,
       });
-      //window.location.reload(true);
+      window.location.reload(true);
       data = await engineResponce.json();
       break;
   }
@@ -389,11 +429,7 @@ const searchInput = document.querySelector('.search_input');
 const searchDropdown = document.querySelector('.search_dropdown');
 
 searchInput.addEventListener('focus', () => searchDropdown.classList.add('active'));
-handleClickOutside(document.querySelector('.search'), () => {
-  if (searchDropdown.classList.contains('active')) {
-    searchDropdown.classList.remove('active');
-  }
-});
+searchInput.addEventListener('blur', () => searchDropdown.classList.remove('active'));
 
 function debounce(func, delay) {
   let debounceTimer;
@@ -416,19 +452,33 @@ const debouncedSearchCallback = debounce(async () => {
 
   }, 1000);
 
-  // тут, офицер, вместо таймаута будет загрузка нужных данных, такого плана:
+  const formData = new FormData();
+  const inputValue = document.querySelector('input[name="q"]').value;
+  formData.append('q', inputValue);
+  formData.append('ajax', 1);
 
-  // await fetch('/car-ajax/get-body-by-year-mark-models/', {
-  //   method: 'POST',
-  //   headers: {
-  //     'X-Requested-With': 'XMLHttpRequest'
-  //   },
-  //   body: formData,
-  // });
-  // data = await bodyResponce.json();
+  const params = new URLSearchParams(formData).toString();
 
-  // и генерация нового хтмл-а с данными
+  const response = await fetch('/search/index/?'+ params, {
+    method: 'GET',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    }
+  });
 
-}, 500);
+  if (response.ok) {
+    html = await response.text();
+    document.getElementById('searchResult').innerHTML = html;
+  }
+
+}, 400);
 
 searchInput.addEventListener('input', debouncedSearchCallback);
+
+/* filters */
+const filtersMoreButtons = document.querySelectorAll('.filters_more');
+filtersMoreButtons.forEach((el) => {
+  el.addEventListener('click', function(e) {
+    el.remove();
+  });
+});

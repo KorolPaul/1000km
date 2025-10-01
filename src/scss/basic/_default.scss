@@ -107,3 +107,7 @@ article:not([class]) {
   font-size: 18px;
   letter-spacing: 1px;
 }
+
+select {
+  max-width: 100%;
+}

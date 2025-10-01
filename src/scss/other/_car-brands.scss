@@ -77,4 +77,17 @@
     width: 100%;
     object-fit: contain;
   }
+
+  td {
+    padding: 6px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      text-align: right;
+    }
+  }
 }

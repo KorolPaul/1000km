@@ -8,4 +8,12 @@
     flex-direction: row;
     gap: 40px;
   }
+
+  select {
+    width: 100%;
+  }
+
+  select + .location {
+    margin-top: 10px;
+  }
 }

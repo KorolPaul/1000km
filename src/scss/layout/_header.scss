@@ -188,6 +188,14 @@
       position: static;
       filter: none;
     }
+
+    img {
+      transition: .2s $easing filter;
+    }
+
+    &:hover img {
+      filter: grayscale(1) brightness(10);
+    }
   }
 
   &_cart-button-count {

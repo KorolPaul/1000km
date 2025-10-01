@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  padding-top: 20px;
   @include tablet {
     flex-direction: row;
     gap: 70px;
@@ -369,6 +370,24 @@
       background-color: $cLight;
       border-radius: 5px;
       padding: 32px 40px;
+    }
+  }
+
+  &_buy {
+    position: relative;
+
+    .loading & {
+      opacity: .5;
+
+      &::after {
+        content: '';
+        @include spinner;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+      }
     }
   }
 }
