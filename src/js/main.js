@@ -168,43 +168,47 @@ function addCartButtonEvents() {
 addCartButtonEvents();
 
 /* category page */
-const updatePriceButtons = document.querySelectorAll('.js-update-price');
+function addUpdatePriceEvents() {
+  const updatePriceButtons = document.querySelectorAll('.js-update-price');
 
-async function loadPrice(e) {
-  e.preventDefault();
+  async function loadPrice(e) {
+    e.preventDefault();
 
-  const cardControls = e.target.parentElement.parentElement.parentElement;
-  const art = e.target.dataset['art'];
-  const brand = e.target.dataset['brand'];
-  const artbrand = e.target.dataset['artbrand'];
-  const pdp = e.target.dataset.hasOwnProperty('pdp') ? e.target.dataset['pdp'] : 0;
+    const cardControls = e.target.parentElement.parentElement.parentElement;
+    const art = e.target.dataset['art'];
+    const brand = e.target.dataset['brand'];
+    const artbrand = e.target.dataset['artbrand'];
+    const pdp = e.target.dataset.hasOwnProperty('pdp') ? e.target.dataset['pdp'] : 0;
 
-  cardControls.classList.add('loading');
+    cardControls.classList.add('loading');
 
-  const formData = new FormData();
-  formData.append('art', art);
-  formData.append('brand', brand);
-  formData.append('artbrand', artbrand);
-  formData.append('pdp', pdp);
+    const formData = new FormData();
+    formData.append('art', art);
+    formData.append('brand', brand);
+    formData.append('artbrand', artbrand);
+    formData.append('pdp', pdp);
 
-  const responce = await fetch('/service-request/get-price/', {
-    method: 'POST',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest'
-    },
-    body: formData,
-  });
-// debugger;
-  const data = await responce.json();
-  if (data) {
-    document.querySelector('[data-artbrand="' + artbrand + '"]').innerHTML = data.data.html;
-    addCartButtonEvents();
+    const responce = await fetch('/service-request/get-price/', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: formData,
+    });
+  // debugger;
+    const data = await responce.json();
+    if (data) {
+      document.querySelector('[data-artbrand="' + artbrand + '"]').innerHTML = data.data.html;
+      addCartButtonEvents();
+    }
+
+    cardControls.classList.remove('loading');
   }
 
-  cardControls.classList.remove('loading');
+  updatePriceButtons.forEach((el) => el.addEventListener('click', loadPrice));
 }
 
-updatePriceButtons.forEach((el) => el.addEventListener('click', loadPrice));
+addUpdatePriceEvents();
 
 
 /* Car finder */
@@ -397,6 +401,15 @@ const carsInPopup = document.querySelectorAll('.car-finder_my-cars-popup .car-fi
 function selectCarFromPopup(e) {
   const { currentTarget } = e;
 
+  console.log(e.target);
+
+
+  if (e.target.classList.contains('car-finder_delete')) {
+    console.log(22);
+
+    return;
+  }
+
   document.querySelector('.car-finder_result-car').innerHTML = currentTarget.querySelector('.car-finder_result-car-content').innerHTML;
   currentTarget.querySelector('input').checked = true;
   closePopup();
@@ -429,7 +442,11 @@ const searchInput = document.querySelector('.search_input');
 const searchDropdown = document.querySelector('.search_dropdown');
 
 searchInput.addEventListener('focus', () => searchDropdown.classList.add('active'));
-searchInput.addEventListener('blur', () => searchDropdown.classList.remove('active'));
+handleClickOutside(document.querySelector('.search'), () => {
+  if (searchDropdown.classList.contains('active')) {
+    searchDropdown.classList.remove('active');
+  }
+});
 
 function debounce(func, delay) {
   let debounceTimer;
@@ -475,6 +492,7 @@ const debouncedSearchCallback = debounce(async () => {
 
 searchInput.addEventListener('input', debouncedSearchCallback);
 
+
 /* filters */
 const filtersMoreButtons = document.querySelectorAll('.filters_more');
 filtersMoreButtons.forEach((el) => {
@@ -483,7 +501,7 @@ filtersMoreButtons.forEach((el) => {
   });
 });
 
-const mobileFiltersToggles = document.querySelectorAll('.js-filters-toggle, .filters_submit');
+const mobileFiltersToggles = document.querySelectorAll('.js-filters-toggle');
 
 function toggleMobileMenu(e) {
   e.preventDefault();
@@ -491,5 +509,48 @@ function toggleMobileMenu(e) {
   document.body.classList.toggle('filters-opened');
 }
 
-mobileFiltersToggles.forEach(el => el.addEventListener('click', toggleMobileMenu))
+mobileFiltersToggles.forEach(el => el.addEventListener('click', toggleMobileMenu));
+
+async function handleFilterClick(e) {
+  const url = e.target.dataset.url;
+
+  if (!url) {
+    return;
+  }
+
+  window.history.pushState({}, '', window.location.origin + url);
+
+  const response = await fetch(url);
+  const html = await response.text();
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+
+  const filtersElement = doc.querySelector('.filters');
+  const contentElement = doc.querySelector('.catalog_content');
+
+  document.querySelector('.filters').innerHTML = filtersElement.innerHTML;
+  document.querySelector('.catalog_content').innerHTML = contentElement.innerHTML;
+
+  document.querySelector('head title').innerText = doc.querySelector('head title').innerText;
+  document.querySelector('meta[name="keywords"]').content = doc.querySelector('meta[name="keywords"]').content;
+  document.querySelector('meta[name="description"]').content = doc.querySelector('meta[name="description"]').content;
+
+  document.querySelector('.catalog-head h1').innerHTML = doc.querySelector('.catalog-head h1').innerHTML;
+
+  initFilterHandlers();
+  addCartButtonEvents();
+  addUpdatePriceEvents();
+}
+
+function initFilterHandlers() {
+  document.querySelector('.filters_submit')?.addEventListener('click', toggleMobileMenu);
+
+  const filterCheckboxes = document.querySelectorAll('.filters input[type="checkbox"]');
+  filterCheckboxes.forEach((el) => el.addEventListener('change', handleFilterClick));
+}
+
+initFilterHandlers();
+
+
 

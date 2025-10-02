@@ -30,9 +30,16 @@
     @include tablet {
       max-height: 300px;
     }
+    @include desktop {
+      left: -150px;
+      width: auto;
+      right: -150px;
+    }
 
     &.active {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
   }
 

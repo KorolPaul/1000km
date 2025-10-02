@@ -129,7 +129,10 @@
     }
   }
 
-  &_result-car-content {
+  &_result-car-content[class] {
+    padding-left: 10px;
+    width: calc(100% - 34px);
+
     .car-finder_my-cars-popup & a + div {
       flex-grow: 1;
     }
@@ -159,13 +162,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
-
-
   }
 
   &_result-image {
     height: 80px;
+    margin-left: -10px;
+  }
+
+  &_result-image-wrapper {
+    flex-shrink: 0;
   }
 
   &_result-title {
@@ -173,7 +178,29 @@
     margin: 0;
   }
 
-  &_result-test {
+  &_result-text {
     color: $cGray;
+    line-height: 1.3;
+  }
+
+  &_delete {
+    @include button-reset;
+    height: 17px;
+    width: 16px;
+    background: url(#{$img}/trash.svg) no-repeat center;
+    filter: grayscale(1);
+    opacity: 0.3;
+    transition: .2s $easing opacity,
+                .2s $easing filter;
+
+    &:hover {
+      filter: grayscale(0);
+      opacity: .7;
+    }
+
+    &:active {
+      filter: grayscale(0);
+      opacity: .5;
+    }
   }
 }

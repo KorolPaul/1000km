@@ -1,16 +1,16 @@
 .fade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    transition: .3s $easing background;
-    
-    .popup-opened & {
-        background-color: rgba(0, 0, 0, 0.6);
-        pointer-events: all;
-        z-index: 100;
-        backdrop-filter: blur(10px);
-    }
-} 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  transition: .3s $easing background;
+
+  .popup-opened .opened & {
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: all;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+}
