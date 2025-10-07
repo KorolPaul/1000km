@@ -1,13 +1,17 @@
 .location {
   color: $cGray;
-  font-size: 15px;
-  display: none;
+  display: flex;
   align-items: flex-end;
   gap: 6px;
+  font-size: 0;
   cursor: pointer;
+  position: absolute;
+  top: 24px;
+  right: 178px;
   @include tablet {
-    display: flex;
+    font-size: 15px;
     flex-shrink: 0;
+    position: static;
   }
 
   &:hover {
@@ -21,10 +25,20 @@
     display: block;
     position: relative;
     bottom: 2px;
+    width: 16px;
+    filter: brightness(0.8);
+    @include tablet {
+      width: 12px;
+      filter: none;
+    }
   }
 
   sup {
+    display: none;
     font-size: 13px;
     top: -13px;
+    @include tablet {
+      display: inline;
+    }
   }
 }

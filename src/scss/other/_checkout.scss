@@ -21,9 +21,12 @@
   &_section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     padding: 0;
     border: none;
+  }
+
+  &_field {
+    margin-bottom: 10px;
   }
 
   &_section-title {

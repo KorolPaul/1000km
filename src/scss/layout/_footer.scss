@@ -7,7 +7,7 @@
     @include layout;
     font-size: 14px;
     line-height: 20px;
-    color: $cBlackLight;
+    color: rgba($cBlackLight, .5);
     padding-top: 20px;
     padding-bottom: 24px;
     @include tablet {

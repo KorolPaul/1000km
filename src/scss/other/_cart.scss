@@ -44,6 +44,7 @@
     @include button-reset;
     height: 17px;
     width: 16px;
+    display: inline-block;
     background: url(#{$img}/trash.svg) no-repeat center;
     filter: grayscale(1);
     opacity: 0.3;
