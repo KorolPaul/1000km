@@ -13,6 +13,11 @@
     text-align: center;
     display: block;
     padding: 10px 0 0;
+    margin: auto;
+
+    a {
+      color: $cBright;
+    }
   }
 
   form {
@@ -35,5 +40,9 @@
 
   input {
     border-color: $cGray;
+
+    &[name="sms_code"] {
+      text-align: center;
+    }
   }
 }

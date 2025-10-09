@@ -21,12 +21,17 @@
   &_section {
     display: flex;
     flex-direction: column;
+    gap: 16px;
     padding: 0;
     border: none;
+
+    .form_row {
+      margin: 0;
+    }
   }
 
   &_field {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   &_section-title {
@@ -88,4 +93,8 @@
       padding-left: 0;
     }
   }
+}
+
+.extra-data-pickup {
+  margin: 14px 0 0;
 }

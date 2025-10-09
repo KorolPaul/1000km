@@ -20,6 +20,7 @@
     display: none;
     @include desktop {
       padding: 0;
+      top: 180px;
     }
 
     .opened & {
@@ -131,6 +132,10 @@
   &_category-link {
     font-size: 18px;
     color: $cBlackLight;
+
+    &.active {
+      font-weight: bold;
+    }
   }
 
   &_subcategory {

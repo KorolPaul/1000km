@@ -20,6 +20,7 @@
     left: 0;
     top: 100%;
     width: 100%;
+    box-sizing: border-box;
     background-color: $cLight;
     padding: 20px 25px 25px;
     display: flex;
@@ -38,11 +39,14 @@
 
   &_value {
     padding: 15px;
-    width: 12.5%;
+    width: 20%;
     border-radius: 4px;
     cursor: pointer;
     transition: .2s $easing background,
                 .2s $easing color;
+    @include tablet {
+      width: 12.5%;
+    }
 
     &:hover {
       background-color: $cBright;

@@ -62,8 +62,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 8px;
     position: relative;
+    @include tablet {
+      gap: 32px;
+    }
   }
 
   &_result {
@@ -141,10 +144,6 @@
   &_result-buttons {
     display: flex;
     gap: 16px;
-    flex-direction: column;
-    @include desktop {
-      flex-direction: row
-    }
   }
 
   &_my-cars {
@@ -173,6 +172,14 @@
     flex-shrink: 0;
   }
 
+  &_result-content {
+    position: relative;
+    padding-right: 20px;
+    @include tablet {
+      padding-right: 0;
+    }
+  }
+
   &_result-title {
     font-size: 20px;
     margin: 0;
@@ -190,8 +197,15 @@
     background: url(#{$img}/trash.svg) no-repeat center;
     filter: grayscale(1);
     opacity: 0.3;
+    position: absolute;
+    right: 14px;
+    bottom: 40px;
+    flex-shrink: 0;
     transition: .2s $easing opacity,
                 .2s $easing filter;
+    @include tablet {
+      position: static;
+    }
 
     &:hover {
       filter: grayscale(0);

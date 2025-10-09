@@ -15,13 +15,17 @@
   gap: 10px;
   font-size: 16px;
   line-height: 1;
-  padding: 11px 30px;
+  padding: 11px 15px;
   font-family: $font-family;
   min-width: 140px;
   width: 100%;
   transition: .3s $easing background,
               .2s $easing color,
               .2s $easing border-color;
+  @include media(420px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   @include tablet {
     width: auto;
   }

@@ -3,9 +3,11 @@
   display: flex;
   gap: 40px;
   flex-direction: column;
+  margin-bottom: 20px;
   @include tablet {
     flex-direction: row;
     gap: 150px;
+    margin-bottom: 40px;
   }
 
   &_navigation {

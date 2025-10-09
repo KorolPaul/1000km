@@ -28,7 +28,7 @@
     z-index: 3;
     display: none;
     @include tablet {
-      max-height: 300px;
+      max-height: 360px;
     }
     @include desktop {
       left: -150px;
@@ -39,7 +39,7 @@
     &.active {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
   }
 
@@ -74,6 +74,14 @@
     align-items: center;
     gap: 6px;
     padding: 0 12px;
+
+    &__category {
+      margin-bottom: 14px;
+    }
+
+    &__category + &__category {
+      margin-top: -14px;
+    }
   }
 
   &_dropdown-item-icon {
