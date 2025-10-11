@@ -45,6 +45,30 @@
   &_holder {
     display: flex;
     gap: 60px;
+    position: relative;
+
+    &.loading {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+
+      &::after {
+        content: '';
+        @include spinner;
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+        z-index: 2;
+      }
+    }
   }
 
   &_filters {
@@ -74,11 +98,19 @@
     .filters-opened & {
       display: block;
     }
+
+    .catalog_holder.loading & {
+      opacity: .5;
+    }
   }
 
   &_content {
     @include tablet {
       flex-grow: 1;
+    }
+
+    .catalog_holder.loading & {
+      opacity: .5;
     }
   }
 

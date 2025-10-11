@@ -182,7 +182,6 @@
     top: 24px;
     right: 26px;
     font-size: 0;
-    filter: grayscale(1) brightness(1.2);
     @include desktop {
       @include button;
       position: static;
@@ -190,6 +189,7 @@
     }
 
     img {
+      filter: grayscale(1) brightness(1.2);
       transition: .2s $easing filter;
     }
 
@@ -199,12 +199,24 @@
   }
 
   &_cart-button-count {
-    font-size: 12px;
     position: absolute;
-    right: -9px;
-    top: 0;
+    top: -7px;
+    right: -7px;
+    font-size: 10px;
+    background-color: $cBright;
+    border-radius: 50%;
+    height: 14px;
+    min-width: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $cLight;
     @include desktop {
       position: static;
+      background: transparent;
+      color: currentColor;
+      font-size: 14px;
     }
   }
 

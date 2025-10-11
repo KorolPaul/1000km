@@ -34,10 +34,15 @@
   }
 
   sup {
-    display: none;
-    font-size: 13px;
-    top: -13px;
+    font-size: 11px;
+    top: -4px;
+    position: absolute;
+    right: -7px;
     @include tablet {
+      position: relative;
+      right: 0;
+      top: -13px;
+      font-size: 13px;
       display: inline;
     }
   }
