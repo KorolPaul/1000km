@@ -18,6 +18,7 @@
     width: 100vw;
     z-index: 5;
     display: none;
+    box-shadow: 0 10px 20px 2px rgba($cGray, .5);
     @include desktop {
       padding: 0;
       top: 180px;
@@ -62,6 +63,7 @@
   }
 
   &_popup-content {
+    max-height: calc(100dvh - 222px);
     @include desktop {
       @include layout;
       display: flex;
@@ -79,6 +81,9 @@
     flex-direction: column;
     gap: 20px;
     padding: 36px;
+    max-height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
     @include desktop {
       margin: 50px 0;
       padding: 0 30px 0 0;
@@ -89,6 +94,9 @@
   }
 
   &_subcategories {
+    max-height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
     @include desktop {
       padding: 50px 30px 50px 80px;
       flex-grow: 1;
@@ -148,10 +156,11 @@
 
   &_subcategory-list {
     padding: 0 24px;
+    margin: 0;
     @include desktop {
       padding: 0;
       columns: 2;
-      padding: 25px 75px;
+      padding: 25px 0 0;
     }
 
     li {

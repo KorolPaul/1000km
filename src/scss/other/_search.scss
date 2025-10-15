@@ -44,6 +44,11 @@
     }
   }
 
+  &_dropdown-table {
+    margin: 0 22px;
+    min-width: calc(100% - 44px);
+  }
+
   &_dropdown-loading {
     position: absolute;
     top: 0;

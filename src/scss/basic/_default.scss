@@ -111,3 +111,7 @@ article:not([class]) {
 select {
   max-width: 100%;
 }
+
+.nowrap {
+  white-space: nowrap;
+}
