@@ -27,6 +27,7 @@
     max-height: calc(100dvh - 200px);
     z-index: 3;
     display: none;
+    z-index: 5;
     @include tablet {
       max-height: 360px;
     }

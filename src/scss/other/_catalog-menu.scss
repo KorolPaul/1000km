@@ -14,9 +14,9 @@
     z-index: 3;
     position: absolute;
     left: 0;
-    top: 220px;
+    top: 175px;
     width: 100vw;
-    z-index: 3;
+    z-index: 5;
     display: none;
     @include desktop {
       padding: 0;
@@ -147,14 +147,15 @@
   }
 
   &_subcategory-list {
-    padding: 25px 75px;
+    padding: 0 24px;
     @include desktop {
       padding: 0;
       columns: 2;
+      padding: 25px 75px;
     }
 
     li {
-      padding: 26px 0;
+      padding: 6px 0;
       display: flex;
       align-items: center;
       gap: 10px;
