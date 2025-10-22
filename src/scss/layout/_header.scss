@@ -21,8 +21,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 36px;
     @include tablet {
       gap: 30px;
+    }
+    @include desktop {
+      padding-top: 0;
     }
   }
 
@@ -36,8 +40,24 @@
   &_top {
     color: $cGray;
     padding-right: 38px;
+    position: fixed;
+    top: 22px;
+    left: 20px;
+    right: 20px;
+    z-index: 5;
     @include desktop {
+      position: static;
       padding-right: 0;
+    }
+
+    &::before {
+      content: '';
+      top: -22px;
+      left: -20px;
+      right: -20px;
+      bottom: -19px;
+      background-color: $cBlue;
+      position: absolute;
     }
 
     .fixed-menu & {
@@ -103,16 +123,18 @@
   &_logo {
     flex-shrink: 0;
     order: 1;
-    position: absolute;
-    top: 18px;
-    left: 72px;
-    display: none;
+    position: fixed;
+    top: 25px;
+    left: 62px;
+    width: 64px;
+    z-index: 5;
     @include media(375px) {
-      display: block;
       width: 90px;
+      left: 72px;
     }
     @include media(440px) {
       width: 140px;
+      top: 18px;
     }
     @include tablet {
       margin-right: 24px;

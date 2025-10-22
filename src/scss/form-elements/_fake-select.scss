@@ -13,6 +13,13 @@
       background-color: $cLight;
       color: $cBlack;
     }
+
+    &.error {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      box-shadow: 0 0 0 3px $cBright;
+    }
   }
 
   &_popup {
