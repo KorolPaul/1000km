@@ -248,14 +248,16 @@
 
   &_search {
     display: none;
-    position: absolute;
+    position: fixed;
     left: 19px;
     right: 19px;
-    top: 109px;
+    top: 60px;
     flex-grow: 1;
+    box-shadow: 0px 4px 20px 0px #EEF3FD;
     @include desktop {
       display: block;
       position: static;
+      box-shadow: none;
     }
 
     &.active {

@@ -1,5 +1,7 @@
 .car-brands {
   @include layout;
+  padding-left: 0;
+  padding-right: 0;
 
   &_columns {
     background-color: $cLight;

@@ -1,3 +1,7 @@
 .container {
   @include layout;
+
+  & + & {
+    margin-top: 16px;
+  }
 }
