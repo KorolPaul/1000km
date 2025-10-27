@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-top: 36px;
+    padding-top: 41px;
     @include tablet {
       gap: 30px;
     }
@@ -39,7 +39,6 @@
 
   &_top {
     color: $cGray;
-    padding-right: 38px;
     position: fixed;
     top: 22px;
     left: 20px;
@@ -47,7 +46,6 @@
     z-index: 5;
     @include desktop {
       position: static;
-      padding-right: 0;
     }
 
     &::before {
@@ -58,6 +56,9 @@
       bottom: -19px;
       background-color: $cBlue;
       position: absolute;
+      @include desktop {
+        content: none;
+      }
     }
 
     .fixed-menu & {
@@ -78,7 +79,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    @include tablet {
+    @include desktop {
       gap: 30px;
       flex-shrink: 0
     }

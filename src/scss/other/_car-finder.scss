@@ -144,6 +144,10 @@
   &_result-buttons {
     display: flex;
     gap: 16px;
+    flex-direction: column;
+    @include media(420px) {
+      flex-direction: row;
+    }
   }
 
   &_my-cars {
