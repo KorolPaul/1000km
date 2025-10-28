@@ -21,6 +21,11 @@
     opacity: .8;
   }
 
+  .checkout & {
+    font-size: 15px;
+    position: static;
+  }
+
   &_icon {
     display: block;
     position: relative;

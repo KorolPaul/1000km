@@ -19,10 +19,14 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    gap: 20px;
+    gap: 10px;
+    @include media(420px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
     @include tablet {
       grid-template-columns: repeat(7, 1fr);
       margin-bottom: 60px;
+      gap: 20px;
     }
   }
 

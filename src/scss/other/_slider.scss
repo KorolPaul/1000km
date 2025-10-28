@@ -12,23 +12,44 @@
     position: relative;
     max-width: 1060px;
     margin: auto;
+    flex-direction: column;
+    padding-bottom: 30px;
+    @include tablet {
+      padding-bottom: 0;
+      flex-direction: row;
+    }
   }
 
   &_item-content {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    max-width: 426px;
+    display: contents;
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      max-width: 426px;
+    }
+
+    .button {
+      order: 4;
+      @include tablet {
+        order: initial;
+      }
+    }
   }
 
   &_item-title {
-    font-size: 36px;
-    line-height: 42px;
+    order: 1;
+    font-size: 26px;
+    line-height: 1.15;
     font-weight: 700;
     margin-bottom: 20px;
     @include tablet {
+      font-size: 36px;
+      line-height: 42px;
       max-width: 80%;
+      order: initial;
     }
 
     span {
@@ -41,5 +62,32 @@
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 40px;
+    order: 3;
+    @include tablet {
+      order: initial;
+    }
+  }
+
+  &_item-image {
+    order: 2;
+    @include tablet {
+      order: initial;
+    }
+  }
+
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 10px;
+    @include tablet {
+      bottom: 30px;
+    }
   }
 }
