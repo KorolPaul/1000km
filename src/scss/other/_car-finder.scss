@@ -47,11 +47,14 @@
   &_filters-item {
     opacity: .5;
     pointer-events: none;
+    display: none;
     @include tablet {
+      display: block;
       flex-grow: 1;
     }
 
     &.active {
+      display: block;
       opacity: 1;
       pointer-events: all;
     }
@@ -116,7 +119,6 @@
     flex-direction: row;
 
     .car-finder_my-cars-popup & {
-      width: 90vw;
       flex-direction: row;
       @include tablet {
         width: 690px;
@@ -125,10 +127,7 @@
     }
 
     input + label:not([class]) {
-      margin: 0 0 0 -20px;
-      @include tablet {
-        margin: 0 -20px 0 0;
-      }
+      margin: 0 -20px 0 0;
     }
   }
 
@@ -170,6 +169,8 @@
   &_result-image {
     height: 80px;
     margin-left: -10px;
+    width: 213px;
+    object-fit: contain;
   }
 
   &_result-image-wrapper {
@@ -186,6 +187,7 @@
 
   &_result-title {
     font-size: 20px;
+    line-height: 1.2;
     margin: 0;
   }
 
@@ -203,12 +205,13 @@
     opacity: 0.3;
     position: absolute;
     right: 14px;
-    bottom: 40px;
+    bottom: calc(50% - 8px);
     flex-shrink: 0;
     transition: .2s $easing opacity,
                 .2s $easing filter;
     @include tablet {
       position: static;
+      bottom: 40px;
     }
 
     &:hover {

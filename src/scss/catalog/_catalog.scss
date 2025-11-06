@@ -75,8 +75,8 @@
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100dvh;
+    max-width: calc(100% - 50px);
+    max-height: 100dvh;
     overflow: auto;
     background-color: $cBackbround;
     padding: 16px;
@@ -101,6 +101,24 @@
 
     .catalog_holder.loading & {
       opacity: .5;
+    }
+  }
+
+  &_filters-fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 4;
+    display: none;
+
+    .filters-opened & {
+      display: block;
+      @include tablet {
+        display: none;
+      }
     }
   }
 

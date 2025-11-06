@@ -122,7 +122,8 @@
     background-color: $cBackbround;
     @include desktop {
       background-color: transparent;
-      position: static;
+      position: sticky;
+      top: 95px;
     }
 
     &.opened {

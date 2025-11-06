@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  @include tablet {
+  @include desktop {
     padding: 0 0 0 40px;
     flex-direction: row;
     justify-content: space-between;
@@ -22,7 +22,7 @@
     padding: 5px 20px;
     min-width: 98px;
     z-index: 1;
-    @include tablet {
+    @include desktop {
       top: 28px;
       min-width: 120px;
     }
@@ -41,7 +41,7 @@
 
   &_content {
     display: contents;
-    @include tablet {
+    @include desktop {
       display: flex;
       flex-grow: 1;
       padding-top: 24px;
@@ -55,13 +55,13 @@
     flex-direction: column;
     gap: 26px;
     padding-top: 8px;
-    @include media(420px) {
+    @include media(520px) {
       position: absolute;
       left: 16px;
       top: 62px;
       width: 132px;
     }
-    @include tablet {
+    @include desktop {
       position: static;
       width: 165px;
       flex-shrink: 0;
@@ -78,7 +78,7 @@
 
   &_compare-desktop {
     display: none;
-    @include tablet {
+    @include desktop {
       display: inline;
     }
   }
@@ -91,7 +91,7 @@
 
   &_data {
     display: contents;
-    @include tablet {
+    @include desktop {
       display: block;
       flex-grow: 1;
       margin: 0 30px 0 40px;
@@ -101,12 +101,13 @@
   &_title {
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 14px;
+    margin: 8px 0 14px;
     order: 1;
-    @include media(420px) {
+    @include media(520px) {
       padding-left: 152px;
+      margin: 0 0 14px;
     }
-    @include tablet {
+    @include desktop {
       margin-bottom: 24px;
       padding-left: 0;
       order: initial;
@@ -118,19 +119,16 @@
     flex-direction: column;
     order: 3;
     margin: 20px 0 6px;
-    @include tablet {
+    @include desktop {
       margin: 0;
       flex-direction: row;
-      gap: 25px;
-      order: initial;
-    }
-    @include desktop {
       gap: 50px;
+      order: initial;
     }
   }
 
   &_params-column {
-    @include tablet {
+    @include desktop {
       width: 50%;
     }
   }
@@ -157,14 +155,14 @@
     background: $cBlue;
     border-radius: 3px;
     order: 4;
-    @include tablet {
+    @include desktop {
       order: initial;
     }
   }
 
   &_controls {
     order: 2;
-    @include tablet {
+    @include desktop {
       position: relative;
       flex-grow: 0;
       order: initial;
@@ -202,10 +200,10 @@
 
   &_prices {
     min-height: 100px;
-    @include media(420px) {
+    @include media(520px) {
       padding-left: 152px;
     }
-    @include tablet {
+    @include desktop {
       min-height: 0;
       padding-left: 0;
     }
@@ -217,7 +215,7 @@
     position: absolute;
     left: 16px;
     top: 20px;
-    @include tablet {
+    @include desktop {
       top: 13px;
     }
   }
@@ -288,7 +286,7 @@
     border-radius: 5px;
     font-size: 15px;
     min-width: 0;
-    @include tablet {
+    @include desktop {
       flex-shrink: 0;
       gap: 4px;
     }

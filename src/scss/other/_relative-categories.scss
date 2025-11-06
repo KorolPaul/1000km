@@ -1,0 +1,18 @@
+.relative-categories {
+  margin: 0 0 20px;
+
+  h4 {
+    font-size: 22px;
+    margin: 6px 0 10px;
+  }
+
+  a {
+    font-size: 16px;
+    color: $cGray;
+
+    &:hover,
+    &:active {
+      color: $cBright;
+    }
+  }
+}

@@ -9,6 +9,10 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   padding: 0;
+  @include tablet {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 a {
@@ -68,7 +72,7 @@ li {
 }
 
 main {
-  padding: $indent;
+  padding: $indent 0;
 }
 
 .menu-opened {

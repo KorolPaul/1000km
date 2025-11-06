@@ -96,7 +96,10 @@
   td,
   th {
     padding: 11px;
-    text-align: center;
+    text-align: left;
+    @include tablet {
+      text-align: center;
+    }
 
     &:first-child {
       padding-left: 11px;
@@ -123,6 +126,96 @@
     padding-bottom: 20px;
     vertical-align: middle;
     border-bottom: 1px solid $cGrayLight;
+  }
+
+  &_table {
+    td {
+      display: block;
+      width: 50%;
+      box-sizing: border-box;
+      @include tablet {
+        width: auto;
+        display: table-cell;
+      }
+
+      &:first-child {
+        display: none;
+        @include tablet {
+          display: table-cell;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 100%;
+        padding-right: 30px;
+        @include tablet {
+          width: auto;
+          padding-right: 11px;
+        }
+      }
+
+      &:nth-child(3) {
+        display: none;
+        @include tablet {
+          display: table-cell;
+        }
+      }
+
+      &:nth-child(4) {
+        padding-left: 0;
+        @include tablet {
+          padding-left: 11px;
+        }
+      }
+
+      &:nth-child(5) {
+        text-align: right;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include tablet {
+          display: table-cell;
+          text-align: left;
+        }
+      }
+
+      &:last-child {
+        position: absolute;
+        top: 23px;
+        right: 2px;
+        padding: 0;
+        border-bottom-width: 0;
+        width: auto;
+        @include tablet {
+          position: static;
+          padding: 11px 25px;
+          border-bottom-width: 1px;
+        }
+      }
+    }
+
+    thead {
+      display: none;
+      @include tablet {
+        display: table-header-group;
+      }
+    }
+
+    tbody {
+      display: block;
+      @include tablet {
+        display: table-row-group;
+      }
+    }
+
+    tr {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      @include tablet {
+        display: table-row;
+      }
+    }
   }
 
   .number-input {

@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 50px;
   margin-bottom: 50px;
-  @include desktop {
+  @include tablet {
     flex-direction: row;
     gap: 40px;
   }

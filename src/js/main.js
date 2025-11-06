@@ -47,9 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
+  if (!isMobile) {
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  }
 });
 
 /* popups */
@@ -108,7 +110,6 @@ document.querySelectorAll('.categories_subcategory-title').forEach(el => el.addE
 /* fake select */
 const fakeSelects = document.querySelectorAll('.fake-select_button');
 const fakeSelectPopups = document.querySelectorAll('.fake-select_popup');
-let fakeSelectClickOutsideEvent = null;
 
 function toggleFakeSelect(e) {
   if (e?.preventDefault) {
@@ -117,31 +118,36 @@ function toggleFakeSelect(e) {
 
   if (e.target.nextElementSibling.classList.contains('opened')) {
     fakeSelectPopups.forEach((el => el.classList.remove('opened')));
-    e.target.removeEventListener('click', fakeSelectClickOutsideEvent);
-    fakeSelectClickOutsideEvent = null;
   } else {
-    if (e?.preventDefault) {
-      fakeSelectClickOutsideEvent = handleClickOutside(e.target, () => fakeSelectPopups.forEach((el => {
-        el.classList.remove('opened');
-      })));
-    }
     e.target.nextElementSibling.classList.add('opened');
-
   }
 }
 
-fakeSelects.forEach((el => el.addEventListener('click', toggleFakeSelect)));
+fakeSelects.forEach((el => {
+  el.addEventListener('click', toggleFakeSelect);
+  handleClickOutside(el.parentElement, (e) => {
+    if (el.nextElementSibling.classList.contains('opened')) {
+      el.nextElementSibling.classList.remove('opened');
+    }
+  });
+}));
 
 /* add product to cart */
 
 async function addProductToCart(e) {
   e.preventDefault();
 
+  const button = e.target.closest('.add-to-cart');
+
+  const parent = button.closest('.product-card_buttons');
+  const input = parent.querySelector('.number-input_input');
+  let qty = parseInt(input.value, 10);
+
   const id = e.target.dataset['id'];
   const formData = new FormData();
-  // formData.append('art', art);
-  // formData.append('brand', brand);
+
   formData.append('id', id);
+  formData.append('qty', qty);
 
   const responce = await fetch('/cart/add-to-cart/', {
     method: 'POST',
@@ -159,8 +165,6 @@ async function addProductToCart(e) {
 
 function addCartButtonEvents() {
   const addCartButtons = document.querySelectorAll('.add-to-cart');
-  console.log(1, addCartButtons);
-
   addCartButtons.forEach((el) => el.addEventListener('click', addProductToCart));
 }
 
@@ -173,7 +177,7 @@ function addUpdatePriceEvents() {
   async function loadPrice(e) {
     e.preventDefault();
 
-    const cardControls = e.target.parentElement.parentElement.parentElement;
+    const cardControls = e.target.parentElement.parentElement.parentElement.parentElement;
     const art = e.target.dataset['art'];
     const brand = e.target.dataset['brand'];
     const artbrand = e.target.dataset['artbrand'];
@@ -211,19 +215,29 @@ addUpdatePriceEvents();
 
 
 /* Car finder */
+window.selectCar = {};
+
+function setGlobalValue(key, value) {
+  if (value) {
+    window.selectCar[key] = value;
+  }
+}
+
 const carFinderOptions = document.querySelectorAll('.car-finder_filters-item .fake-select_value');
 
-function generateOptions(target, data) {
-  const nextFilter = target.parentElement.parentElement.parentElement.nextElementSibling;
-  nextFilter?.classList.add('active');
+function generateOptions(target, data, openNextPopup = false) {
+  const targetFilter = target;
 
-  const nextPopup = nextFilter?.querySelector('.fake-select_popup');
+  targetFilter?.classList.add('active');
 
-  if (!nextPopup || !data) {
+  const targetPopup = targetFilter?.querySelector('.fake-select_popup');
+
+  if (!targetPopup || !data) {
     return;
   }
 
-  nextPopup.innerHTML = '';
+  targetPopup.innerHTML = '';
+  let activeOption = null;
 
   function createItem(itemData) {
     const el = document.createElement('span');
@@ -233,17 +247,33 @@ function generateOptions(target, data) {
     el.dataset.mark = itemData?.mark;
     el.dataset.model = itemData?.model;
     el.dataset.body = itemData?.body;
-    el.innerHTML = itemData?.label;
+    el.innerHTML = itemData?.label || itemData?.name;
     el.addEventListener('click', handleSelectCarFinderOption);
+
+    if (itemData.is_active) {
+      activeOption = itemData;
+    }
 
     return el;
   }
 
-  data.forEach((item) => nextPopup.appendChild(createItem(item)));
+  data.forEach((item) => targetPopup.appendChild(createItem(item)));
 
-  setTimeout(() => {
-    toggleFakeSelect({ target: nextPopup?.previousElementSibling });
-  }, 100);
+  if (activeOption) {
+    targetFilter.querySelector('.fake-select_button').innerHTML = activeOption.label || activeOption.name;
+    targetFilter.parentElement.classList.add('active');
+
+    const previousFilter = targetFilter.parentElement.previousElementSibling.querySelector('.fake-select_button');
+    if (!previousFilter.dataset.value) {
+      previousFilter.classList.add('error');
+    }
+  }
+
+  if (openNextPopup) {
+    setTimeout(() => {
+      toggleFakeSelect({ target: targetPopup?.previousElementSibling });
+    }, 100);
+  }
 }
 
 async function handleSelectCarFinderOption(e) {
@@ -253,124 +283,189 @@ async function handleSelectCarFinderOption(e) {
   parentPopup?.classList.remove('opened');
 
   if (parentPopup && parentPopup.previousElementSibling && e.target.innerText) {
-    parentPopup.previousElementSibling.innerText = e.target.innerText;
+    const button = parentPopup.previousElementSibling;
+    button.innerText = e.target.innerText;
+    button.dataset.value = e.target.innerText;
+    button.classList.remove('error');
   }
 
   const key = parentPopup?.dataset?.key || null;
 
   let data = null;
+  let nextFilterKey = '';
   const formData = new FormData();
+
+  async function fetchMarks() {
+    formData.append('year', window.selectCar.year);
+
+    const yearResponce = await fetch('/car-ajax/get-marks-by-year/', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: formData,
+    });
+    data = await yearResponce.json();
+    nextFilterKey = 'mark';
+  }
+
+  async function fetchModels() {
+    formData.append('year', window.selectCar.year);
+    formData.append('mark', window.selectCar.markId);
+
+    markResponce = await fetch('/car-ajax/get-models-by-year-mark/', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: formData,
+    });
+    data = await markResponce.json();
+    nextFilterKey = 'model';
+  }
+
+  async function fetchBody() {
+    formData.append('year', window.selectCar.year);
+    formData.append('mark', window.selectCar.markId);
+    formData.append('model', window.selectCar.modelId);
+
+    bodyResponce = await fetch('/car-ajax/get-body-by-year-mark-models/', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: formData,
+    });
+    data = await bodyResponce.json();
+    nextFilterKey = 'body';
+  }
+
+  async function fetchEngine() {
+    formData.append('year', window.selectCar.year);
+    formData.append('mark', window.selectCar.markId);
+    formData.append('model', window.selectCar.modelId);
+    formData.append('body', window.selectCar.bodyId);
+
+    engineResponce = await fetch('/car-ajax/get-engine-by-year-mark-models-body/', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: formData,
+    });
+    data = await engineResponce.json();
+    nextFilterKey = 'engine_fuel';
+  }
+
+  async function fetchFuelVolume() {
+    formData.append('year', window.selectCar.year);
+    formData.append('mark', window.selectCar.markId);
+    formData.append('model', window.selectCar.modelId);
+    formData.append('engine', window.selectCar.engineId);
+
+    engineResponce = await fetch('/car-ajax/get-engine-code-by-year-mark-models-body-fuel-volume/', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: formData,
+    });
+    data = await engineResponce.json();
+    nextFilterKey = 'engine_code';
+  }
+
+  async function fetchEngineById() {
+    formData.append('engine', window.selectCar.engineId);
+
+    engineResponce = await fetch('/car-ajax/set-engine-by-id/', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: formData,
+    });
+    window.location.reload(true);
+    data = await engineResponce.json();
+    nextFilterKey = '';
+  }
 
   switch(key) {
     case 'year':
-      year = e.target.dataset['year'];
-      formData.append('year', year);
+      setGlobalValue('year', e.target.dataset['year']);
 
-      const yearResponce = await fetch('/car-ajax/get-marks-by-year/', {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        },
-        body: formData,
-      });
-      data = await yearResponce.json();
+      if (window.selectCar.modelId) {
+        await fetchBody();
+      } else if (window.selectCar.markId) {
+        await fetchModels();
+      } else {
+        await fetchMarks();
+      }
       break;
 
     case 'mark':
-      year = e.target.dataset['year'];
-      markId = e.target.dataset['id'];
+      setGlobalValue('markId', e.target.dataset['id']);
 
-      formData.append('year', year);
-      formData.append('mark', markId);
-
-      markResponce = await fetch('/car-ajax/get-models-by-year-mark/', {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        },
-        body: formData,
-      });
-      data = await markResponce.json();
+      await fetchModels();
       break;
+
     case 'model':
-      year = e.target.dataset['year'];
-      modelId = e.target.dataset['id'];
-      markId = e.target.dataset['mark'];
+      setGlobalValue('modelId', e.target.dataset['id']);
 
-      formData.append('year', year);
-      formData.append('mark', markId);
-      formData.append('model', modelId);
-
-      bodyResponce = await fetch('/car-ajax/get-body-by-year-mark-models/', {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        },
-        body: formData,
-      });
-      data = await bodyResponce.json();
+      await fetchBody()
       break;
+
     case 'body':
-      year = e.target.dataset['year'];
-      bodyId = e.target.dataset['id'];
-      modelId = e.target.dataset['model'];
-      markId = e.target.dataset['mark'];
+      setGlobalValue('bodyId', e.target.dataset['id']);
 
-      formData.append('year', year);
-      formData.append('mark', markId);
-      formData.append('model', modelId);
-      formData.append('body', bodyId);
-
-      engineResponce = await fetch('/car-ajax/get-engine-by-year-mark-models-body/', {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        },
-        body: formData,
-      });
-      data = await engineResponce.json();
+      await fetchEngine();
       break;
+
     case 'engine_fuel':
-      year = e.target.dataset['year'];
-      engineId = e.target.dataset['id'];
-      modelId = e.target.dataset['model'];
-      markId = e.target.dataset['mark'];
+      setGlobalValue('engineId', e.target.dataset['id']);
 
-      formData.append('year', year);
-      formData.append('mark', markId);
-      formData.append('model', modelId);
-      formData.append('engine', engineId);
-
-      engineResponce = await fetch('/car-ajax/get-engine-code-by-year-mark-models-body-fuel-volume/', {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        },
-        body: formData,
-      });
-      data = await engineResponce.json();
+      await fetchFuelVolume();
       break;
+
     case 'engine_code':
-      engineId = e.target.dataset['id'];
+      setGlobalValue('engineId', e.target.dataset['id']);
 
-      formData.append('engine', engineId);
-
-      engineResponce = await fetch('/car-ajax/set-engine-by-id/', {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        },
-        body: formData,
-      });
-      window.location.reload(true);
-      data = await engineResponce.json();
+      await fetchEngineById();
       break;
   }
 
-  generateOptions(e.target, data);
+  if (nextFilterKey) {
+    generateOptions(document.querySelector(`.car-finder_filters-item[data-key="${nextFilterKey}"]`), data, true);
+  }
 }
 
 carFinderOptions.forEach((el) => el.addEventListener('click', handleSelectCarFinderOption));
+
+const carFinderHiddenFields = document.querySelectorAll('input[name^="fastSearch"]');
+
+function handleCarFinderHiddenFieldsValues(field) {
+  const { dataset,  value } = field;
+
+  if (!value) {
+    return '';
+  }
+
+  const parsedValue = JSON.parse(value);
+  const name = dataset.name;
+  const select = document.querySelector(`.fake-select_popup[data-key="${name}"]`)?.previousElementSibling;
+
+  if (select) {
+    generateOptions(select.parentElement, parsedValue);
+
+    const selectedValue = parsedValue.find((el) => el.is_active);
+    if (selectedValue) {
+      setGlobalValue(`${name}Id`, selectedValue.id);
+      select.parentElement.querySelector('.fake-select_button').dataset.value = selectedValue.label;
+    }
+  }
+}
+
+carFinderHiddenFields.forEach((el) => handleCarFinderHiddenFieldsValues(el));
+
 
 /* disclaimer */
 const disclaimerButtons = document.querySelectorAll('.disclaimer_button');
@@ -454,11 +549,15 @@ function debounce(func, delay) {
 }
 
 const debouncedSearchCallback = debounce(async () => {
+  const inputValue = document.querySelector('input[name="q"]').value;
+  if (inputValue.length < 3) {
+    return;
+  }
+
   searchDropdown.classList.add('loading');
   searchInput.disabled = true;
 
   const formData = new FormData();
-  const inputValue = document.querySelector('input[name="q"]').value;
   formData.append('q', inputValue);
   formData.append('ajax', 1);
 
@@ -479,20 +578,24 @@ const debouncedSearchCallback = debounce(async () => {
     searchInput.focus();
   }
 
-}, 400);
+}, 700);
 
 searchInput.addEventListener('input', debouncedSearchCallback);
 
 
 /* filters */
-const filtersMoreButtons = document.querySelectorAll('.filters_more');
-filtersMoreButtons.forEach((el) => {
-  el.addEventListener('click', function(e) {
-    el.remove();
+function addShowMoreEvents() {
+  const filtersMoreButtons = document.querySelectorAll('.filters_more');
+  filtersMoreButtons.forEach((el) => {
+    el.addEventListener('click', function(e) {
+      el.remove();
+    });
   });
-});
+}
 
-const mobileFiltersToggles = document.querySelectorAll('.js-filters-toggle');
+addShowMoreEvents();
+
+const mobileFiltersToggles = document.querySelectorAll('.js-filters-toggle, .filters_close, .catalog_filters-fade');
 
 function toggleMobileMenu(e) {
   e.preventDefault();
@@ -510,6 +613,9 @@ async function handleFilterClick(e) {
   }
 
   window.history.pushState({}, '', window.location.origin + url);
+  const catalogHolderElement = document.querySelector('.catalog_holder');
+
+  catalogHolderElement.classList.add('loading');
 
   const response = await fetch(url);
   const html = await response.text();
@@ -529,9 +635,16 @@ async function handleFilterClick(e) {
 
   document.querySelector('.catalog-head h1').innerHTML = doc.querySelector('.catalog-head h1').innerHTML;
 
+  if (document.querySelector('.catalog-head .catalog-info_text') && doc.querySelector('.catalog-head .catalog-info_text')) {
+    document.querySelector('.catalog-head .catalog-info_text').innerHTML = doc.querySelector('.catalog-head .catalog-info_text').innerHTML;
+  }
+
   initFilterHandlers();
   addCartButtonEvents();
   addUpdatePriceEvents();
+  addShowMoreEvents();
+
+  catalogHolderElement.classList.remove('loading');
 }
 
 function initFilterHandlers() {

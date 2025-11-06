@@ -44,7 +44,9 @@
     left: 20px;
     right: 20px;
     z-index: 5;
+    padding-right: 34px;
     @include desktop {
+      padding-right: 0;
       position: static;
     }
 
@@ -65,6 +67,10 @@
       @include tablet {
         display: none;
       }
+    }
+
+    .menu-opened & {
+      z-index: 6;
     }
   }
 
@@ -204,10 +210,11 @@
   }
 
   &_cart-button {
-    position: absolute;
+    position: fixed;
     top: 24px;
     right: 26px;
     font-size: 0;
+    z-index: 5;
     @include desktop {
       @include button;
       position: static;
@@ -253,9 +260,11 @@
     right: 14px;
     top: 64px;
     flex-grow: 1;
-    box-shadow: 0px 4px 20px 0px #EEF3FD;
+    box-shadow: 0px 4px 20px 0px rgba($cBlack, .8);
     z-index: 7;
+    border-radius: 50px;
     @include desktop {
+      border-radius: 0;
       display: block;
       position: static;
       box-shadow: none;
@@ -269,7 +278,7 @@
       content: "";
       position: absolute;
       bottom: 100%;
-      right: 95px;
+      right: 131px;
       height: 30px;
       width: 30px;
       background-color: #fff;

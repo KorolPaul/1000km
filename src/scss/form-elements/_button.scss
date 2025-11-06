@@ -17,7 +17,6 @@
   line-height: 1;
   padding: 11px 15px;
   font-family: $font-family;
-  min-width: 140px;
   width: 100%;
   transition: .3s $easing background,
               .2s $easing color,
@@ -25,6 +24,7 @@
   @include media(420px) {
     padding-left: 30px;
     padding-right: 30px;
+    min-width: 140px;
   }
   @include tablet {
     width: auto;

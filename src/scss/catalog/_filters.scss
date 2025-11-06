@@ -82,15 +82,25 @@
 
   &_header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 10px;
+    @include tablet {
+      justify-content: space-between;
+    }
   }
 
   &_clear {
     @include button-reset;
-    background: url(#{$img}/close.svg) no-repeat left center / 14px;
-    padding-left: 16px;
+    background: url(#{$img}/trash.svg) no-repeat left center / 14px;
+    filter: grayscale(1);
     color: $cGray;
+    font-size: 0;
+    @include tablet {
+      background-image: url(#{$img}/close.svg);
+      padding-left: 16px;
+      font-size: 16px;
+    }
 
     &:hover {
       color: $cGray;
@@ -100,6 +110,20 @@
     &:active {
       color: $cGray;
       opacity: .6;
+    }
+  }
+
+  &_close {
+    @include button-reset;
+    background: url(#{$img}/close.svg) no-repeat left center / 30px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    z-index: 3;
+    @include tablet {
+      display: none;
     }
   }
 }
