@@ -83,7 +83,8 @@ function toggleCatalogMenu(e) {
 
 catalogMenuToggleElements.forEach((el) => el.addEventListener('click', toggleCatalogMenu));
 
-function closeSubcategores() {
+function closeSubcategores(e) {
+  e?.preventDefault();
   catalogSubcategories.forEach((el) => el.classList.remove('opened'));
 }
 
@@ -101,11 +102,20 @@ function selectCategory(e) {
     .forEach(el => el?.classList.add('active'));
   document.querySelectorAll(`.catalog-menu_subcategory[data-catalog-menu="${index}"], .categories_subcategory[data-category="${index}"]`)
     .forEach(el => el?.classList.add('opened'));
+
+  document.querySelector('.categories_subcategory opened')?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
 }
 
 catalogMenuCategoriesElements.forEach((el) => el.addEventListener('click', selectCategory));
 
 document.querySelectorAll('.categories_subcategory-title').forEach(el => el.addEventListener('click', closeSubcategores));
+document.querySelectorAll('.catalog-menu_subcategory-title').forEach(el => el.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.target.parentElement.classList.remove('opened');
+}));
 
 /* fake select */
 const fakeSelects = document.querySelectorAll('.fake-select_button');

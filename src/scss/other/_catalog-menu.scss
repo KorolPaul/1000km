@@ -59,6 +59,7 @@
     width: 30px;
     background: url(#{$img}/close.svg) no-repeat center;
     @include desktop {
+      display: none;
     }
   }
 
@@ -88,6 +89,7 @@
       margin: 50px 0;
       padding: 0 30px 0 0;
       width: 300px;
+      box-sizing: border-box;
       border-right: 1px solid $cGrayLight;
       flex-shrink: 0;
     }
@@ -141,13 +143,21 @@
     font-size: 18px;
     color: $cBlackLight;
 
-    &.active {
+    .active & {
       font-weight: bold;
     }
   }
 
   &_subcategory {
     display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: $cLight;
+    @include tablet {
+      position: static;
+    }
 
     &.opened {
       display: block;

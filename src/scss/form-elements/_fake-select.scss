@@ -30,13 +30,21 @@
     box-sizing: border-box;
     background-color: $cLight;
     padding: 20px 25px 25px;
-    display: flex;
-    flex-wrap: wrap;
     z-index: 2;
     opacity: 0;
     pointer-events: none;
     box-shadow: 0 10px 10px 0px rgba(0, 0, 0, .2);
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
     transition: .2s $easing opacity;
+    @include media(420px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     &.opened {
       opacity: 1;
@@ -46,7 +54,6 @@
 
   &_value {
     padding: 15px;
-    width: 20%;
     border-radius: 4px;
     cursor: pointer;
     transition: .2s $easing background,

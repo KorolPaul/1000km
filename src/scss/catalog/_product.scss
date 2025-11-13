@@ -255,6 +255,39 @@
     margin-bottom: 50px;
   }
 
+  &_variations-button {
+    @include button-reset;
+    border-bottom: 1px dashed currentColor;
+
+    &:hover {
+      color: $cGray;
+    }
+
+    &:active {
+      color: $cGrayLight;
+    }
+
+    &::after {
+      content: '▼';
+      transform-origin: center;
+      font-size: 10px;
+      margin-left: -4px;
+    }
+
+    &.active::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &_variations-sublist {
+    display: none;
+    margin: 0;
+
+    &.opened {
+      display: block;
+    }
+  }
+
   &_variations-table {
     th,
     td {
@@ -284,6 +317,29 @@
       margin: 3px 0;
     }
 
+    td:last-child,
+    th:last-child {
+      display: none;
+      @include tablet {
+        display: table-cell;
+      }
+    }
+
+    .button {
+      display: none;
+      @include tablet {
+        display: inline-block;
+      }
+    }
+
+    a:not([class]) {
+      font-size: 14px;
+      text-decoration: underline;
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+
     &__big {
       td:nth-child(1) {
         @include tablet {
@@ -311,6 +367,12 @@
         }
       }
     }
+
+    &.short {
+      tr:nth-child(10) ~ tr {
+        display: none;
+      }
+    }
   }
 
   &_variations-status {
@@ -319,11 +381,21 @@
     }
   }
 
+  &_variations-more {
+    margin: 20px auto 0;
+    display: none;
+
+    .short + & {
+      display: block;
+    }
+  }
+
   &_variations-status-time {
     display: block;
     color: $cGray;
     font-size: 14px;
     margin-top: 2px;
+    white-space: normal;
   }
 
   &_variations-price {
@@ -335,6 +407,12 @@
       font-size: 16px;
       font-weight: 600;
       color: $color;
+    }
+
+    &__mobile {
+      @include tablet {
+        display: none;
+      }
     }
   }
 

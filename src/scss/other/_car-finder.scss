@@ -1,6 +1,7 @@
 .car-finder {
+  @include layout;
   background-color: $cBlue;
-  padding: 0 0 26px;
+  padding-bottom: 26px;
   @include tablet {
     background-color: transparent;
     padding: 0;
@@ -144,7 +145,7 @@
     display: flex;
     gap: 16px;
     flex-direction: column;
-    @include media(420px) {
+    @include media(360px) {
       flex-direction: row;
     }
   }

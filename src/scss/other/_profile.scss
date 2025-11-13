@@ -6,7 +6,7 @@
   margin-bottom: 20px;
   @include tablet {
     flex-direction: row;
-    gap: 150px;
+    gap: 60px;
     margin-bottom: 40px;
   }
 
@@ -37,6 +37,10 @@
     left: calc(100% + 4px);
     top: 0px;
     font-size: 12px;
+  }
+
+  &_content {
+    flex-grow: 1;
   }
 
   &_title {
@@ -70,5 +74,54 @@
     &.active {
       display: block;
     }
+
+    &__small {
+      max-width: 500px;
+    }
+  }
+
+  &_adresses-table,
+  &_orders-table,
+  &_autos-table {
+    th,
+    td {
+      padding: 20px;
+      text-align: center;
+      font-size: 16px;
+      border-bottom: 1px solid $cGrayLighter;
+      font-weight: 400;
+    }
+
+    th {
+      background: $cBlue;
+      font-size: 14px;
+      border: none;
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      &:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+      &:last-child {
+        border-radius: 0 4px 4px 0;
+      }
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    a:not([class]) {
+      text-decoration: underline;
+    }
+  }
+
+  &_order-status {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 5px;
+    border-radius: 3px;
   }
 }

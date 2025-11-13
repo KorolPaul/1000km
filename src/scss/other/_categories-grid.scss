@@ -1,8 +1,15 @@
 .categories-grid {
   @include layout;
-  padding: 35px 0;
+  padding-top: 35px;
+  padding-bottom: 35px;
   @include tablet {
     padding: 80px 0 60px;
+  }
+
+  &__small-indent {
+    @include tablet {
+      padding-top: 20px;
+    }
   }
 
   &_title {
