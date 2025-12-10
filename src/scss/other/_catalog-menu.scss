@@ -80,18 +80,29 @@
   &_categories {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     padding: 36px;
     max-height: 100%;
     overflow: auto;
     box-sizing: border-box;
     @include desktop {
       margin: 50px 0;
-      padding: 0 30px 0 0;
+      padding: 0;
       width: 300px;
       box-sizing: border-box;
-      border-right: 1px solid $cGrayLight;
       flex-shrink: 0;
+      position: relative;
+    }
+
+    &::after {
+      @include desktop {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        right: 30px;
+        border-right: 1px solid $cGrayLight;
+      }
     }
   }
 
@@ -100,8 +111,32 @@
     overflow: auto;
     box-sizing: border-box;
     @include desktop {
-      padding: 50px 30px 50px 80px;
+      position: relative;
+      padding: 50px 30px;
       flex-grow: 1;
+    }
+
+    &.empty::before {
+      @include desktop {
+        content: '';
+        background: url(#{$img}/parts-placeholder.avif) no-repeat center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: .5;
+      }
+    }
+
+    &.loading::after {
+      content: '';
+      @include spinner;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
     }
   }
 
@@ -110,27 +145,31 @@
     align-items: center;
     gap: 16px;
     position: relative;
+    @include desktop {
+      padding-right: 60px;
+    }
 
     &.active::after {
       @include desktop {
         content: '';
         position: absolute;
         top: 8px;
-        left: calc(100% + 20px);
-        height: 20px;
-        width: 20px;
+        right: 22px;
+        height: 15px;
+        width: 15px;
         background-color: $cLight;
         border-top: 1px solid $cGrayLight;
         border-right: 1px solid $cGrayLight;
         transform: rotate(45deg);
+        z-index: 1;
       }
     }
   }
 
   &_category-icon,
   &_subcategory-icon {
-    height: 40px;
-    width: 53px;
+    height: 35px;
+    width: 40px;
     object-fit: contain;
   }
 
@@ -140,7 +179,7 @@
   }
 
   &_category-link {
-    font-size: 18px;
+    font-size: 16px;
     color: $cBlackLight;
 
     .active & {
@@ -155,8 +194,13 @@
     top: 0;
     width: 100%;
     background-color: $cLight;
-    @include tablet {
+    height: 100%;
+    overflow: auto;
+    @include desktop {
+      display: block;
       position: static;
+      height: auto;
+      overflow: initial;
     }
 
     &.opened {
@@ -170,7 +214,10 @@
     @include desktop {
       padding: 0;
       columns: 2;
-      padding: 25px 0 0;
+      padding: 0;
+    }
+    @include desktop-large {
+      columns: 3;
     }
 
     li {
@@ -193,9 +240,7 @@
     position: relative;
     display: block;
     @include desktop {
-      border-bottom: none;
-      background-image: none;
-      padding: 0;
+      display: none;
     }
 
     &::after {

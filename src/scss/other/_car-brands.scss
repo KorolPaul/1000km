@@ -1,7 +1,5 @@
 .car-brands {
   @include layout;
-  padding-left: 0;
-  padding-right: 0;
 
   &_columns {
     background-color: $cLight;
@@ -96,6 +94,14 @@
   &_year {
     color: $cGray;
     margin: 8px auto 0;
+  }
+
+  th,
+  td {
+    font-size: 12px;
+    @include tablet {
+      font-size: 14px;
+    }
   }
 
   td {

@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  box-sizing: border-box;
   @include desktop {
     padding: 0 0 0 40px;
     flex-direction: row;
@@ -41,6 +42,9 @@
 
   &_content {
     display: contents;
+    @include desktop {
+      width: calc(100% - 40px - 356px);
+    }
     @include desktop {
       display: flex;
       flex-grow: 1;
@@ -172,6 +176,7 @@
       display: flex;
       flex-direction: column;
       min-height: 186px;
+      box-sizing: border-box;
       justify-content: center;
     }
 
@@ -286,9 +291,10 @@
     border-radius: 5px;
     font-size: 15px;
     min-width: 0;
+    position: relative;
     @include desktop {
       flex-shrink: 0;
-      gap: 4px;
+      gap: 6px;
     }
 
     img {

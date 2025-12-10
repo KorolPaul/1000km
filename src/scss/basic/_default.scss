@@ -9,10 +9,6 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   padding: 0;
-  @include tablet {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
 }
 
 a {
@@ -118,4 +114,9 @@ select {
 
 .nowrap {
   white-space: nowrap;
+}
+
+.product-price-retail-price {
+  font-size: 14px;
+  color: $cGray;
 }

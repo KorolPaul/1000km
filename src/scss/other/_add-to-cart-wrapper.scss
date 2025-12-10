@@ -1,0 +1,47 @@
+.add-to-cart-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+
+  &_tooltip {
+    border-radius: 8px;
+    background-color: $cLight;
+    padding: 12px;
+    position: absolute;
+    top: calc(100% + 20px);
+    right: 0;
+    color: $cBlack;
+    font-size: 13px;
+    font-weight: 500;
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px 4px rgba($cGray, .5);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    @include desktop-large {
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .added & {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      height: 20px;
+      width: 20px;
+      background-color: $cLight;
+      border-radius: 4px;
+      transform: rotate(45deg) translate(6px, 15px);
+      z-index: -1;
+    }
+  }
+}

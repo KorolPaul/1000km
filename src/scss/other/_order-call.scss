@@ -1,0 +1,16 @@
+.order-call {
+  padding: 0 32px 32px;
+
+  &_title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  input[type="tel"] {
+    border: 1px solid $cBlackLight;
+  }
+
+  input[type="submit"] {
+    margin: auto;
+  }
+}

@@ -172,6 +172,7 @@
     border-radius: 5px;
     font-size: 15px;
     min-width: 0;
+    position: relative;
     @include tablet {
       flex-shrink: 0;
       gap: 4px;
@@ -414,6 +415,23 @@
         display: none;
       }
     }
+
+     &.loading {
+      position: relative;
+
+      &::after {
+        content: '';
+        @include spinner;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -16px;
+        margin-left: -10px;
+        width: 20px;
+        height: 20px;
+        padding: 4px;
+      }
+    }
   }
 
   &_variations-price-old {
@@ -473,4 +491,9 @@
 
 .product-card_show-price {
   margin-bottom: 20px;
+
+  .loading & {
+    pointer-events: none;
+    opacity: .5;
+  }
 }

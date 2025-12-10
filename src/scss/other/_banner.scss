@@ -1,5 +1,6 @@
 .banner {
   background-color: $cBlue;
+  overflow: hidden;
   box-shadow: 0 0 15px #0055FF1A inset;
 
   &_holder {

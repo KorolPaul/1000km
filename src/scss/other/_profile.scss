@@ -85,11 +85,15 @@
   &_autos-table {
     th,
     td {
-      padding: 20px;
+      padding: 16px;
       text-align: center;
-      font-size: 16px;
       border-bottom: 1px solid $cGrayLighter;
       font-weight: 400;
+      font-size: 13px;
+      @include tablet {
+        font-size: 16px;
+        padding: 20px;
+      }
     }
 
     th {
@@ -109,12 +113,59 @@
 
     .actions {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      gap: 10px;
+      justify-content: center;
     }
 
     a:not([class]) {
       text-decoration: underline;
+    }
+  }
+
+  &_orders-table {
+    th {
+      display: none;
+      @include tablet {
+        display: table-cell;
+      }
+    }
+
+    td {
+      padding: 0;
+      border-bottom: none;
+      @include tablet {
+        padding: 20px;
+        border-bottom: 1px solid $cGrayLighter;
+      }
+    }
+
+    tr {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      gap: 12px;
+      padding: 0 0 20px;
+      border-bottom: 1px solid $cGrayLighter;
+      @include tablet {
+        margin-bottom: 0;
+        display: table-row;
+        border-bottom: none;
+        padding: 0;
+      }
+    }
+
+    thead {
+      display: none;
+      @include tablet {
+        display: table-header-group;
+      }
+    }
+
+    tbody {
+      display: block;
+      @include tablet {
+        display: table-row-group;
+      }
     }
   }
 
@@ -123,5 +174,43 @@
     white-space: nowrap;
     padding: 5px;
     border-radius: 3px;
+  }
+
+  &_table-edit,
+  &_table-delete {
+    height: 16px;
+    width: 16px;
+    background: no-repeat center / 100%;
+    filter: grayscale(1);
+    transition: .2s $easing opacity;
+
+    &:hover {
+      opacity: .6;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &_table-edit {
+    background-image: url(#{$img}/edit.svg);
+  }
+
+  &_table-delete {
+    background-image: url(#{$img}/trash.svg) ;
+  }
+
+  &_order-id {
+    display: none;
+    @include tablet {
+      display: inline;
+    }
+  }
+
+  &_mobile-label {
+    @include tablet {
+      display: none;
+    }
   }
 }
