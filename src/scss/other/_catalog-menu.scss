@@ -64,10 +64,13 @@
   }
 
   &_popup-content {
-    max-height: calc(100dvh - 222px);
+    max-height: calc(100dvh - 176px);
+    overflow: auto;
     @include desktop {
       @include layout;
       display: flex;
+      overflow: initial;
+      max-height: calc(100dvh - 222px);
     }
   }
 
