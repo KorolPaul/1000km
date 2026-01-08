@@ -254,6 +254,29 @@
 
   &_variations {
     margin-bottom: 50px;
+    position: relative;
+
+    &.loading {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($cBackbround, .8);
+      }
+
+      &::after {
+        content: '';
+        @include spinner;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+      }
+    }
   }
 
   &_variations-button {
@@ -318,14 +341,6 @@
       margin: 3px 0;
     }
 
-    td:last-child,
-    th:last-child {
-      display: none;
-      @include tablet {
-        display: table-cell;
-      }
-    }
-
     .button {
       display: none;
       @include tablet {
@@ -343,6 +358,7 @@
 
     &__big {
       td:nth-child(1) {
+        text-align: left;
         @include tablet {
           width: 22%;
         }
@@ -403,6 +419,15 @@
     color: $cGray;
     font-size: 14px;
     white-space: nowrap;
+
+    .product-price-retail-price {
+      display: block;
+      margin-bottom: 4px;
+      @include tablet {
+        display: inline;
+        margin-bottom: 0;
+      }
+    }
 
     strong {
       font-size: 16px;

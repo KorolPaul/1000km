@@ -175,6 +175,7 @@ async function addProductToCart(e) {
 
 function addCartButtonEvents() {
   const addCartButtons = document.querySelectorAll('.add-to-cart');
+  addCartButtons.forEach((el) => el.removeEventListener('click', addProductToCart));
   addCartButtons.forEach((el) => el.addEventListener('click', addProductToCart));
 }
 

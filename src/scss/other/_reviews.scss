@@ -53,6 +53,9 @@
   &_item-name {
     font-size: 18px;
     font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85%;
   }
 
   &_item-date {
@@ -109,9 +112,28 @@
   }
 
   &_button {
-    color: $cBright;
-    border-radius: 5px;
-    width: auto;
-    margin-top: 16px;
+    @include button;
+    @include button-filled;
+    margin: 16px auto 24px;
+    display: block;
+    width: min-content;
+    @include tablet {
+      width: min-content;
+    }
+  }
+
+  &_form {
+    .form_row {
+      align-items: center;
+    }
+
+    .form_row label:first-child {
+      width: auto;
+    }
+
+    textarea {
+      font-size: 15px;
+      height: 100px;
+    }
   }
 }

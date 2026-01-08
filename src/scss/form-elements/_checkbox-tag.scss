@@ -1,0 +1,26 @@
+.checkbox-tag {
+  padding: 6px 10px;
+  border-radius: 5px;
+  background-color: #eaebeb;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 6px;
+  transition: .2s ease all;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    background-color: $cBright;
+    color: $cLight;
+  }
+
+  input:checked + & {
+    background-color: $cBright;
+    color: $cLight;
+  }
+}

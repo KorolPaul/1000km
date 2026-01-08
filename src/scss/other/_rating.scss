@@ -2,6 +2,10 @@
   display: flex;
   align-items: center;
 
+  &.editable {
+    margin-top: -4px;
+  }
+
   &_star {
     height: 18px;
     width: 18px;
@@ -9,6 +13,21 @@
 
     &__filled {
       background-image: url(#{$img}/star-filled.svg);
+    }
+
+    .editable & {
+      cursor: pointer;
+      height: 26px;
+      width: 26px;
+      background-size: 80%;
+    }
+
+    .editable:hover & {
+      background-image: url(#{$img}/star-filled.svg);
+    }
+
+    .editable &:hover ~ & {
+      background-image: url(#{$img}/star.svg);
     }
   }
 }

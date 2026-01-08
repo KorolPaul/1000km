@@ -56,7 +56,6 @@
   }
 
   &_subcategories {
-    background-color: $cLight;
     max-height: 100%;
     width: 100%;
     @include desktop {
@@ -122,8 +121,8 @@
 
     .categories_subcategory & {
       @include desktop {
-        width: 125px;
-        height: 120px;
+        width: 90px;
+        height: 90px;
       }
     }
   }
@@ -144,6 +143,7 @@
       line-height: 1;
       word-break: break-all;
       @include desktop {
+        font-size: 13px;
         word-break: normal;
         text-align: center;
       }
@@ -171,10 +171,13 @@
     padding: 20px 0;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1;
     gap: 12px;
+    @include media(520px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     @include desktop {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 22px;
       padding: 0;
     }
@@ -185,8 +188,9 @@
       align-items: center;
       gap: 5px;
       background-color: $cLight;
-      padding: 16px;
+      padding: 4px 16px;
       @include desktop {
+        padding: 12px 16px;
         gap: 10px;
         flex-direction: column;
       }

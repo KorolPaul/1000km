@@ -1,0 +1,65 @@
+.all-alt-offers {
+  display: block;
+  margin: 10px 0 12px 0;
+
+  button {
+    color: $cBright;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 13px;
+
+    &:hover {
+      color: $cLight;
+    }
+  }
+}
+
+.all-offers {
+  padding: 20px;
+
+  &:empty {
+    padding: 0;
+  }
+
+  &_title {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    margin: 0 0 10px;
+  }
+
+  td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &_table {
+    td,
+    th {
+      padding: 11px;
+      vertical-align: middle;
+      border-bottom: 1px solid $cGrayLight;
+      font-size: 12px;
+      @include tablet {
+        font-size: 14px;
+      }
+
+      &:nth-child(4) {
+        display: none;
+        @include tablet {
+          display: table-cell;
+        }
+      }
+    }
+
+    input[type="number"] {
+      width: 50px;
+    }
+
+    button {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  }
+}

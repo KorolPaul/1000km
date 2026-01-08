@@ -62,6 +62,11 @@
       width: 12.5%;
     }
 
+    &__with-letter {
+      position: relative;
+      padding-left: 20px;
+    }
+
     &:hover {
       background-color: $cBright;
       color: $cLight;
@@ -76,6 +81,19 @@
       font-size: 13px;
       pointer-events: none;
       margin-top: 5px;
+    }
+  }
+
+  &_letter {
+    font-weight: bold;
+    color: $cBright;
+    position: absolute;
+    left: 3px;
+    top: 15px;
+    pointer-events: none;
+
+    .fake-select_button & {
+      display: none;
     }
   }
 }
