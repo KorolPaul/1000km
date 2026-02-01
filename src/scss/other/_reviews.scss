@@ -1,4 +1,12 @@
 .reviews {
+  &_holder {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
 
   &_items {
     display: flex;
@@ -20,10 +28,10 @@
       padding: 16px;
       border-color: $cGrayLight;
       @include tablet {
-        display: flex;
         border-radius: 0;
         padding: 0;
         border: none;
+        position: relative;
       }
     }
   }
@@ -38,7 +46,9 @@
     .reviews__big & {
       flex-direction: column;
       align-items: flex-start;
-      width: 200px;
+      @include tablet {
+        width: 80%;
+      }
     }
   }
 
@@ -65,6 +75,14 @@
 
   &_item-rating {
     margin-bottom: 12px;
+
+    .reviews__big & {
+      @include tablet {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
   }
 
   &_item-text {
@@ -88,33 +106,16 @@
 
   &_item-content {
     @include tablet {
-      border: 1px solid $cGrayLight;
-      border-radius: 10px;
-      padding: 24px 24px 8px;
+      border-bottom: 1px solid $color;
       flex-grow: 1;
       position: relative;
-    }
-
-    &::before {
-      content: '';
-      @include tablet {
-        position: absolute;
-        border-left: 1px solid $cGrayLight;
-        border-bottom: 1px solid $cGrayLight;
-        height: 20px;
-        width: 20px;
-        left: -11px;
-        top: 29px;
-        background-color: $cBackbround;
-        transform: rotate(45deg);
-      }
     }
   }
 
   &_button {
     @include button;
     @include button-filled;
-    margin: 16px auto 24px;
+    margin: auto;
     display: block;
     width: min-content;
     @include tablet {
@@ -123,6 +124,8 @@
   }
 
   &_form {
+    padding: 20px;
+
     .form_row {
       align-items: center;
     }
@@ -131,9 +134,118 @@
       width: auto;
     }
 
+    .form_row label {
+      color: $color;
+    }
+
     textarea {
       font-size: 15px;
       height: 100px;
+      border-color: $cGray;
     }
+
+    .rating {
+      margin-top: 0;
+    }
+  }
+
+  &_info {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+
+  &_info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: $cGrayLighter;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  &_info-name {
+    font-weight: 700;
+    font-size: 16px;
+
+    &::after {
+      content: '';
+      background: url(#{$img}/like.svg);
+      height: 13px;
+      width: 13px;
+      display: inline-block;
+      margin-left: 4px;
+    }
+  }
+
+  &_info-title {
+    color: $cGray;
+  }
+
+  &_info-value {
+    font-size: 14px;
+    color: $cGray;
+  }
+
+  &_total {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  &_total-column {
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      align-items: flex-end;
+    }
+  }
+
+  &_total-sum {
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+  &_total-info {
+    font-size: 13px;
+    color: $cGray;
+    height: 26px;
+    margin: -1px 0 2px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &_total-stars {
+    display: flex;
+    gap: 2px;
+    margin: 3px 0;
+  }
+
+  &_total-star {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: url(#{$img}/star-filled.svg) no-repeat center / 100%;
+    filter: brightness(0);
+
+    .reviews_total-sum & {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  &_total-progress {
+    margin: 6px 0;
+    height: 4px;
+    background-color: $cGrayLighter;
+  }
+
+  &_total-progress-value {
+    height: 100%;
+    background-color: $cGray;
   }
 }

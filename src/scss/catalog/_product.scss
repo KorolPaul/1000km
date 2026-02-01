@@ -483,6 +483,34 @@
     margin-bottom: 60px;
   }
 
+  &_reviews-toggle-button {
+    margin: 16px auto 24px;
+    display: block;
+
+    .active ~ & {
+      display: none;
+    }
+  }
+
+  &_reviews-toggle-status {
+    display: none;
+    margin: 20px 0 0;
+    font-size: 20px;
+    text-align: center;
+
+    &.active {
+      display: block;
+    }
+
+    &__success {
+      color: $cGreen;
+    }
+
+    &__error {
+      color: $cBright;
+    }
+  }
+
   &_sticky-panel {
     display: none;
     @include desktop {
