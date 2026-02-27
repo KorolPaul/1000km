@@ -1,4 +1,8 @@
 .reviews {
+  &_title {
+    margin-bottom: 24px;
+  }
+
   &_holder {
     display: flex;
     flex-direction: column;
@@ -11,9 +15,9 @@
   &_items {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     @include tablet {
-      gap: 12px;
+      gap: 18px;
     }
   }
 
@@ -70,11 +74,30 @@
 
   &_item-date {
     color: $cGrayLight;
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 3px;
+    display: block;
+  }
+
+  &_item-car {
+    color: $cGrayLight;
+    font-size: 13px;
+    margin: -3px 0 4px;
+    display: block;
+  }
+
+  &_info-phone {
+    color: $cGray;
+    font-size: 12px;
+    margin-left: 2px;
+    font-weight: 400;
   }
 
   &_item-rating {
     margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
     .reviews__big & {
       @include tablet {
@@ -86,8 +109,52 @@
   }
 
   &_item-text {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 4px;
+    @include tablet {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    span {
+      color: $cGray;
+    }
+  }
+
+  &_item-avatar {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    color: $cLight;
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0 4px 0 0;
+    display: inline-flex;
+  }
+
+  &_item-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0 0 16px;
+  }
+
+  &_item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid #81868c4a;
+    display: block;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   &_more {
@@ -106,9 +173,19 @@
 
   &_item-content {
     @include tablet {
-      border-bottom: 1px solid $color;
+      border-bottom: 1px solid #81868c4a;
       flex-grow: 1;
       position: relative;
+      padding-bottom: 10px;
+    }
+  }
+
+  &_item-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include tablet {
+      min-height: 50px
     }
   }
 
@@ -208,15 +285,21 @@
   &_total-sum {
     font-weight: 700;
     font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    line-height: 1;
   }
 
   &_total-info {
     font-size: 13px;
     color: $cGray;
     height: 26px;
+    line-height: 1;
     margin: -1px 0 2px;
     display: flex;
     align-items: flex-end;
+    white-space: nowrap;
   }
 
   &_total-stars {
@@ -235,6 +318,7 @@
     .reviews_total-sum & {
       height: 14px;
       width: 14px;
+      margin-bottom: -3px;
     }
   }
 

@@ -19,8 +19,16 @@
     color: $cLight;
   }
 
-  input:checked + & {
+  input:checked + &[class] {
     background-color: $cBright;
     color: $cLight;
+  }
+
+  .reviews_item-content & {
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 6px;
+    margin-top: 0px;
   }
 }
