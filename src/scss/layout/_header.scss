@@ -192,6 +192,10 @@
     align-items: center;
     gap: 10px;
     width: 100%;
+    font-size: 12px;
+    @include media(400px) {
+      font-size: 14px;
+    }
     @include desktop {
       display: block;
       width: auto;

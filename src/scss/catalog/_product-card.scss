@@ -6,6 +6,8 @@
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
+  box-shadow: 0 4px 20px #EEF3FD;
+  border-radius: 5px;
   @include desktop {
     padding: 0 0 0 40px;
     flex-direction: row;
@@ -204,8 +206,13 @@
   }
 
   &_prices {
-    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     @include media(520px) {
+      min-height: 100px;
+      display: block;
       padding-left: 152px;
     }
     @include desktop {

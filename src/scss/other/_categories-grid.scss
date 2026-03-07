@@ -37,14 +37,17 @@
     @include tablet {
       grid-template-columns: repeat(7, 1fr);
       margin-bottom: 60px;
-      gap: 20px;
+      gap: 12px;
+    }
+    @include desktop {
+      grid-template-columns: repeat(8, 1fr);
     }
   }
 
   &_link {
     background-color: $cLight;
     border-radius: 10px;
-    padding: 16px;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,16 +59,14 @@
     overflow: hidden;
     @include tablet {
       font-size: 15px;
-      gap: 16px;
     }
   }
 
   &_image {
-    height: 128px;
     object-fit: contain;
     @include tablet {
-      width: 125px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
     }
   }
 }
