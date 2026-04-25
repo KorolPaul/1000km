@@ -1567,6 +1567,313 @@
       </div>
     </footer>
 
+    <div class="chat-bot">
+      <button class="chat-bot_trigger" id="chatBotTrigger" aria-label="Открыть чат">
+        <img src="src/img/chat-bot/trigger.svg" alt="" width="34" height="34">
+      </button>
+
+      <div class="chat-bot_window" id="chatBotWindow" role="dialog" aria-label="Чат с помощником">
+        <div class="chat-bot_header">
+          <div class="chat-bot_header-icon">
+            <img src="src/img/chat-bot/header-icon.svg" alt="" width="22" height="22">
+          </div>
+          <div class="chat-bot_header-info">
+            <div class="chat-bot_header-name">1000km.by</div>
+            <div class="chat-bot_header-status">Цифровой помощник</div>
+          </div>
+          <button class="chat-bot_close" id="chatBotClose" aria-label="Закрыть чат">
+            <img src="src/img/chat-bot/close.svg" alt="" width="20" height="20">
+          </button>
+        </div>
+
+        <div class="chat-bot_messages" id="chatBotMessages"></div>
+
+        <div class="chat-bot_footer">
+          <div class="chat-bot_input-wrap">
+            <input class="chat-bot_input" id="chatBotInput" type="text" placeholder="Написать сообщение..." autocomplete="off" maxlength="1000">
+            <button class="chat-bot_send" id="chatBotSend" aria-label="Отправить" disabled>
+              <img src="src/img/chat-bot/send.svg" alt="" width="16" height="16">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const STORAGE_KEY = 'chatbot_1000km_v1';
+          const PAGE_SIZE = 20;
+
+          let allMessages = [];
+          let renderedStart = 0;
+          let isOpen = false;
+
+          const triggerEl  = document.getElementById('chatBotTrigger');
+          const windowEl   = document.getElementById('chatBotWindow');
+          const closeEl    = document.getElementById('chatBotClose');
+          const messagesEl = document.getElementById('chatBotMessages');
+          const inputEl    = document.getElementById('chatBotInput');
+          const sendEl     = document.getElementById('chatBotSend');
+
+          /* ---- storage ---- */
+          function load() {
+            try {
+              return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            } catch (e) {
+              return [];
+            }
+          }
+
+          function save(msgs) {
+            try {
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(msgs));
+            } catch (e) {}
+          }
+
+          /* ---- date / time helpers ---- */
+          function fmtTime(iso) {
+            const d = new Date(iso);
+
+            return d.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+          }
+
+          function fmtDate(iso) {
+            const d = new Date(iso);
+            const now = new Date();
+            const yesterday = new Date(now);
+            yesterday.setDate(now.getDate() - 1);
+
+            if (d.toDateString() === now.toDateString()) {
+              return 'Сегодня';
+            }
+
+            if (d.toDateString() === yesterday.toDateString()) {
+              return 'Вчера';
+            }
+
+            return d.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+          }
+
+          function sameDay(a, b) {
+            const da = new Date(a);
+            const db = new Date(b);
+
+            return da.getFullYear() === db.getFullYear() && da.getMonth() === db.getMonth() && da.getDate() === db.getDate();
+          }
+
+          /* ---- DOM builders ---- */
+          function makeDivider(iso) {
+            const el = document.createElement('div');
+            el.className = 'chat-bot_date-divider';
+            el.textContent = fmtDate(iso);
+
+            return el;
+          }
+
+          function makeMessageGroup(msg, prevMsg) {
+            const frag = document.createDocumentFragment();
+
+            if (!prevMsg || !sameDay(prevMsg.time, msg.time)) {
+              frag.appendChild(makeDivider(msg.time));
+            }
+
+            const wrap = document.createElement('div');
+            wrap.className = `chat-bot_message-wrap chat-bot_message-wrap__${msg.type}`;
+
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bot_message chat-bot_message__${msg.type}`;
+            bubble.textContent = msg.text;
+
+            const time = document.createElement('div');
+            time.className = 'chat-bot_message-time';
+            time.textContent = fmtTime(msg.time);
+
+            wrap.appendChild(bubble);
+            wrap.appendChild(time);
+            frag.appendChild(wrap);
+
+            return frag;
+          }
+
+          function makeLoadMoreBtn() {
+            const wrap = document.createElement('div');
+            wrap.className = 'chat-bot_load-more';
+
+            const btn = document.createElement('button');
+            btn.textContent = 'Загрузить ещё';
+            btn.addEventListener('click', loadMore);
+            wrap.appendChild(btn);
+
+            return wrap;
+          }
+
+          /* ---- render ---- */
+          function renderInitial() {
+            messagesEl.innerHTML = '';
+
+            const total = allMessages.length;
+            renderedStart = Math.max(0, total - PAGE_SIZE);
+
+            const frag = document.createDocumentFragment();
+
+            for (let i = renderedStart; i < total; i++) {
+              const prev = i > 0 ? allMessages[i - 1] : null;
+              frag.appendChild(makeMessageGroup(allMessages[i], prev));
+            }
+
+            if (renderedStart > 0) {
+              frag.insertBefore(makeLoadMoreBtn(), frag.firstChild);
+            }
+
+            messagesEl.appendChild(frag);
+            scrollBottom();
+          }
+
+          function loadMore() {
+            if (renderedStart <= 0) {
+              return;
+            }
+
+            const oldBtn = messagesEl.querySelector('.chat-bot_load-more');
+
+            if (oldBtn) {
+              oldBtn.remove();
+            }
+
+            const newStart = Math.max(0, renderedStart - PAGE_SIZE);
+            const frag = document.createDocumentFragment();
+
+            for (let i = newStart; i < renderedStart; i++) {
+              const prev = i > 0 ? allMessages[i - 1] : null;
+              frag.appendChild(makeMessageGroup(allMessages[i], prev));
+            }
+
+            if (newStart > 0) {
+              frag.insertBefore(makeLoadMoreBtn(), frag.firstChild);
+            }
+
+            const hBefore = messagesEl.scrollHeight;
+            const sBefore = messagesEl.scrollTop;
+
+            messagesEl.insertBefore(frag, messagesEl.firstChild);
+            messagesEl.scrollTop = sBefore + (messagesEl.scrollHeight - hBefore);
+
+            renderedStart = newStart;
+          }
+
+          function appendMessage(msg) {
+            const prev = allMessages.length > 1 ? allMessages[allMessages.length - 2] : null;
+
+            messagesEl.appendChild(makeMessageGroup(msg, prev));
+            scrollBottom();
+          }
+
+          function scrollBottom() {
+            messagesEl.scrollTop = messagesEl.scrollHeight;
+          }
+
+          /* ---- typing indicator ---- */
+          function showTyping() {
+            const wrap = document.createElement('div');
+            wrap.className = 'chat-bot_typing-wrap';
+            wrap.id = 'cbTyping';
+
+            const dots = document.createElement('div');
+            dots.className = 'chat-bot_typing';
+            dots.innerHTML = '<span></span><span></span><span></span>';
+            wrap.appendChild(dots);
+
+            messagesEl.appendChild(wrap);
+            scrollBottom();
+          }
+
+          function hideTyping() {
+            const el = document.getElementById('cbTyping');
+
+            if (el) {
+              el.remove();
+            }
+          }
+
+          /* ---- send / bot reply ---- */
+          function addMsg(type, text) {
+            const msg = { id: Date.now() + Math.random(), type, text, time: new Date().toISOString() };
+
+            allMessages.push(msg);
+            save(allMessages);
+
+            return msg;
+          }
+
+          function sendMessage() {
+            const text = inputEl.value.trim();
+
+            if (!text) {
+              return;
+            }
+
+            inputEl.value = '';
+            sendEl.disabled = true;
+            appendMessage(addMsg('user', text));
+            showTyping();
+
+            setTimeout(() => {
+              hideTyping();
+              appendMessage(addMsg('bot', 'Спасибо за ваш вопрос! Наш менеджер ответит вам в ближайшее время. Для срочных вопросов воспользуйтесь номером телефона на сайте.'));
+              sendEl.disabled = !inputEl.value.trim();
+            }, 1000 + Math.random() * 700);
+          }
+
+          /* ---- open / close ---- */
+          function openChat() {
+            isOpen = true;
+            windowEl.classList.add('opened');
+            allMessages = load();
+
+            if (allMessages.length === 0) {
+              allMessages.push({
+                id: Date.now(),
+                type: 'bot',
+                text: 'Добрый день! Я цифровой помощник 1000km.by, чем могу помочь?',
+                time: new Date().toISOString(),
+              });
+              save(allMessages);
+            }
+
+            renderInitial();
+            setTimeout(() => inputEl.focus(), 300);
+          }
+
+          function closeChat() {
+            isOpen = false;
+            windowEl.classList.remove('opened');
+          }
+
+          /* ---- events ---- */
+          triggerEl.addEventListener('click', () => isOpen ? closeChat() : openChat());
+          closeEl.addEventListener('click', closeChat);
+
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isOpen) {
+              closeChat();
+            }
+          });
+
+          sendEl.addEventListener('click', sendMessage);
+
+          inputEl.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              sendMessage();
+            }
+          });
+
+          inputEl.addEventListener('input', () => {
+            sendEl.disabled = !inputEl.value.trim();
+          });
+        })();
+      </script>
+    </div>
+
   </main>
 
   <div class="cookies">
