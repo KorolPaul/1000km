@@ -161,6 +161,7 @@
     background: $cBlue;
     border-radius: 3px;
     order: 4;
+    word-break: break-all;
     @include desktop {
       order: initial;
     }
