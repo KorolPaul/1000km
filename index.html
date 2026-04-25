@@ -1681,7 +1681,12 @@
 
             const bubble = document.createElement('div');
             bubble.className = `chat-bot_message chat-bot_message__${msg.type}`;
-            bubble.textContent = msg.text;
+
+            if (msg.type === 'bot' && msg.html) {
+              bubble.innerHTML = msg.html;
+            } else {
+              bubble.textContent = msg.text;
+            }
 
             const time = document.createElement('div');
             time.className = 'chat-bot_message-time';
@@ -1830,12 +1835,25 @@
             allMessages = load();
 
             if (allMessages.length === 0) {
+              const t = new Date();
+
               allMessages.push({
-                id: Date.now(),
+                id: t.getTime(),
                 type: 'bot',
                 text: 'Добрый день! Я цифровой помощник 1000km.by, чем могу помочь?',
-                time: new Date().toISOString(),
+                time: t.toISOString(),
               });
+
+              t.setSeconds(t.getSeconds() + 2);
+
+              allMessages.push({
+                id: t.getTime(),
+                type: 'bot',
+                text: 'Например, могу подобрать запчасти и показать доступные варианты доставки.',
+                html: `Например, могу подобрать запчасти и показать доступные варианты доставки.<div class="chat-bot_message-products"><div class="chat-bot_message-product"><img src="https://1000km.by/images/categories/120x120/maslyanyj-filtr1-5.png" alt="" class="chat-bot_message-product-img"><div class="chat-bot_message-product-name">MANN HU 711/51 x</div><div class="chat-bot_message-product-price">8,90 р.</div></div><div class="chat-bot_message-product"><img src="https://1000km.by/images/categories/120x120/tormoznye-kolodki-2.png" alt="" class="chat-bot_message-product-img"><div class="chat-bot_message-product-name">TRW GDB1535</div><div class="chat-bot_message-product-price">34,20 р.</div></div><div class="chat-bot_message-product"><img src="https://1000km.by/images/categories/120x120/svecha-zazhiganiya1-43.png" alt="" class="chat-bot_message-product-img"><div class="chat-bot_message-product-name">NGK BKR6E</div><div class="chat-bot_message-product-price">4,60 р.</div></div><div class="chat-bot_message-product"><img src="https://1000km.by/images/categories/120x120/vozdushnyj-filtr-93.png" alt="" class="chat-bot_message-product-img"><div class="chat-bot_message-product-name">BOSCH 1 457 433 063</div><div class="chat-bot_message-product-price">12,80 р.</div></div></div><div class="chat-bot_message-sep"></div>Доставка доступна в:<ul class="chat-bot_message-list"><li>Минск — 1–2 рабочих дня</li><li>Гомель, Гродно, Брест — 2–3 дня</li><li>Вся Беларусь — курьером до 5 дней</li></ul>`,
+                time: t.toISOString(),
+              });
+
               save(allMessages);
             }
 
